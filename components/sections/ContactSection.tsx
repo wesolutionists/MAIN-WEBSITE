@@ -65,6 +65,8 @@ export default function ContactSection() {
         style={{ background: 'linear-gradient(to bottom, rgba(10,9,12,0.80) 0%, rgba(10,9,12,0.65) 50%, rgba(10,9,12,0.85) 100%)' }}
         aria-hidden="true"
       />
+      {/* Mobile: stronger flat overlay */}
+      <div className="absolute inset-0 pointer-events-none md:hidden" style={{ background: 'rgba(10,9,12,0.25)' }} aria-hidden="true" />
       {/* Glow */}
       <div
         className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 h-[500px] w-[500px] rounded-full"

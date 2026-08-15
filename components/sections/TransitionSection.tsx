@@ -77,6 +77,8 @@ export default function TransitionSection() {
         style={{ background: 'rgba(10,9,12,0.78)' }}
         aria-hidden="true"
       />
+      {/* Mobile: stronger overlay */}
+      <div className="absolute inset-0 pointer-events-none md:hidden" style={{ background: 'rgba(10,9,12,0.15)' }} aria-hidden="true" />
 
       {/* Edge fade masks */}
       <div

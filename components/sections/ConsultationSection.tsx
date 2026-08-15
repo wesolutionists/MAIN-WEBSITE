@@ -19,12 +19,15 @@ export default function ConsultationSection({ onConsultClick }: Props) {
         backgroundRepeat: 'no-repeat',
       }}
     >
-      {/* Dark overlay */}
+      {/* Dark overlay — left/right on desktop, top/bottom on mobile */}
       <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: 'linear-gradient(to right, rgba(10,9,12,0.88) 0%, rgba(10,9,12,0.65) 50%, rgba(10,9,12,0.88) 100%)',
-        }}
+        className="absolute inset-0 pointer-events-none hidden md:block"
+        style={{ background: 'linear-gradient(to right, rgba(10,9,12,0.88) 0%, rgba(10,9,12,0.65) 50%, rgba(10,9,12,0.88) 100%)' }}
+        aria-hidden="true"
+      />
+      <div
+        className="absolute inset-0 pointer-events-none md:hidden"
+        style={{ background: 'rgba(10,9,12,0.82)' }}
         aria-hidden="true"
       />
 

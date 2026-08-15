@@ -254,14 +254,14 @@ export default function PackagesSection({ onConsultClick }: Props) {
         backgroundRepeat: 'no-repeat',
       }}
     >
-      {/* Dark overlay to maintain readability + contrast */}
+      {/* Dark overlay */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{
-          background: 'linear-gradient(to bottom, rgba(10,9,12,0.72) 0%, rgba(10,9,12,0.55) 50%, rgba(10,9,12,0.82) 100%)',
-        }}
+        style={{ background: 'linear-gradient(to bottom, rgba(10,9,12,0.72) 0%, rgba(10,9,12,0.55) 50%, rgba(10,9,12,0.82) 100%)' }}
         aria-hidden="true"
       />
+      {/* Mobile: stronger flat overlay */}
+      <div className="absolute inset-0 pointer-events-none md:hidden" style={{ background: 'rgba(10,9,12,0.30)' }} aria-hidden="true" />
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
         {/* Header */}
         <div className="mb-6 md:mb-8 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
