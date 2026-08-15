@@ -10,8 +10,10 @@ interface Props {
   onConsultClick: () => void
 }
 
-const line1Words = ['We', 'Are']
-const line2Words = ['The', 'Solutionists.']
+const lines = [
+  { text: 'We Are', gradient: false, delay: 0.1 },
+  { text: 'The Solutionists.', gradient: true, delay: 0.32 },
+]
 
 export default function HeroSection({ onAuditClick, onConsultClick }: Props) {
   const sectionRef = useRef<HTMLElement>(null)
@@ -92,47 +94,31 @@ export default function HeroSection({ onAuditClick, onConsultClick }: Props) {
 
           {/* Headline — word by word */}
           <h1
-            className="font-display font-semibold leading-tight"
-            style={{ fontSize: 'clamp(2.8rem, 7.5vw, 5.8rem)', lineHeight: 1.04, letterSpacing: '-0.02em' }}
+            className="font-display font-semibold"
+            style={{ fontSize: 'clamp(2.8rem, 7.5vw, 5.8rem)', lineHeight: 1.08, letterSpacing: '-0.02em' }}
           >
-            <span className="block">
-              {line1Words.map((word, i) => (
+            {lines.map((line) => (
+              <span key={line.text} className="block overflow-hidden" style={{ paddingBottom: '0.06em' }}>
                 <motion.span
-                  key={word}
-                  className="text-ink"
-                  style={{ display: 'inline-block', marginRight: i < line1Words.length - 1 ? '0.28em' : 0 }}
-                  initial={{ opacity: 0, y: 28, filter: 'blur(8px)' }}
-                  animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                  transition={{ duration: 0.75, delay: 0.1 + i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                >
-                  {word}
-                </motion.span>
-              ))}
-            </span>
-            <span className="block">
-              {line2Words.map((word, i) => (
-                <motion.span
-                  key={word}
-                  style={{
-                    display: 'inline-block',
-                    marginRight: i < line2Words.length - 1 ? '0.28em' : 0,
+                  className="block"
+                  style={line.gradient ? {
                     background: 'linear-gradient(135deg, #D4947E 0%, #C47A65 50%, #D4947E 100%)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     backgroundClip: 'text',
-                  }}
-                  initial={{ opacity: 0, y: 28, filter: 'blur(8px)' }}
-                  animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                  } : { color: '#F4EFE8' }}
+                  initial={{ y: '105%', opacity: 0 }}
+                  animate={{ y: '0%', opacity: 1 }}
                   transition={{
-                    duration: 0.75,
-                    delay: 0.1 + (line1Words.length + i) * 0.1,
+                    duration: 1.0,
+                    delay: line.delay,
                     ease: [0.16, 1, 0.3, 1],
                   }}
                 >
-                  {word}
+                  {line.text}
                 </motion.span>
-              ))}
-            </span>
+              </span>
+            ))}
           </h1>
 
           {/* Subheading */}
