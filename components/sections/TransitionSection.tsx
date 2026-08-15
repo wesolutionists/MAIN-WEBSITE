@@ -63,22 +63,11 @@ export default function TransitionSection() {
       className="relative py-12 md:py-16 overflow-hidden"
       aria-label="Trusted by"
       style={{
-        backgroundImage: 'url(/transition-bg.png)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
         borderTop: '1px solid rgba(196, 122, 101, 0.08)',
         borderBottom: '1px solid rgba(196, 122, 101, 0.08)',
+        background: '#0A090C',
       }}
     >
-      {/* Dark overlay */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{ background: 'rgba(10,9,12,0.78)' }}
-        aria-hidden="true"
-      />
-      {/* Mobile: stronger overlay */}
-      <div className="absolute inset-0 pointer-events-none md:hidden" style={{ background: 'rgba(10,9,12,0.15)' }} aria-hidden="true" />
 
       {/* Edge fade masks */}
       <div

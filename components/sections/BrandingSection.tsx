@@ -59,12 +59,24 @@ export default function BrandingSection() {
       className="relative overflow-hidden"
       aria-label="Branding"
       style={{
-        background: '#07060A',
+        backgroundImage: 'url(/transition-bg.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
         borderTop: '1px solid rgba(196, 122, 101, 0.1)',
         borderBottom: '1px solid rgba(196, 122, 101, 0.1)',
         padding: 'clamp(3rem, 7vw, 5rem) clamp(1.5rem, 6vw, 5rem)',
       }}
     >
+      {/* Dark overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: 'rgba(7,6,10,0.82)' }}
+        aria-hidden="true"
+      />
+      {/* Mobile: stronger overlay */}
+      <div className="absolute inset-0 pointer-events-none md:hidden" style={{ background: 'rgba(7,6,10,0.12)' }} aria-hidden="true" />
+
       {/* Ghost "BRAND" — parallax drift */}
       <motion.div
         className="pointer-events-none absolute inset-0 flex items-center justify-center select-none overflow-hidden"
