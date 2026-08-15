@@ -247,8 +247,22 @@ export default function PackagesSection({ onConsultClick }: Props) {
       id="packages"
       className="relative py-12 md:py-16 overflow-hidden"
       aria-label="Packages"
+      style={{
+        backgroundImage: 'url(/packages-bg.webp)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center top',
+        backgroundRepeat: 'no-repeat',
+      }}
     >
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+      {/* Dark overlay to maintain readability + contrast */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'linear-gradient(to bottom, rgba(10,9,12,0.72) 0%, rgba(10,9,12,0.55) 50%, rgba(10,9,12,0.82) 100%)',
+        }}
+        aria-hidden="true"
+      />
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
         {/* Header */}
         <div className="mb-10 md:mb-14 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
