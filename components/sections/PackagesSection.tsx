@@ -73,7 +73,7 @@ function PricingCard({
 
   return (
     <motion.article
-      className={`group relative flex flex-col gap-5 p-7 md:p-9 h-full cursor-default${featuredIdle ? ' featured-card-pulse' : ''}`}
+      className={`group relative flex flex-col gap-4 p-6 md:p-7 h-full cursor-default${featuredIdle ? ' featured-card-pulse' : ''}`}
       style={{
         background: hovered ? '#161320' : pkg.featured ? '#131118' : '#0F0D12',
         ...(!featuredIdle && {
@@ -245,7 +245,7 @@ export default function PackagesSection({ onConsultClick }: Props) {
   return (
     <section
       id="packages"
-      className="relative py-10 md:py-12 overflow-hidden"
+      className="relative py-8 md:py-10 overflow-hidden"
       aria-label="Packages"
       style={{
         backgroundImage: 'url(/pricing-bg.png)',
@@ -264,7 +264,7 @@ export default function PackagesSection({ onConsultClick }: Props) {
       />
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
         {/* Header */}
-        <div className="mb-8 md:mb-10 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+        <div className="mb-6 md:mb-8 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <div>
             <RevealOnScroll>
               <p
