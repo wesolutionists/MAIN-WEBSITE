@@ -68,18 +68,18 @@ export default function BrandingSection() {
         padding: 'clamp(3rem, 7vw, 5rem) clamp(1.5rem, 6vw, 5rem)',
       }}
     >
-      {/* Dark overlay */}
+      {/* Dark overlay — always on */}
       <div
-        className="absolute inset-0 pointer-events-none"
-        style={{ background: 'rgba(7,6,10,0.82)' }}
+        className="absolute inset-0 pointer-events-none z-[1]"
+        style={{ background: 'rgba(7,6,10,0.80)' }}
         aria-hidden="true"
       />
-      {/* Mobile: stronger overlay */}
-      <div className="absolute inset-0 pointer-events-none md:hidden" style={{ background: 'rgba(7,6,10,0.12)' }} aria-hidden="true" />
+      {/* Mobile: extra overlay for portrait screens */}
+      <div className="absolute inset-0 pointer-events-none md:hidden z-[2]" style={{ background: 'rgba(7,6,10,0.18)' }} aria-hidden="true" />
 
-      {/* Ghost "BRAND" — parallax drift */}
+      {/* Ghost "BRAND" — parallax drift, sits above overlay */}
       <motion.div
-        className="pointer-events-none absolute inset-0 flex items-center justify-center select-none overflow-hidden"
+        className="pointer-events-none absolute inset-0 flex items-center justify-center select-none overflow-hidden z-[3]"
         style={{ y: ghostY, scale: ghostScale }}
         aria-hidden="true"
       >
@@ -101,7 +101,7 @@ export default function BrandingSection() {
 
       {/* Accent line — draws in on view */}
       <motion.div
-        className="mb-14"
+        className="mb-14 relative z-10"
         initial={{ width: 0, opacity: 0 }}
         animate={isInView ? { width: 40, opacity: 1 } : {}}
         transition={{ duration: 1.1, ease }}
