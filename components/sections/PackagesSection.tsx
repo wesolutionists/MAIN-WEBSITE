@@ -248,7 +248,7 @@ export default function PackagesSection({ onConsultClick }: Props) {
       className="relative py-12 md:py-16 overflow-hidden"
       aria-label="Packages"
       style={{
-        backgroundImage: 'url(/packages-bg.webp)',
+        backgroundImage: 'url(/pricing-bg.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center top',
         backgroundRepeat: 'no-repeat',
