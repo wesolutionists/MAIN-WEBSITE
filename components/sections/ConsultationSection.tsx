@@ -10,8 +10,24 @@ export default function ConsultationSection({ onConsultClick }: Props) {
     <section
       className="relative py-12 md:py-16 overflow-hidden"
       aria-label="Free Consultation"
-      style={{ borderTop: '1px solid rgba(196, 122, 101, 0.1)', borderBottom: '1px solid rgba(196, 122, 101, 0.1)' }}
+      style={{
+        borderTop: '1px solid rgba(196, 122, 101, 0.1)',
+        borderBottom: '1px solid rgba(196, 122, 101, 0.1)',
+        backgroundImage: 'url(/consultation-bg.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
     >
+      {/* Dark overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'linear-gradient(to right, rgba(10,9,12,0.88) 0%, rgba(10,9,12,0.65) 50%, rgba(10,9,12,0.88) 100%)',
+        }}
+        aria-hidden="true"
+      />
+
       {/* Atmospheric left glow */}
       <div
         className="pointer-events-none absolute -left-40 top-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full opacity-60"
