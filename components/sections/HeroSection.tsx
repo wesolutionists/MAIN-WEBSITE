@@ -109,19 +109,18 @@ export default function HeroSection({ onAuditClick, onConsultClick }: Props) {
                 </motion.span>
               ))}
             </span>
-            <span
-              className="block"
-              style={{
-                background: 'linear-gradient(135deg, #D4947E 0%, #C47A65 50%, #D4947E 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}
-            >
+            <span className="block">
               {line2Words.map((word, i) => (
                 <motion.span
                   key={word}
-                  style={{ display: 'inline-block', marginRight: i < line2Words.length - 1 ? '0.28em' : 0 }}
+                  style={{
+                    display: 'inline-block',
+                    marginRight: i < line2Words.length - 1 ? '0.28em' : 0,
+                    background: 'linear-gradient(135deg, #D4947E 0%, #C47A65 50%, #D4947E 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                  }}
                   initial={{ opacity: 0, y: 28, filter: 'blur(8px)' }}
                   animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                   transition={{
