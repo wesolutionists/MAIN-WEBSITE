@@ -1,0 +1,175 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --font-cormorant: 'Cormorant', Georgia, serif;
+  --font-montserrat: 'Belleza', system-ui, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0A090C;
+  color: #F4EFE8;
+  font-family: var(--font-montserrat);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(196, 122, 101, 0.25);
+  color: #F4EFE8;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+::-webkit-scrollbar-track {
+  background: #0A090C;
+}
+::-webkit-scrollbar-thumb {
+  background: #A05C50;
+  border-radius: 2px;
+}
+
+/* Logo strip marquee */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee 28s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Portfolio dual marquee */
+@keyframes portfolio-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes portfolio-right {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+.portfolio-track-left {
+  animation: portfolio-left 44s linear infinite;
+}
+.portfolio-track-right {
+  animation: portfolio-right 56s linear infinite;
+}
+.portfolio-track-left:hover,
+.portfolio-track-right:hover {
+  animation-play-state: paused;
+}
+
+/* Featured pricing card border + glow pulse */
+@keyframes featured-card-pulse {
+  0%, 100% {
+    box-shadow: 0 0 60px rgba(196,122,101,0.1), 0 8px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(196,122,101,0.1);
+    border-color: rgba(196,122,101,0.30);
+  }
+  50% {
+    box-shadow: 0 0 100px rgba(196,122,101,0.24), 0 8px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(196,122,101,0.18);
+    border-color: rgba(196,122,101,0.62);
+  }
+}
+.featured-card-pulse {
+  animation: featured-card-pulse 3s ease-in-out infinite;
+}
+
+/* "Most Popular" badge shimmer */
+@keyframes badge-shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.badge-shimmer {
+  background: linear-gradient(90deg, #AEA8A4 0%, #D4947E 30%, #F4EFE8 50%, #D4947E 70%, #AEA8A4 100%);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: badge-shimmer 3.5s linear infinite;
+}
+
+/* Stat count-up finish glow */
+@keyframes stat-pulse {
+  0%   { text-shadow: 0 0 0 rgba(196,122,101,0); }
+  35%  { text-shadow: 0 0 18px rgba(196,122,101,0.55), 0 0 32px rgba(212,148,126,0.25); }
+  100% { text-shadow: 0 0 0 rgba(196,122,101,0); }
+}
+.stat-pulse {
+  animation: stat-pulse 1.2s ease-out forwards;
+}
+
+/* Gold rule animation utility */
+.gold-rule {
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, #C47A65, transparent);
+  width: 0;
+  opacity: 0;
+  transition: width 1.2s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.3s ease;
+}
+.gold-rule.visible {
+  width: 100%;
+  opacity: 1;
+}
+
+/* Aurora background animations */
+@keyframes aurora-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 1; }
+  25%       { transform: translate(-5vw, 7vw) scale(1.1); opacity: 0.8; }
+  50%       { transform: translate(7vw, 4vw) scale(0.93); opacity: 1; }
+  75%       { transform: translate(3vw, -6vw) scale(1.06); opacity: 0.85; }
+}
+@keyframes aurora-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.9; }
+  30%       { transform: translate(9vw, -5vw) scale(1.12); opacity: 1; }
+  65%       { transform: translate(-5vw, 8vw) scale(0.9); opacity: 0.75; }
+}
+@keyframes aurora-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%       { transform: translate(-10vw, -4vw) scale(1.18); opacity: 0.7; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+}
+
+/* Premium focus ring */
+:focus-visible {
+  outline: 2px solid rgba(196, 122, 101, 0.6);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-cormorant);
+  }
+  .font-body {
+    font-family: var(--font-montserrat);
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}

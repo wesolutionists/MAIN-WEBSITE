@@ -1,0 +1,154 @@
+﻿import Logo from '../Logo'
+
+const links = {
+  Services: [
+    { label: 'Web Design & Development', href: '#services' },
+    { label: 'Meta Ads', href: '#services' },
+    { label: 'Business Automation', href: '#services' },
+  ],
+  Company: [
+    { label: 'About Us', href: '#about' },
+    { label: 'Packages', href: '#packages' },
+    { label: 'FAQ', href: '#faq' },
+    { label: 'Contact', href: '#contact' },
+  ],
+}
+
+const socials = [
+  {
+    label: 'Instagram',
+    href: '#',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4" aria-hidden="true">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+        <circle cx="12" cy="12" r="4" />
+        <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Facebook',
+    href: '#',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4" aria-hidden="true">
+        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+      </svg>
+    ),
+  },
+  {
+    label: 'LinkedIn',
+    href: '#',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4" aria-hidden="true">
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+        <rect x="2" y="9" width="4" height="12" />
+        <circle cx="4" cy="4" r="2" />
+      </svg>
+    ),
+  },
+]
+
+export default function Footer() {
+  return (
+    <footer
+      className="relative pt-16 overflow-hidden"
+      style={{
+        paddingBottom: 'max(2rem, env(safe-area-inset-bottom, 0px))',
+        borderTop: '1px solid rgba(196, 122, 101, 0.15)',
+      }}
+      aria-label="Site footer"
+    >
+      {/* Subtle top glow */}
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-px"
+        style={{ background: 'linear-gradient(90deg, transparent, rgba(196, 122, 101,0.3), transparent)' }}
+        aria-hidden="true"
+      />
+
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        {/* Main footer grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12"
+          style={{ borderBottom: '1px solid rgba(196, 122, 101, 0.1)' }}
+        >
+          {/* Brand column */}
+          <div className="lg:col-span-2">
+            <a href="#" aria-label="The Solutionists — back to top">
+              <Logo size="sm" />
+            </a>
+            <p
+              className="font-body font-normal text-ink-muted mt-6 max-w-xs"
+              style={{ fontSize: '0.96rem', lineHeight: 1.9 }}
+            >
+              We help ambitious businesses design their presence, grow their audience, and automate
+              their operations — so they can focus on building something that lasts.
+            </p>
+            {/* Socials */}
+            <div className="mt-8 flex items-center gap-4">
+              {socials.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  aria-label={s.label}
+                  className="flex h-9 w-9 items-center justify-center rounded-full text-ink-muted hover:text-ink transition-colors duration-300"
+                  style={{ border: '1px solid rgba(196, 122, 101, 0.2)' }}
+                >
+                  {s.icon}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Link columns */}
+          {Object.entries(links).map(([group, items]) => (
+            <div key={group}>
+              <p
+                className="font-body font-medium text-ink-muted mb-5"
+                style={{ fontSize: '0.78rem', letterSpacing: '0.25em' }}
+              >
+                {group.toUpperCase()}
+              </p>
+              <ul className="space-y-3.5" role="list">
+                {items.map((item) => (
+                  <li key={item.label}>
+                    <a
+                      href={item.href}
+                      className="font-body font-normal text-ink-muted hover:text-ink transition-colors duration-300"
+                      style={{ fontSize: '0.96rem' }}
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom bar */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
+          <p
+            className="font-body font-normal text-ink-dim"
+            style={{ fontSize: '0.8rem', letterSpacing: '0.1em' }}
+          >
+            © {new Date().getFullYear()} The Solutionists. All rights reserved.
+          </p>
+          <div className="flex items-center gap-6">
+            {[
+              { label: 'Privacy Policy', href: '/privacy' },
+              { label: 'Terms of Service', href: '/terms' },
+            ].map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="font-body font-normal text-ink-dim hover:text-ink-muted transition-colors duration-300"
+                style={{ fontSize: '0.8rem', letterSpacing: '0.05em' }}
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </footer>
+  )
+}
