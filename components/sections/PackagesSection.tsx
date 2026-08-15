@@ -118,9 +118,9 @@ function PricingCard({
       {/* Package name */}
       <div>
         <h3
-          className="font-display font-medium text-ink mb-2 transition-all duration-500"
+          className="font-display font-medium text-ink mb-1.5 transition-all duration-500"
           style={{
-            fontSize: '1.55rem',
+            fontSize: '1.3rem',
             lineHeight: 1.2,
             transform: hovered ? 'translateY(-2px)' : 'translateY(0)',
           }}
@@ -129,7 +129,7 @@ function PricingCard({
         </h3>
         <p
           className="font-body font-normal text-ink-muted italic"
-          style={{ fontSize: '0.9rem', letterSpacing: '0.04em' }}
+          style={{ fontSize: '0.82rem', letterSpacing: '0.04em' }}
         >
           &ldquo;{pkg.promise}&rdquo;
         </p>
@@ -140,7 +140,7 @@ function PricingCard({
         <span
           className="font-display font-semibold transition-all duration-500"
           style={{
-            fontSize: hovered ? '3.5rem' : '3.2rem',
+            fontSize: hovered ? '2.8rem' : '2.5rem',
             lineHeight: 1,
             color: '#F4EFE8',
           }}
@@ -148,8 +148,8 @@ function PricingCard({
           ${pkg.price}
         </span>
         <span
-          className="font-body font-normal text-ink-dim line-through mb-2"
-          style={{ fontSize: '1rem' }}
+          className="font-body font-normal text-ink-dim line-through mb-1.5"
+          style={{ fontSize: '0.9rem' }}
           aria-label={`Was $${pkg.originalPrice}`}
         >
           ${pkg.originalPrice}
@@ -168,7 +168,7 @@ function PricingCard({
       />
 
       {/* Features */}
-      <ul className="flex flex-col gap-4 flex-1" role="list">
+      <ul className="flex flex-col gap-2.5 flex-1" role="list">
         {pkg.features.map((feature, fi) => (
           <motion.li
             key={feature}
@@ -190,8 +190,8 @@ function PricingCard({
             <span
               className="font-body font-normal transition-colors duration-400"
               style={{
-                fontSize: '0.96rem',
-                lineHeight: 1.65,
+                fontSize: '0.86rem',
+                lineHeight: 1.55,
                 color: hovered ? '#D8D0C8' : '#AEA8A4',
               }}
             >
@@ -214,7 +214,7 @@ function PricingCard({
       {/* CTA */}
       <button
         onClick={onConsultClick}
-        className="w-full py-4 font-body font-medium transition-all duration-300 active:scale-[0.98] cursor-pointer"
+        className="w-full py-3 font-body font-medium transition-all duration-300 active:scale-[0.98] cursor-pointer"
         style={
           pkg.featured
             ? {
