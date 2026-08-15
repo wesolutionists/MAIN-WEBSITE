@@ -11,8 +11,8 @@ interface Props {
 }
 
 const lines = [
-  { text: 'We Are', gradient: false, delay: 0.1 },
-  { text: 'The Solutionists.', gradient: true, delay: 0.32 },
+  { text: 'We Are', accent: false, delay: 0.1 },
+  { text: 'The Solutionists.', accent: true, delay: 0.32 },
 ]
 
 export default function HeroSection({ onAuditClick, onConsultClick }: Props) {
@@ -101,16 +101,11 @@ export default function HeroSection({ onAuditClick, onConsultClick }: Props) {
               <span key={line.text} className="block overflow-hidden" style={{ paddingBottom: '0.06em' }}>
                 <motion.span
                   className="block"
-                  style={line.gradient ? {
-                    background: 'linear-gradient(135deg, #D4947E 0%, #C47A65 50%, #D4947E 100%)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                  } : { color: '#F4EFE8' }}
-                  initial={{ y: '105%', opacity: 0 }}
-                  animate={{ y: '0%', opacity: 1 }}
+                  style={{ color: line.accent ? '#D4947E' : '#F4EFE8' }}
+                  initial={{ y: '105%' }}
+                  animate={{ y: '0%' }}
                   transition={{
-                    duration: 1.0,
+                    duration: 1.1,
                     delay: line.delay,
                     ease: [0.16, 1, 0.3, 1],
                   }}
