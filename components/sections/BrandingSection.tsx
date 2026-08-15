@@ -55,7 +55,7 @@ export default function BrandingSection() {
         backgroundRepeat: 'no-repeat',
         borderTop: '1px solid rgba(196, 122, 101, 0.1)',
         borderBottom: '1px solid rgba(196, 122, 101, 0.1)',
-        padding: 'clamp(3rem, 7vw, 5rem) clamp(1.5rem, 6vw, 5rem)',
+        padding: 'clamp(2rem, 4vw, 3.5rem) clamp(1.5rem, 6vw, 5rem)',
       }}
     >
       {/* Dark overlay — brighter now (0.58) */}
@@ -104,7 +104,7 @@ export default function BrandingSection() {
 
       {/* Top accent line — draws from left */}
       <motion.div
-        className="mb-14 relative z-10"
+        className="mb-8 relative z-10"
         initial={{ width: 0, opacity: 0 }}
         animate={isInView ? { width: 60, opacity: 1 } : {}}
         transition={{ duration: 1.1, ease }}
@@ -193,7 +193,7 @@ export default function BrandingSection() {
 
         {/* "YOUR BUSINESS NEEDS BOTH." — letter-by-letter with terracotta glow pulse after reveal */}
         <motion.p
-          className="font-display font-semibold mt-8 md:mt-12"
+          className="font-display font-semibold mt-5 md:mt-8"
           style={{ fontSize: 'clamp(1.4rem, 3.5vw, 3rem)', letterSpacing: '0.06em' }}
           aria-label={calloutText}
           animate={isInView ? { textShadow: ['0 0 0px rgba(196,122,101,0)', '0 0 24px rgba(196,122,101,0.35)', '0 0 0px rgba(196,122,101,0)'] } : {}}
@@ -218,7 +218,7 @@ export default function BrandingSection() {
 
         {/* Bottom accent line — draws from right after callout */}
         <motion.div
-          className="mt-10"
+          className="mt-6"
           initial={{ width: 0, opacity: 0 }}
           animate={isInView ? { width: 60, opacity: 1 } : {}}
           transition={{ duration: 1.1, delay: 1.6, ease }}
