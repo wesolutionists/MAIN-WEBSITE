@@ -51,8 +51,20 @@ export default function ContactSection() {
       id="contact"
       className="relative py-12 md:py-16 overflow-hidden"
       aria-label="Contact"
-      style={{ borderTop: '1px solid rgba(196, 122, 101, 0.1)' }}
+      style={{
+        borderTop: '1px solid rgba(196, 122, 101, 0.1)',
+        backgroundImage: 'url(/contact-bg.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
     >
+      {/* Dark overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: 'linear-gradient(to bottom, rgba(10,9,12,0.80) 0%, rgba(10,9,12,0.65) 50%, rgba(10,9,12,0.85) 100%)' }}
+        aria-hidden="true"
+      />
       {/* Glow */}
       <div
         className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 h-[500px] w-[500px] rounded-full"
