@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://thesolutionists.com/sitemap.xml
+Sitemap: https://www.wesolutionists.com/sitemap.xml

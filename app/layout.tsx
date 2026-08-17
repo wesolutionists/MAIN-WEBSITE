@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: 'The Solutionists — Design. Market. Automate.',
   description:
     'We help businesses build lasting legacies through premium web design, data-driven Meta Ads, and intelligent automation.',
-  metadataBase: new URL('https://thesolutionists.com'),
+  metadataBase: new URL('https://www.wesolutionists.com'),
   alternates: {
     canonical: '/',
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description:
       'We help businesses build lasting legacies through premium web design, data-driven Meta Ads, and intelligent automation.',
     type: 'website',
-    url: 'https://thesolutionists.com',
+    url: 'https://www.wesolutionists.com',
     siteName: 'The Solutionists',
     images: [
       {
