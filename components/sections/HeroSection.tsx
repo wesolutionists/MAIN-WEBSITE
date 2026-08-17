@@ -53,7 +53,7 @@ export default function HeroSection({ onAuditClick, onConsultClick }: Props) {
         ref={videoRef}
         className="pointer-events-none absolute inset-0 h-full w-full object-cover object-top md:object-center"
         src="/hero-bg.mp4"
-        poster="/hero-poster.jpg"
+        poster="/hero-poster.png"
         preload="metadata"
         muted
         playsInline
