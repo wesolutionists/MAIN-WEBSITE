@@ -82,16 +82,26 @@ export default function Footer() {
               We help ambitious businesses design their presence, grow their audience, and automate
               their operations — so they can focus on building something that lasts.
             </p>
-            {/* Email */}
-            <a
-              href="mailto:hello@wesolutionists.com"
-              className="mt-5 inline-flex items-center gap-2 font-body font-normal transition-colors duration-300"
-              style={{ fontSize: '0.9rem', color: 'rgba(196,122,101,0.75)', textDecoration: 'none' }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#D4947E')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(196,122,101,0.75)')}
-            >
-              hello@wesolutionists.com
-            </a>
+            {/* Emails */}
+            <div className="mt-5 flex flex-col gap-1.5">
+              {[
+                'hello@wesolutionists.com',
+                'contact@wesolutionists.com',
+                'info@wesolutionists.com',
+                'support@wesolutionists.com',
+              ].map((email) => (
+                <a
+                  key={email}
+                  href={`mailto:${email}`}
+                  className="font-body font-normal transition-colors duration-300"
+                  style={{ fontSize: '0.85rem', color: 'rgba(196,122,101,0.7)', textDecoration: 'none' }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#D4947E')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(196,122,101,0.7)')}
+                >
+                  {email}
+                </a>
+              ))}
+            </div>
 
             {/* Socials */}
             <div className="mt-6 flex items-center gap-4">
