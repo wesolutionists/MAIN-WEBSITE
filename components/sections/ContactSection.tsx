@@ -39,7 +39,7 @@ export default function ContactSection() {
     border: 'none',
     borderBottom: '1px solid rgba(196, 122, 101, 0.25)',
     color: '#F4EFE8',
-    fontFamily: 'var(--font-montserrat)',
+    fontFamily: 'inherit',
     fontWeight: 300,
     fontSize: '1rem',
     padding: '12px 0',
