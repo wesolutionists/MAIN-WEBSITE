@@ -34,6 +34,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@wesolutionists',
+    creator: '@wesolutionists',
     title: 'The Solutionists — Design. Market. Automate.',
     description:
       'We help businesses build lasting legacies through premium web design, data-driven Meta Ads and intelligent automation.',
