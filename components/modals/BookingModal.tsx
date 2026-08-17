@@ -65,7 +65,7 @@ export default function BookingModal({ isOpen, onClose, selectedPackage }: Props
     border: 'none',
     borderBottom: '1px solid rgba(196, 122, 101, 0.25)',
     color: '#F4EFE8',
-    fontFamily: 'inherit',
+    fontFamily: 'Belleza, Georgia, serif',
     fontWeight: 300,
     fontSize: '0.9rem',
     padding: '10px 0',
