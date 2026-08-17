@@ -47,6 +47,7 @@ export default function BookingModal({ isOpen, onClose }: Props) {
           access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
           subject: `Consultation Booking from ${form.name}`,
           botcheck: false,
+          spam_filter: false,
           ...form,
         }),
       })

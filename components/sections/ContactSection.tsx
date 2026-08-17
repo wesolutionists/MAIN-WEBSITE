@@ -23,6 +23,7 @@ export default function ContactSection() {
           access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
           subject: `New message from ${form.name}`,
           botcheck: false,
+          spam_filter: false,
           ...form,
         }),
       })

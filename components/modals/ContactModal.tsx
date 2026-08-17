@@ -48,6 +48,7 @@ export default function ContactModal({ isOpen, onClose }: Props) {
           access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
           subject: `Free Audit Request from ${form.name}`,
           botcheck: false,
+          spam_filter: false,
           ...form,
         }),
       })
