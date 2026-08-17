@@ -7,9 +7,10 @@ import { useFocusTrap } from '../ui/useFocusTrap'
 interface Props {
   isOpen: boolean
   onClose: () => void
+  selectedPackage?: string
 }
 
-export default function BookingModal({ isOpen, onClose }: Props) {
+export default function BookingModal({ isOpen, onClose, selectedPackage }: Props) {
   const [form, setForm] = useState({ name: '', email: '', preferred: '', message: '' })
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent'>('idle')
   const firstInputRef = useRef<HTMLInputElement>(null)
@@ -45,9 +46,10 @@ export default function BookingModal({ isOpen, onClose }: Props) {
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
           access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
-          subject: `Consultation Booking from ${form.name}`,
+          subject: `Consultation Booking from ${form.name}${selectedPackage ? ` — ${selectedPackage}` : ''}`,
           botcheck: false,
           spam_filter: false,
+          package: selectedPackage || 'General Consultation',
           ...form,
         }),
       })
@@ -99,7 +101,7 @@ export default function BookingModal({ isOpen, onClose }: Props) {
           <div className="flex items-start justify-between mb-8">
             <div>
               <p className="font-body font-medium text-ink-muted mb-1" style={{ fontSize: '0.65rem', letterSpacing: '0.28em' }}>
-                FREE CONSULTATION
+                {selectedPackage ? selectedPackage.toUpperCase() : 'FREE CONSULTATION'}
               </p>
               <h2 className="font-display font-semibold text-ink" style={{ fontSize: '1.9rem', lineHeight: 1.1, letterSpacing: '-0.01em' }}>
                 Book your discovery call.

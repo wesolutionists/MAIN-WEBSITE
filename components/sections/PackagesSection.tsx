@@ -6,7 +6,7 @@ import RevealOnScroll from '../ui/RevealOnScroll'
 import { Check } from 'lucide-react'
 
 interface Props {
-  onConsultClick: () => void
+  onConsultClick: (packageName: string) => void
 }
 
 const packages = [
@@ -64,7 +64,7 @@ function PricingCard({
   onConsultClick,
 }: {
   pkg: (typeof packages)[0]
-  onConsultClick: () => void
+  onConsultClick: (packageName: string) => void
 }) {
   const [hovered, setHovered] = useState(false)
 
@@ -213,7 +213,7 @@ function PricingCard({
 
       {/* CTA */}
       <button
-        onClick={onConsultClick}
+        onClick={() => onConsultClick(pkg.name)}
         className="w-full py-3 font-body font-medium transition-all duration-300 active:scale-[0.98] cursor-pointer"
         style={
           pkg.featured

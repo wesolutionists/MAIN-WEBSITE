@@ -21,6 +21,7 @@ import AuroraBg from '@/components/ui/AuroraBg'
 export default function Home() {
   const [contactOpen, setContactOpen] = useState(false)
   const [bookingOpen, setBookingOpen] = useState(false)
+  const [selectedPackage, setSelectedPackage] = useState<string | undefined>()
 
   return (
     <>
@@ -37,18 +38,18 @@ export default function Home() {
       <main>
         <HeroSection
           onAuditClick={() => setContactOpen(true)}
-          onConsultClick={() => setBookingOpen(true)}
+          onConsultClick={() => { setSelectedPackage(undefined); setBookingOpen(true) }}
         />
 
         <TransitionSection />
 
-        <ConsultationSection onConsultClick={() => setBookingOpen(true)} />
+        <ConsultationSection onConsultClick={() => { setSelectedPackage(undefined); setBookingOpen(true) }} />
 
         <ServicesSection />
 
         <BrandingSection />
 
-        <PackagesSection onConsultClick={() => setBookingOpen(true)} />
+        <PackagesSection onConsultClick={(pkg) => { setSelectedPackage(pkg); setBookingOpen(true) }} />
 
         <AboutSection />
 
@@ -65,7 +66,7 @@ export default function Home() {
 
       {/* Modals */}
       <ContactModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
-      <BookingModal isOpen={bookingOpen} onClose={() => setBookingOpen(false)} />
+      <BookingModal isOpen={bookingOpen} onClose={() => { setBookingOpen(false); setSelectedPackage(undefined) }} selectedPackage={selectedPackage} />
     </>
   )
 }
