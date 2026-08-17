@@ -79,7 +79,7 @@ export default function Footer() {
               className="font-body font-normal text-ink-muted mt-6 max-w-xs"
               style={{ fontSize: '0.96rem', lineHeight: 1.9 }}
             >
-              We help ambitious businesses design their presence, grow their audience, and automate
+              We help ambitious businesses design their presence, grow their audience and automate
               their operations — so they can focus on building something that lasts.
             </p>
             {/* Emails */}

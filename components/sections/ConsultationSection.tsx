@@ -66,7 +66,7 @@ export default function ConsultationSection({ onConsultClick }: Props) {
                 style={{ fontSize: '1.08rem', lineHeight: 1.9 }}
               >
                 Your biggest opportunity might be one conversation away. We&apos;ll listen, understand your
-                business, and show you exactly what&apos;s holding you back — no pitch, no pressure.
+                business and show you exactly what&apos;s holding you back — no pitch, no pressure.
               </p>
             </RevealOnScroll>
 
@@ -94,7 +94,7 @@ export default function ConsultationSection({ onConsultClick }: Props) {
               {
                 number: '01',
                 title: 'Understand Your Business',
-                desc: 'We map your current position, goals, and gaps — clearly and honestly.',
+                desc: 'We map your current position, goals and gaps — clearly and honestly.',
               },
               {
                 number: '02',

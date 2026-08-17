@@ -44,7 +44,7 @@ const services = [
       </svg>
     ),
     title: 'Marketing & Sales',
-    desc: 'We craft strategies that attract, convert, and retain customers — from paid social campaigns to full-funnel sales systems built around your business.',
+    desc: 'We craft strategies that attract, convert and retain customers — from paid social campaigns to full-funnel sales systems built around your business.',
     detail: 'Meta Ads · Sales Funnels · Lead Generation · Conversion Strategy',
   },
   {
@@ -67,7 +67,7 @@ const services = [
       </svg>
     ),
     title: 'Business Automation (n8n)',
-    desc: 'We automate your workflows, save time, reduce errors, and help your business run smarter — so you can focus on what only you can do.',
+    desc: 'We automate your workflows, save time, reduce errors and help your business run smarter — so you can focus on what only you can do.',
     detail: 'n8n Workflows · CRM Integration · Lead Automation',
   },
 ]

@@ -124,7 +124,7 @@ export default function HeroSection({ onAuditClick, onConsultClick }: Props) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            Some people see a business. We see a dream someone refused to abandon — so we build with purpose, grow with intention, and create with conviction.
+            Some people see a business. We see a dream someone refused to abandon — so we build with purpose, grow with intention and create with conviction.
           </motion.p>
 
           {/* CTAs */}

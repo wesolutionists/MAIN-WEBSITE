@@ -67,8 +67,8 @@ export default function AboutSection() {
                     className="font-body font-normal text-ink-muted"
                     style={{ fontSize: '1.05rem', lineHeight: 1.9 }}
                   >
-                    To combine AI, automation, modern technology, and strategic marketing to help businesses
-                    build a lasting legacy — one that outlives the campaign, the trend, and the noise.
+                    To combine AI, automation, modern technology and strategic marketing to help businesses
+                    build a lasting legacy — one that outlives the campaign, the trend and the noise.
                   </p>
                 </div>
                 <div>

@@ -11,7 +11,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: 'The Solutionists — Design. Market. Automate.',
   description:
-    'We help businesses build lasting legacies through premium web design, data-driven Meta Ads, and intelligent automation.',
+    'We help businesses build lasting legacies through premium web design, data-driven Meta Ads and intelligent automation.',
   metadataBase: new URL('https://www.wesolutionists.com'),
   alternates: {
     canonical: '/',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'The Solutionists — Design. Market. Automate.',
     description:
-      'We help businesses build lasting legacies through premium web design, data-driven Meta Ads, and intelligent automation.',
+      'We help businesses build lasting legacies through premium web design, data-driven Meta Ads and intelligent automation.',
     type: 'website',
     url: 'https://www.wesolutionists.com',
     siteName: 'The Solutionists',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'The Solutionists — Design. Market. Automate.',
     description:
-      'We help businesses build lasting legacies through premium web design, data-driven Meta Ads, and intelligent automation.',
+      'We help businesses build lasting legacies through premium web design, data-driven Meta Ads and intelligent automation.',
     images: ['/og-image.jpg'],
   },
   icons: {

@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     q: 'What is n8n and how does automation help my business?',
-    a: 'n8n is an open-source workflow automation platform that connects your tools — CRM, email, forms, databases — and automates repetitive tasks like lead follow-ups, notifications, and data syncing. Less manual work. More revenue.',
+    a: 'n8n is an open-source workflow automation platform that connects your tools — CRM, email, forms, databases — and automates repetitive tasks like lead follow-ups, notifications and data syncing. Less manual work. More revenue.',
   },
   {
     q: 'Do you run ads on platforms other than Meta?',
@@ -29,11 +29,11 @@ const faqs = [
   },
   {
     q: 'Do you offer ongoing support after launch?',
-    a: 'Yes. Every package includes post-launch support, and extended maintenance plans are available. We don\'t disappear after delivery — we\'re invested in your continued success.',
+    a: 'Yes. Every package includes post-launch support and extended maintenance plans are available. We don\'t disappear after delivery — we\'re invested in your continued success.',
   },
   {
     q: 'What makes The Solutionists different from other agencies?',
-    a: 'We combine design, marketing, and automation under one roof — so your brand, your traffic, and your systems all speak the same language. No handoffs, no gaps, no excuses.',
+    a: 'We combine design, marketing and automation under one roof — so your brand, your traffic and your systems all speak the same language. No handoffs, no gaps, no excuses.',
   },
 ]
 
