@@ -142,7 +142,7 @@ export default function TermsPage() {
           </p>
           <p style={{ fontSize: '1rem', lineHeight: 1.8, color: 'rgba(244,239,232,0.6)' }}>
             If anything here is unclear, reach out at{' '}
-            <a href="mailto:hello@wesolutionists.com" style={{ color: '#C47A65', textDecoration: 'none' }}>
+            <a href="https://mail.google.com/mail/?view=cm&to=hello@wesolutionists.com" target="_blank" rel="noopener noreferrer" style={{ color: '#C47A65', textDecoration: 'none' }}>
               hello@wesolutionists.com
             </a>
           </p>

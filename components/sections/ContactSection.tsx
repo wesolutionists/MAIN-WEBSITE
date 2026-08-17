@@ -108,8 +108,8 @@ export default function ContactSection() {
             <RevealOnScroll delay={0.3}>
               <div className="mt-12 space-y-6">
                 {[
-                  { label: 'General', value: 'hello@wesolutionists.com', href: 'mailto:hello@wesolutionists.com' },
-                  { label: 'Support', value: 'support@wesolutionists.com', href: 'mailto:support@wesolutionists.com' },
+                  { label: 'General', value: 'hello@wesolutionists.com', href: 'https://mail.google.com/mail/?view=cm&to=hello@wesolutionists.com' },
+                  { label: 'Support', value: 'support@wesolutionists.com', href: 'https://mail.google.com/mail/?view=cm&to=support@wesolutionists.com' },
                   { label: 'Location', value: 'Available Worldwide', href: null },
                   { label: 'Response Time', value: 'Within 24 hours', href: null },
                 ].map((item) => (
@@ -123,6 +123,8 @@ export default function ContactSection() {
                     {item.href ? (
                       <a
                         href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="font-body font-normal transition-colors duration-300"
                         style={{ fontSize: '1rem', color: 'rgba(196,122,101,0.75)', textDecoration: 'none' }}
                         onMouseEnter={(e) => (e.currentTarget.style.color = '#D4947E')}
