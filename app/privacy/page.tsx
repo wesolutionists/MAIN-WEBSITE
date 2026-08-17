@@ -4,6 +4,22 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Privacy Policy — The Solutionists',
   description: 'How The Solutionists collects, uses and protects your personal information.',
+  alternates: { canonical: '/privacy' },
+  openGraph: {
+    title: 'Privacy Policy — The Solutionists',
+    description: 'How The Solutionists collects, uses and protects your personal information.',
+    url: 'https://www.wesolutionists.com/privacy',
+    siteName: 'The Solutionists',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'The Solutionists — Privacy Policy' }],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@wesolutionists',
+    title: 'Privacy Policy — The Solutionists',
+    description: 'How The Solutionists collects, uses and protects your personal information.',
+    images: ['/og-image.jpg'],
+  },
 }
 
 const sections = [

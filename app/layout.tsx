@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
+  authors: [{ name: 'The Solutionists', url: 'https://www.wesolutionists.com' }],
   openGraph: {
     title: 'The Solutionists — Design. Market. Automate.',
     description:
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'The Solutionists — Design. Market. Automate.',
+        alt: 'A dark, premium hero image for The Solutionists digital agency — web design, marketing and automation.',
       },
     ],
   },
@@ -44,11 +45,17 @@ export const metadata: Metadata = {
   icons: {
     icon: [{ url: '/favicon.png', type: 'image/png' }],
     shortcut: '/favicon.png',
-    apple: '/favicon.png',
+    apple: '/apple-touch-icon.png',
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 

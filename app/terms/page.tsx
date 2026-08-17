@@ -4,6 +4,22 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Terms of Service — The Solutionists',
   description: 'Terms and conditions governing the use of The Solutionists services.',
+  alternates: { canonical: '/terms' },
+  openGraph: {
+    title: 'Terms of Service — The Solutionists',
+    description: 'Terms and conditions governing the use of The Solutionists services.',
+    url: 'https://www.wesolutionists.com/terms',
+    siteName: 'The Solutionists',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'The Solutionists — Terms of Service' }],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@wesolutionists',
+    title: 'Terms of Service — The Solutionists',
+    description: 'Terms and conditions governing the use of The Solutionists services.',
+    images: ['/og-image.jpg'],
+  },
 }
 
 const sections = [
