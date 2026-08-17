@@ -45,9 +45,8 @@ export const metadata: Metadata = {
     images: ['/og-image.jpg'],
   },
   icons: {
-    icon: [{ url: '/favicon.jpg', type: 'image/jpeg' }],
-    shortcut: '/favicon.jpg',
-    apple: '/apple-touch-icon.jpg',
+    icon: [{ url: 'https://www.wesolutionists.com/favicon.jpg', type: 'image/jpeg' }],
+    apple: 'https://www.wesolutionists.com/apple-touch-icon.jpg',
   },
   robots: {
     index: true,
@@ -57,6 +56,7 @@ export const metadata: Metadata = {
       follow: true,
       'max-image-preview': 'large',
       'max-snippet': -1,
+      'max-video-preview': -1,
     },
   },
 }
@@ -73,6 +73,33 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              {
+                '@context': 'https://schema.org',
+                '@type': 'Organization',
+                name: 'The Solutionists',
+                url: 'https://www.wesolutionists.com',
+                logo: 'https://www.wesolutionists.com/logo.jpg',
+                description:
+                  'We help businesses build lasting legacies through premium web design, data-driven Meta Ads and intelligent automation.',
+                email: 'hello@wesolutionists.com',
+                sameAs: [
+                  'https://x.com/wesolutionists',
+                  'https://www.linkedin.com/in/thesolutionists',
+                ],
+              },
+              {
+                '@context': 'https://schema.org',
+                '@type': 'WebSite',
+                name: 'The Solutionists',
+                url: 'https://www.wesolutionists.com',
+              },
+            ]),
+          }}
+        />
         {children}
         <Analytics />
         <SpeedInsights />
