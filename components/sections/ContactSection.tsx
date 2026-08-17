@@ -106,9 +106,10 @@ export default function ContactSection() {
             <RevealOnScroll delay={0.3}>
               <div className="mt-12 space-y-6">
                 {[
-                  { label: 'Email', value: 'hello@thesolutionists.com' },
-                  { label: 'Location', value: 'Available Worldwide' },
-                  { label: 'Response Time', value: 'Within 24 hours' },
+                  { label: 'General', value: 'hello@wesolutionists.com', href: 'mailto:hello@wesolutionists.com' },
+                  { label: 'Support', value: 'support@wesolutionists.com', href: 'mailto:support@wesolutionists.com' },
+                  { label: 'Location', value: 'Available Worldwide', href: null },
+                  { label: 'Response Time', value: 'Within 24 hours', href: null },
                 ].map((item) => (
                   <div key={item.label}>
                     <p
@@ -117,12 +118,21 @@ export default function ContactSection() {
                     >
                       {item.label.toUpperCase()}
                     </p>
-                    <p
-                      className="font-body font-normal text-ink-muted"
-                      style={{ fontSize: '1rem' }}
-                    >
-                      {item.value}
-                    </p>
+                    {item.href ? (
+                      <a
+                        href={item.href}
+                        className="font-body font-normal transition-colors duration-300"
+                        style={{ fontSize: '1rem', color: 'rgba(196,122,101,0.75)', textDecoration: 'none' }}
+                        onMouseEnter={(e) => (e.currentTarget.style.color = '#D4947E')}
+                        onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(196,122,101,0.75)')}
+                      >
+                        {item.value}
+                      </a>
+                    ) : (
+                      <p className="font-body font-normal text-ink-muted" style={{ fontSize: '1rem' }}>
+                        {item.value}
+                      </p>
+                    )}
                   </div>
                 ))}
               </div>

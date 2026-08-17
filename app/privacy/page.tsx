@@ -139,8 +139,8 @@ export default function PrivacyPage() {
           </p>
           <p style={{ fontSize: '1rem', lineHeight: 1.8, color: 'rgba(244,239,232,0.6)' }}>
             If you have any questions about this Privacy Policy, please contact us at{' '}
-            <a href="mailto:hello@thesolutionists.com" style={{ color: '#C47A65', textDecoration: 'none' }}>
-              hello@thesolutionists.com
+            <a href="mailto:hello@wesolutionists.com" style={{ color: '#C47A65', textDecoration: 'none' }}>
+              hello@wesolutionists.com
             </a>
           </p>
         </div>
