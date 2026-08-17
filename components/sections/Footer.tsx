@@ -81,7 +81,9 @@ export default function Footer() {
               ].map((email) => (
                 <a
                   key={email}
-                  href={`mailto:${email}`}
+                  href={`https://mail.google.com/mail/?view=cm&to=${email}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="font-body font-normal transition-colors duration-300"
                   style={{ fontSize: '0.85rem', color: 'rgba(196,122,101,0.7)', textDecoration: 'none' }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = '#D4947E')}
