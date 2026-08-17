@@ -7,9 +7,9 @@ interface LogoProps {
 }
 
 const sizes = {
-  sm: { mark: 44, nameSize: '1.05rem', tagSize: '0.58rem' },
-  md: { mark: 54, nameSize: '1.2rem', tagSize: '0.65rem' },
-  lg: { mark: 72, nameSize: '1.45rem', tagSize: '0.72rem' },
+  sm: { mark: 40, nameSize: '1.05rem', tagSize: '0.58rem' },
+  md: { mark: 50, nameSize: '1.2rem', tagSize: '0.65rem' },
+  lg: { mark: 68, nameSize: '1.45rem', tagSize: '0.72rem' },
 }
 
 export default function Logo({ className = '', size = 'md', wordmark = true }: LogoProps) {
@@ -17,14 +17,20 @@ export default function Logo({ className = '', size = 'md', wordmark = true }: L
 
   return (
     <div className={`flex items-center gap-3 ${className}`}>
-      <Image
-        src="/logo.jpg"
-        alt="The Solutionists"
-        width={mark}
-        height={mark}
-        style={{ flexShrink: 0, objectFit: 'contain' }}
-        priority
-      />
+      <div style={{ width: mark, height: mark, flexShrink: 0, position: 'relative' }}>
+        <Image
+          src="/logo.jpg"
+          alt="The Solutionists"
+          fill
+          sizes={`${mark}px`}
+          style={{
+            objectFit: 'contain',
+            mixBlendMode: 'lighten',
+            filter: 'contrast(1.1) brightness(1.05)',
+          }}
+          priority
+        />
+      </div>
 
       {wordmark && (
         <div className="flex flex-col leading-none gap-1.5">
