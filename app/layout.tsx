@@ -18,15 +18,15 @@ export const metadata: Metadata = {
     'We help businesses build lasting legacies through premium web design, data-driven Meta Ads and intelligent automation.',
   metadataBase: new URL('https://www.wesolutionists.com'),
   alternates: {
-    canonical: '/',
+    canonical: 'https://www.wesolutionists.com/',
   },
-  authors: [{ name: 'The Solutionists', url: 'https://www.wesolutionists.com' }],
+  authors: [{ name: 'The Solutionists', url: 'https://www.wesolutionists.com/' }],
   openGraph: {
     title: 'The Solutionists — Design. Market. Automate.',
     description:
       'We help businesses build lasting legacies through premium web design, data-driven Meta Ads and intelligent automation.',
     type: 'website',
-    url: 'https://www.wesolutionists.com',
+    url: 'https://www.wesolutionists.com/',
     siteName: 'The Solutionists',
     images: [
       {
@@ -83,7 +83,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 '@context': 'https://schema.org',
                 '@type': 'Organization',
                 name: 'The Solutionists',
-                url: 'https://www.wesolutionists.com',
+                url: 'https://www.wesolutionists.com/',
                 logo: 'https://www.wesolutionists.com/logo.jpg',
                 description:
                   'We help businesses build lasting legacies through premium web design, data-driven Meta Ads and intelligent automation.',
@@ -97,7 +97,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 '@context': 'https://schema.org',
                 '@type': 'WebSite',
                 name: 'The Solutionists',
-                url: 'https://www.wesolutionists.com',
+                url: 'https://www.wesolutionists.com/',
               },
             ]),
           }}
