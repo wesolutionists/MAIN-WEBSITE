@@ -188,7 +188,7 @@ function PricingCard({
               }}
             />
             <span
-              className="font-body font-normal transition-colors duration-400"
+              className="font-body font-normal transition-colors duration-300"
               style={{
                 fontSize: '0.86rem',
                 lineHeight: 1.55,

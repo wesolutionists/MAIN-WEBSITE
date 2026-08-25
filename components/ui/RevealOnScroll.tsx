@@ -18,14 +18,13 @@ export default function RevealOnScroll({
   className,
   direction = 'up',
   amount = 0.12,
-  distance = 56,
+  distance = 36,
 }: Props) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount })
 
   const initial = {
     opacity: 0,
-    filter: 'blur(8px)',
     y: direction === 'up' ? distance : 0,
     x: direction === 'left' ? -distance : direction === 'right' ? distance : 0,
   }
@@ -37,11 +36,11 @@ export default function RevealOnScroll({
       initial={initial}
       animate={
         isInView
-          ? { opacity: 1, filter: 'blur(0px)', y: 0, x: 0 }
+          ? { opacity: 1, y: 0, x: 0 }
           : initial
       }
       transition={{
-        duration: 1.0,
+        duration: 0.7,
         delay,
         ease: [0.16, 1, 0.3, 1],
       }}
