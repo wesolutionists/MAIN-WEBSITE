@@ -32,12 +32,12 @@ const sections = [
     body: `The information you share is used exclusively to respond to your enquiry, deliver the service you requested and refine the quality of our work over time. We do not sell your data, rent it out or pass it to any third party for advertising or marketing purposes.`,
   },
   {
-    title: 'Cookies',
-    body: `Our website uses only the cookies necessary to keep it functioning correctly. We do not plant tracking pixels, advertising cookies or behavioural profiling tools. You are free to disable cookies in your browser at any time — doing so will not affect your ability to browse or contact us.`,
+    title: 'Cookies & Analytics',
+    body: `Our website uses Google Analytics 4 (GA4) to understand how visitors interact with our pages. GA4 may set cookies and collect anonymised data such as page views, session duration and general location. This data is used solely to improve the site experience and is never sold or used for advertising targeting. We do not use advertising cookies or behavioural profiling tools beyond this. You are free to disable cookies or use a browser extension to opt out of GA4 at any time — doing so will not affect your ability to browse or contact us.`,
   },
   {
     title: 'Third-Party Tools',
-    body: `We use Web3Forms to receive contact form submissions. Your message travels securely to our inbox and is not stored on their servers beyond delivery. We are not responsible for the independent privacy practices of any external services linked from our website.`,
+    body: `We use Web3Forms to receive contact form submissions. Your message travels securely to our inbox and is not stored on their servers beyond delivery. We also use Google Analytics 4 for site analytics and Vercel Analytics for performance monitoring — both process data in accordance with their own privacy policies. We are not responsible for the independent privacy practices of any external services linked from our website.`,
   },
   {
     title: 'How Long We Keep It',
