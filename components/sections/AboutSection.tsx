@@ -1,11 +1,22 @@
-﻿import RevealOnScroll from '../ui/RevealOnScroll'
-import CountUp from '../ui/CountUp'
+import RevealOnScroll from '../ui/RevealOnScroll'
 import AnimatedRule from '@/components/ui/AnimatedRule'
 
-const stats = [
-  { value: '250+', label: 'Happy Clients', barPct: 82 },
-  { value: '2,000+', label: 'Projects Delivered', barPct: 93 },
-  { value: '3', label: 'Growth Solutions', barPct: 55 },
+const pillars = [
+  {
+    number: '01',
+    title: 'Curious By Nature',
+    desc: 'We stay close to what’s changing — exploring new technology, new possibilities, and better ways to solve real business problems.',
+  },
+  {
+    number: '02',
+    title: 'Built With Purpose',
+    desc: 'We don’t build technology for the sake of technology. We build with intention, solving problems that matter and creating value that lasts.',
+  },
+  {
+    number: '03',
+    title: 'Obsessed With What’s Next',
+    desc: 'We’re deeply involved in the evolution of AI and technology because we believe the businesses that embrace what’s next will shape what comes after.',
+  },
 ]
 
 export default function AboutSection() {
@@ -42,7 +53,7 @@ export default function AboutSection() {
                 className="font-display font-semibold text-ink text-balance"
                 style={{ fontSize: 'clamp(2.4rem, 5vw, 3.8rem)', lineHeight: 1.08, letterSpacing: '-0.02em' }}
               >
-                Let&apos;s Build Your Legacy.
+                We Build What We Believe The Future Is
               </h2>
             </RevealOnScroll>
 
@@ -53,49 +64,14 @@ export default function AboutSection() {
                 aria-hidden="true"
               />
             </RevealOnScroll>
-
-            <RevealOnScroll delay={0.25}>
-              <div className="mt-8 space-y-8">
-                <div>
-                  <p
-                    className="font-body font-medium text-ink-muted mb-3"
-                    style={{ fontSize: '0.75rem', letterSpacing: '0.22em' }}
-                  >
-                    OUR VISION
-                  </p>
-                  <p
-                    className="font-body font-normal text-ink-muted"
-                    style={{ fontSize: '1.05rem', lineHeight: 1.9 }}
-                  >
-                    To combine AI, automation, modern technology and strategic marketing to help businesses
-                    build a lasting legacy — one that outlives the campaign, the trend and the noise.
-                  </p>
-                </div>
-                <div>
-                  <p
-                    className="font-body font-medium text-ink-muted mb-3"
-                    style={{ fontSize: '0.75rem', letterSpacing: '0.22em' }}
-                  >
-                    OUR MISSION
-                  </p>
-                  <p
-                    className="font-body font-normal text-ink-muted"
-                    style={{ fontSize: '1.05rem', lineHeight: 1.9 }}
-                  >
-                    Transform ideas into intelligent systems that help businesses grow — sustainably, scalably,
-                    and with purpose.
-                  </p>
-                </div>
-              </div>
-            </RevealOnScroll>
           </div>
 
-          {/* Right: stat showcase */}
+          {/* Right: pillars */}
           <div className="flex flex-col gap-3">
-            {stats.map((stat, i) => (
-              <RevealOnScroll key={stat.label} delay={0.1 + i * 0.1}>
+            {pillars.map((pillar, i) => (
+              <RevealOnScroll key={pillar.number} delay={0.1 + i * 0.1}>
                 <div
-                  className="group relative flex flex-col justify-center px-10 py-10 transition-all duration-500 overflow-hidden"
+                  className="group relative flex gap-5 px-8 py-8 md:gap-6 md:px-10 md:py-10 transition-all duration-500 overflow-hidden"
                   style={{
                     background: '#0F0D12',
                     border: '1px solid rgba(196, 122, 101, 0.13)',
@@ -119,25 +95,26 @@ export default function AboutSection() {
                     style={{ background: 'linear-gradient(180deg, transparent, rgba(196, 122, 101, 0.5), transparent)' }}
                     aria-hidden="true"
                   />
-                  <p
-                    className="font-body font-medium text-ink-muted mb-3"
-                    style={{ fontSize: '0.7rem', letterSpacing: '0.3em' }}
+                  <span
+                    className="font-display font-light text-ink-muted shrink-0 mt-0.5"
+                    style={{ fontSize: '0.88rem', letterSpacing: '0.1em' }}
                   >
-                    {stat.label.toUpperCase()}
-                  </p>
-                  <CountUp
-                    value={stat.value}
-                    className="font-display font-semibold"
-                    style={{
-                      fontSize: 'clamp(3.5rem, 7vw, 5.5rem)',
-                      lineHeight: 1,
-                      color: '#F4EFE8',
-                      letterSpacing: '-0.03em',
-                    }}
-                    showBar
-                    barPct={stat.barPct}
-                    duration={2200}
-                  />
+                    {pillar.number}
+                  </span>
+                  <div>
+                    <h3
+                      className="font-display font-medium text-ink mb-2"
+                      style={{ fontSize: '1.22rem' }}
+                    >
+                      {pillar.title}
+                    </h3>
+                    <p
+                      className="font-body font-normal text-ink-muted"
+                      style={{ fontSize: '0.96rem', lineHeight: 1.8 }}
+                    >
+                      {pillar.desc}
+                    </p>
+                  </div>
                 </div>
               </RevealOnScroll>
             ))}
