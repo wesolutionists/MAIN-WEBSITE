@@ -85,7 +85,6 @@ const services = [
     number: '03',
     title: 'AI Business Systems',
     items: [
-      'Havex OS',
       'Home Services OS',
       'Real Estate OS',
       'E-commerce OS',
@@ -157,20 +156,12 @@ function ServiceCard({ service }: { service: (typeof services)[0] }) {
 
         {/* Content */}
         <div className="flex flex-col gap-5 flex-1">
-          <div className="flex items-baseline gap-3">
-            <span
-              className="font-display font-light text-ink-muted shrink-0"
-              style={{ fontSize: '0.88rem', letterSpacing: '0.1em' }}
-            >
-              {service.number}
-            </span>
-            <h3
-              className="font-display font-semibold text-ink"
-              style={{ fontSize: '1.5rem', lineHeight: 1.2 }}
-            >
-              {service.title}
-            </h3>
-          </div>
+          <h3
+            className="font-display font-semibold text-ink"
+            style={{ fontSize: '1.5rem', lineHeight: 1.2 }}
+          >
+            {service.title}
+          </h3>
 
           <ul className="flex flex-col gap-2.5 flex-1">
             {service.items.map((item) => {
@@ -207,11 +198,11 @@ function ServiceCard({ service }: { service: (typeof services)[0] }) {
           <p
             className="font-display font-medium italic"
             style={{
-              fontSize: '1rem',
-              lineHeight: 1.6,
-              color: '#C8BEB8',
+              fontSize: '1.32rem',
+              lineHeight: 1.5,
+              color: '#D8CFC6',
               borderTop: '1px solid rgba(196, 122, 101, 0.15)',
-              paddingTop: '1.25rem',
+              paddingTop: '1.5rem',
               marginTop: '0.25rem',
             }}
           >
@@ -255,7 +246,7 @@ export default function ServicesSection() {
               className="font-display font-semibold text-ink"
               style={{ fontSize: 'clamp(2rem, 4.5vw, 3.2rem)', lineHeight: 1.1, letterSpacing: '-0.02em' }}
             >
-              Our Solutions
+              Solutions
             </h2>
           </RevealOnScroll>
         </div>
