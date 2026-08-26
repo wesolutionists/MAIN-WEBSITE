@@ -13,18 +13,18 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'The Solutionists — Design. Market. Automate.',
+  title: 'The Solutionists — Websites, AI Workforce & Business Systems',
   description:
-    'We help businesses build lasting legacies through premium web design, data-driven Meta Ads and intelligent automation.',
+    'We help ambitious businesses build intelligent systems and workforce — from websites to AI agents to custom business software — that simplify operations and create lasting value.',
   metadataBase: new URL('https://www.wesolutionists.com'),
   alternates: {
     canonical: 'https://www.wesolutionists.com/',
   },
   authors: [{ name: 'The Solutionists', url: 'https://www.wesolutionists.com/' }],
   openGraph: {
-    title: 'The Solutionists — Design. Market. Automate.',
+    title: 'The Solutionists — Websites, AI Workforce & Business Systems',
     description:
-      'We help businesses build lasting legacies through premium web design, data-driven Meta Ads and intelligent automation.',
+      'We help ambitious businesses build intelligent systems and workforce — from websites to AI agents to custom business software — that simplify operations and create lasting value.',
     type: 'website',
     url: 'https://www.wesolutionists.com/',
     siteName: 'The Solutionists',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'A dark, premium hero image for The Solutionists digital agency — web design, marketing and automation.',
+        alt: 'A dark, premium hero image for The Solutionists — websites, AI workforce and business systems.',
       },
     ],
   },
@@ -41,9 +41,9 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@wesolutionists',
     creator: '@wesolutionists',
-    title: 'The Solutionists — Design. Market. Automate.',
+    title: 'The Solutionists — Websites, AI Workforce & Business Systems',
     description:
-      'We help businesses build lasting legacies through premium web design, data-driven Meta Ads and intelligent automation.',
+      'We help ambitious businesses build intelligent systems and workforce — from websites to AI agents to custom business software — that simplify operations and create lasting value.',
     images: ['/og-image.jpg'],
   },
   icons: {
@@ -86,7 +86,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 url: 'https://www.wesolutionists.com/',
                 logo: 'https://www.wesolutionists.com/logo.jpg',
                 description:
-                  'We help businesses build lasting legacies through premium web design, data-driven Meta Ads and intelligent automation.',
+                  'We help ambitious businesses build intelligent systems and workforce — from websites to AI agents to custom business software — that simplify operations and create lasting value.',
                 email: 'hello@wesolutionists.com',
                 sameAs: [
                   'https://x.com/wesolutionists',
