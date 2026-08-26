@@ -9,13 +9,13 @@ export default function AuroraBg() {
       <div
         style={{
           position: 'absolute',
-          width: '70vw',
-          height: '70vw',
-          top: '-20vw',
-          right: '-15vw',
+          width: '45vw',
+          height: '45vw',
+          top: '-13vw',
+          right: '-10vw',
           background:
             'radial-gradient(circle, rgba(196,122,101,0.09) 0%, rgba(180,90,70,0.04) 35%, transparent 68%)',
-          filter: 'blur(52px)',
+          filter: 'blur(34px)',
           animation: 'aurora-1 22s ease-in-out infinite',
         }}
       />
@@ -24,13 +24,13 @@ export default function AuroraBg() {
       <div
         style={{
           position: 'absolute',
-          width: '80vw',
-          height: '80vw',
-          bottom: '-30vw',
-          left: '-22vw',
+          width: '52vw',
+          height: '52vw',
+          bottom: '-19vw',
+          left: '-14vw',
           background:
             'radial-gradient(circle, rgba(160,80,55,0.07) 0%, rgba(130,55,40,0.03) 38%, transparent 68%)',
-          filter: 'blur(65px)',
+          filter: 'blur(42px)',
           animation: 'aurora-2 28s ease-in-out infinite',
         }}
       />
@@ -39,13 +39,13 @@ export default function AuroraBg() {
       <div
         style={{
           position: 'absolute',
-          width: '55vw',
-          height: '55vw',
+          width: '36vw',
+          height: '36vw',
           top: '35%',
           left: '20%',
           background:
             'radial-gradient(circle, rgba(212,148,126,0.045) 0%, rgba(196,100,75,0.02) 40%, transparent 70%)',
-          filter: 'blur(45px)',
+          filter: 'blur(29px)',
           animation: 'aurora-3 18s ease-in-out infinite',
         }}
       />
