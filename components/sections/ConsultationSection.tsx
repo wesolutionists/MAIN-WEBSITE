@@ -8,7 +8,7 @@ interface Props {
 export default function ConsultationSection({ onConsultClick }: Props) {
   return (
     <section
-      className="relative py-12 md:py-16 overflow-hidden"
+      className="relative pt-12 pb-9 md:pt-16 md:pb-12 overflow-hidden"
       aria-label="Free Consultation"
       style={{
         borderTop: '1px solid rgba(196, 122, 101, 0.1)',
@@ -44,8 +44,8 @@ export default function ConsultationSection({ onConsultClick }: Props) {
           <div>
             <RevealOnScroll>
               <p
-                className="font-body font-medium text-ink-muted mb-5"
-                style={{ fontSize: '0.78rem', letterSpacing: '0.3em' }}
+                className="font-body font-medium mb-5"
+                style={{ fontSize: '0.78rem', letterSpacing: '0.3em', color: '#C47A65' }}
               >
                 NO PITCH, JUST CLARITY
               </p>
@@ -94,12 +94,12 @@ export default function ConsultationSection({ onConsultClick }: Props) {
               {
                 number: '01',
                 title: 'Understand Your Business',
-                desc: 'Understand how your business works, what it attracts, what it serves, how it operates, and where it stands today.',
+                desc: 'Understand how your business works, what it attracts, what it serves, how it operates and where it stands today.',
               },
               {
                 number: '02',
                 title: 'Identify Opportunities',
-                desc: 'We uncover overlooked opportunities, inefficiencies, and areas where your business can improve and evolve.',
+                desc: 'We uncover overlooked opportunities, inefficiencies and areas where your business can improve and evolve.',
               },
               {
                 number: '03',
@@ -127,8 +127,8 @@ export default function ConsultationSection({ onConsultClick }: Props) {
                   }}
                 >
                   <span
-                    className="font-display font-light text-ink-muted shrink-0 mt-0.5"
-                    style={{ fontSize: '0.88rem', letterSpacing: '0.1em' }}
+                    className="font-display font-semibold shrink-0 mt-0.5"
+                    style={{ fontSize: '0.88rem', letterSpacing: '0.1em', color: '#D4947E' }}
                   >
                     {item.number}
                   </span>

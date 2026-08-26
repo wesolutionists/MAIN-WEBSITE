@@ -13,7 +13,7 @@ const packages = [
   {
     number: '01',
     name: 'Digital Foundation',
-    promise: 'Build your digital presence with intention.',
+    promise: 'Your foundation, built to convert.',
     price: '$299',
     monthly: '$99',
     featured: false,
@@ -29,7 +29,7 @@ const packages = [
   {
     number: '02',
     name: 'AI Workforce',
-    promise: 'Build your intelligent workforce.',
+    promise: 'A team that never clocks out.',
     price: '$799+',
     monthly: '$199',
     featured: true,
@@ -45,7 +45,7 @@ const packages = [
   {
     number: '03',
     name: 'AI Business Systems',
-    promise: 'Get your custom intelligent system.',
+    promise: 'Software built around how you work.',
     price: '$1,499+',
     monthly: '$399',
     featured: false,
@@ -141,7 +141,7 @@ function PricingCard({
           className="font-body font-normal text-ink-muted italic"
           style={{ fontSize: '0.82rem', letterSpacing: '0.04em' }}
         >
-          &ldquo;{pkg.promise}&rdquo;
+          {pkg.promise}
         </p>
       </div>
 

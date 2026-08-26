@@ -5,7 +5,7 @@ const pillars = [
   {
     number: '01',
     title: 'Curious By Nature',
-    desc: 'We stay close to what’s changing — exploring new technology, new possibilities, and better ways to solve real business problems.',
+    desc: 'We stay close to what’s changing — exploring new technology, new possibilities and better ways to solve real business problems.',
   },
   {
     number: '02',
@@ -23,7 +23,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="relative pt-10 md:pt-12 pb-12 md:pb-16 overflow-hidden"
+      className="relative pt-8 md:pt-10 pb-9 md:pb-12 overflow-hidden"
       aria-label="About Us"
     >
       <AnimatedRule />
@@ -34,8 +34,8 @@ export default function AboutSection() {
         aria-hidden="true"
       />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10 mt-10 md:mt-12">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10 mt-8 md:mt-10">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
           {/* Left: text */}
           <div>
@@ -57,7 +57,16 @@ export default function AboutSection() {
               </h2>
             </RevealOnScroll>
 
-            <RevealOnScroll delay={0.2}>
+            <RevealOnScroll delay={0.15}>
+              <p
+                className="font-body font-normal text-ink-muted mt-6 max-w-md"
+                style={{ fontSize: '1.05rem', lineHeight: 1.9 }}
+              >
+                A small, senior team — not a big agency playbook. Every solution is built to compound, not just launch.
+              </p>
+            </RevealOnScroll>
+
+            <RevealOnScroll delay={0.25}>
               <div
                 className="mt-8 h-px w-16"
                 style={{ background: 'linear-gradient(90deg, #C47A65, transparent)' }}
@@ -67,11 +76,11 @@ export default function AboutSection() {
           </div>
 
           {/* Right: pillars */}
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-2.5">
             {pillars.map((pillar, i) => (
               <RevealOnScroll key={pillar.number} delay={0.1 + i * 0.1}>
                 <div
-                  className="group relative flex gap-5 px-8 py-8 md:gap-6 md:px-10 md:py-10 transition-all duration-500 overflow-hidden"
+                  className="group relative flex gap-5 px-7 py-7 md:gap-6 md:px-8 md:py-8 transition-all duration-500 overflow-hidden"
                   style={{
                     background: '#0F0D12',
                     border: '1px solid rgba(196, 122, 101, 0.13)',
@@ -103,8 +112,8 @@ export default function AboutSection() {
                   </span>
                   <div>
                     <h3
-                      className="font-display font-medium text-ink mb-2"
-                      style={{ fontSize: '1.22rem' }}
+                      className="font-display font-medium mb-2"
+                      style={{ fontSize: '1.22rem', color: '#D4947E' }}
                     >
                       {pillar.title}
                     </h3>

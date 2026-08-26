@@ -13,27 +13,27 @@ const faqs = [
   },
   {
     q: 'Is AI actually useful for a business like mine?',
-    a: 'It depends on your business. We look for practical opportunities where AI can reduce repetitive work, improve customer experiences, increase responsiveness, or help your team operate more effectively.',
+    a: 'It depends on your business. We look for practical opportunities where AI can reduce repetitive work, improve customer experiences, increase responsiveness or help your team operate more effectively.',
   },
   {
     q: 'Can you build something specifically around my business?',
-    a: "Yes. Every business is different, so we design systems around your workflows, customers, tools, and goals — rather than forcing you into a predefined model.",
+    a: "Yes. Every business is different, so we design systems around your workflows, customers, tools and goals — rather than forcing you into a predefined model.",
   },
   {
-    q: "Will this actually make my business better, or just give me another system to manage?",
-    a: "The goal is to remove complexity, not create it. We build systems that take repetitive work off your team's plate, connect your operations, and make important processes easier to manage.",
+    q: "Will this actually make my business better or just give me another system to manage?",
+    a: "The goal is to remove complexity, not create it. We build systems that take repetitive work off your team's plate, connect your operations and make important processes easier to manage.",
   },
   {
     q: 'Can you work with the tools and systems I already use?',
-    a: 'Yes. Where possible, we integrate with your existing website, CRM, communication platforms, and business software rather than asking you to replace everything.',
+    a: 'Yes. Where possible, we integrate with your existing website, CRM, communication platforms and business software rather than asking you to replace everything.',
   },
   {
     q: 'What does it cost to work with The Solutionists?',
-    a: 'Our solutions have a one-time implementation cost followed by a monthly fee for ongoing evolution, maintenance, and optimization. Starting prices are shown in our investment section.',
+    a: 'Our solutions have a one-time implementation cost followed by a monthly fee for ongoing evolution, maintenance and optimization. Starting prices are shown in our investment section.',
   },
   {
     q: 'What happens after I contact you?',
-    a: "We'll review what you've shared, understand what you're trying to achieve, and come back with a clear direction for what makes sense next — no obligation to move forward.",
+    a: "We'll review what you've shared, understand what you're trying to achieve and come back with a clear direction for what makes sense next — no obligation to move forward.",
   },
   {
     q: "What if I have an idea that isn't listed on your website?",
@@ -67,8 +67,8 @@ export default function FAQSection() {
           </RevealOnScroll>
           <RevealOnScroll delay={0.1}>
             <h2
-              className="font-display font-semibold text-ink"
-              style={{ fontSize: 'clamp(2rem, 4.5vw, 3.2rem)', lineHeight: 1.1, letterSpacing: '-0.02em' }}
+              className="font-display font-semibold"
+              style={{ fontSize: 'clamp(2rem, 4.5vw, 3.2rem)', lineHeight: 1.1, letterSpacing: '-0.02em', color: '#D4947E' }}
             >
               We Have Answers
             </h2>

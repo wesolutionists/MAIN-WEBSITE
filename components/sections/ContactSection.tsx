@@ -81,14 +81,6 @@ export default function ContactSection() {
           {/* Left */}
           <div>
             <RevealOnScroll>
-              <p
-                className="font-body font-medium text-ink-muted mb-4"
-                style={{ fontSize: '0.78rem', letterSpacing: '0.3em' }}
-              >
-                LET'S TALK
-              </p>
-            </RevealOnScroll>
-            <RevealOnScroll delay={0.1}>
               <h2
                 className="font-display font-semibold text-ink"
                 style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.4rem)', lineHeight: 1.1, letterSpacing: '-0.02em' }}
@@ -96,12 +88,12 @@ export default function ContactSection() {
                 Let&apos;s cook together.
               </h2>
             </RevealOnScroll>
-            <RevealOnScroll delay={0.2}>
+            <RevealOnScroll delay={0.1}>
               <p
-                className="font-body font-normal text-ink-muted mt-6 max-w-sm"
+                className="font-body font-normal text-ink-muted mt-5 max-w-sm"
                 style={{ fontSize: '1.05rem', lineHeight: 1.9 }}
               >
-                Tell us where your business is today, what you want to achieve, or what you&apos;d like to change. We&apos;ll explore what we can build together.
+                Tell us where your business is today, what you want to achieve or what you&apos;d like to change. We&apos;ll explore what we can build together.
               </p>
             </RevealOnScroll>
 

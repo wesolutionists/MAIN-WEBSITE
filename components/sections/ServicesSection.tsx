@@ -87,6 +87,7 @@ const services = [
     items: [
       'Home Services OS',
       'Real Estate OS',
+      'Healthcare OS',
       'E-commerce OS',
       'Business Automation Systems',
       'CUSTOM BUSINESS SYSTEMS',
@@ -123,7 +124,7 @@ function ServiceCard({ service }: { service: (typeof services)[0] }) {
       onMouseLeave={onMouseLeave}
     >
       <motion.article
-        className="group relative flex flex-col gap-8 p-10 md:p-12 h-full cursor-default"
+        className="group relative flex flex-col gap-6 p-8 md:p-10 h-full cursor-default"
         style={{
           background: hovered ? '#131118' : '#0F0D12',
           border: `1px solid rgba(196, 122, 101, ${hovered ? '0.32' : '0.13'})`,
@@ -202,11 +203,11 @@ function ServiceCard({ service }: { service: (typeof services)[0] }) {
               lineHeight: 1.5,
               color: '#D8CFC6',
               borderTop: '1px solid rgba(196, 122, 101, 0.15)',
-              paddingTop: '1.5rem',
+              paddingTop: '1.25rem',
               marginTop: '0.25rem',
             }}
           >
-            &ldquo;{service.quote}&rdquo;
+            {service.quote}
           </p>
         </div>
 
@@ -225,26 +226,18 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="relative pt-10 md:pt-12 pb-12 md:pb-16 overflow-hidden"
+      className="relative pt-8 md:pt-10 pb-9 md:pb-12 overflow-hidden"
       aria-label="Services"
     >
       <AnimatedRule />
 
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 mt-10 md:mt-12">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10 mt-8 md:mt-10">
         {/* Section header */}
-        <div className="mb-10 md:mb-14">
+        <div className="mb-8 md:mb-10">
           <RevealOnScroll>
-            <p
-              className="font-body font-medium text-ink-muted mb-4"
-              style={{ fontSize: '0.75rem', letterSpacing: '0.32em' }}
-            >
-              THE WORK
-            </p>
-          </RevealOnScroll>
-          <RevealOnScroll delay={0.1}>
             <h2
               className="font-display font-semibold text-ink"
-              style={{ fontSize: 'clamp(2rem, 4.5vw, 3.2rem)', lineHeight: 1.1, letterSpacing: '-0.02em' }}
+              style={{ fontSize: 'clamp(2.6rem, 6vw, 4.2rem)', lineHeight: 1.1, letterSpacing: '-0.02em' }}
             >
               Solutions
             </h2>
@@ -252,7 +245,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Service cards */}
-        <div className="grid gap-5 md:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-3">
           {services.map((service, i) => (
             <RevealOnScroll key={service.title} delay={i * 0.12}>
               <ServiceCard service={service} />

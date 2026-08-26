@@ -70,7 +70,7 @@ export default function TransitionSection() {
   return (
     <section
       ref={ref}
-      className="relative py-8 md:py-10 overflow-hidden"
+      className="relative pt-5 pb-8 md:pt-6 md:pb-10 overflow-hidden"
       aria-label="Trusted by"
       style={{
         borderTop: '1px solid rgba(196, 122, 101, 0.08)',
