@@ -75,7 +75,7 @@ export default function ConsultationSection({ onConsultClick }: Props) {
                 onClick={onConsultClick}
                 className="mt-10 inline-flex items-center gap-3 px-8 py-4 font-body font-medium text-white transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
                 style={{
-                  background: 'linear-gradient(135deg, #C47A65, #D4947E, #C47A65)',
+                  background: 'linear-gradient(135deg, #B86855, #D4947E, #B86855)',
                   fontSize: '0.76rem',
                   letterSpacing: '0.18em',
                   borderRadius: '50px',

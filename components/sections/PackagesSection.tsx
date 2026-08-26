@@ -248,7 +248,7 @@ function PricingCard({
         style={
           pkg.featured
             ? {
-                background: 'linear-gradient(135deg, #C47A65, #D4947E, #C47A65)',
+                background: 'linear-gradient(135deg, #B86855, #D4947E, #B86855)',
                 color: '#0A090C',
                 fontSize: '0.76rem',
                 letterSpacing: '0.18em',

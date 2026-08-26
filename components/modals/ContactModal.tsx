@@ -93,7 +93,7 @@ export default function ContactModal({ isOpen, onClose }: Props) {
         }}
       >
         {/* Gold top line */}
-        <div className="h-0.5 w-full" style={{ background: 'linear-gradient(90deg, #C47A65, #D4947E, #C47A65)' }} aria-hidden="true" />
+        <div className="h-0.5 w-full" style={{ background: 'linear-gradient(90deg, #B86855, #D4947E, #B86855)' }} aria-hidden="true" />
 
         <div className="p-8 md:p-10">
           {/* Header */}
@@ -232,7 +232,7 @@ export default function ContactModal({ isOpen, onClose }: Props) {
                 disabled={status === 'sending'}
                 className="w-full py-4 font-body font-medium text-bg transition-all duration-300 hover:shadow-[0_0_30px_rgba(196, 122, 101,0.25)] active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed"
                 style={{
-                  background: 'linear-gradient(135deg, #C47A65, #D4947E, #C47A65)',
+                  background: 'linear-gradient(135deg, #B86855, #D4947E, #B86855)',
                   fontSize: '0.72rem',
                   letterSpacing: '0.18em',
                 }}
