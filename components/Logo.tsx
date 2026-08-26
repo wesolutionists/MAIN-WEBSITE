@@ -2,17 +2,19 @@ import Image from 'next/image'
 
 interface LogoProps {
   className?: string
-  size?: 'sm' | 'md' | 'lg'
+  size?: 'sm' | 'md' | 'lg' | 'nav'
   wordmark?: boolean
+  tagline?: boolean
 }
 
 const sizes = {
   sm: { mark: 40, nameSize: '1.05rem', tagSize: '0.58rem' },
   md: { mark: 50, nameSize: '1.2rem', tagSize: '0.65rem' },
   lg: { mark: 68, nameSize: '1.45rem', tagSize: '0.72rem' },
+  nav: { mark: 46, nameSize: '1.22rem', tagSize: '0.58rem' },
 }
 
-export default function Logo({ className = '', size = 'md', wordmark = true }: LogoProps) {
+export default function Logo({ className = '', size = 'md', wordmark = true, tagline = true }: LogoProps) {
   const { mark, nameSize, tagSize } = sizes[size]
 
   return (
@@ -45,18 +47,20 @@ export default function Logo({ className = '', size = 'md', wordmark = true }: L
           >
             The Solutionists
           </span>
-          <span
-            className="font-body font-normal"
-            style={{
-              fontSize: tagSize,
-              letterSpacing: '0.28em',
-              color: '#C47A65',
-              opacity: 0.85,
-              lineHeight: 1,
-            }}
-          >
-            {'DESIGN · MARKET · AUTOMATE'}
-          </span>
+          {tagline && (
+            <span
+              className="font-body font-normal"
+              style={{
+                fontSize: tagSize,
+                letterSpacing: '0.28em',
+                color: '#C47A65',
+                opacity: 0.85,
+                lineHeight: 1,
+              }}
+            >
+              {'DESIGN · MARKET · AUTOMATE'}
+            </span>
+          )}
         </div>
       )}
     </div>

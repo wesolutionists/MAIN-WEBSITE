@@ -6,7 +6,7 @@ import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 import Logo from './Logo'
 
 const navLinks = [
-  { label: 'Services', href: '#services' },
+  { label: 'Solutions', href: '#services' },
   { label: 'Packages', href: '#packages' },
   { label: 'About', href: '#about' },
   { label: 'Contact', href: '#contact' },
@@ -57,7 +57,7 @@ export default function Header() {
 
             {/* Logo */}
             <a href="#" aria-label="The Solutionists — home" className="shrink-0">
-              <Logo size="sm" />
+              <Logo size="nav" tagline={false} />
             </a>
 
             {/* Desktop nav */}
