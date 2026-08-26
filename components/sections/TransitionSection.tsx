@@ -55,11 +55,10 @@ function Pill({ label }: { label: string }) {
       }}
     >
       <span
-        className="font-body font-normal whitespace-nowrap transition-colors duration-300"
+        className="font-body font-normal text-ink-soft whitespace-nowrap transition-colors duration-300"
         style={{
           fontSize: '0.82rem',
           letterSpacing: '0.06em',
-          color: '#D8CFC6',
         }}
       >
         {label}

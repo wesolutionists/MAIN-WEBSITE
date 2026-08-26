@@ -44,8 +44,8 @@ export default function ConsultationSection({ onConsultClick }: Props) {
           <div>
             <RevealOnScroll>
               <p
-                className="font-body font-medium mb-5"
-                style={{ fontSize: '0.78rem', letterSpacing: '0.3em', color: '#C47A65' }}
+                className="font-body font-medium text-gold mb-5"
+                style={{ fontSize: '0.78rem', letterSpacing: '0.3em' }}
               >
                 NO PITCH, JUST CLARITY
               </p>
@@ -127,8 +127,8 @@ export default function ConsultationSection({ onConsultClick }: Props) {
                   }}
                 >
                   <span
-                    className="font-display font-semibold shrink-0 mt-0.5"
-                    style={{ fontSize: '0.88rem', letterSpacing: '0.1em', color: '#D4947E' }}
+                    className="font-display font-semibold text-gold-light shrink-0 mt-0.5"
+                    style={{ fontSize: '0.88rem', letterSpacing: '0.1em' }}
                   >
                     {item.number}
                   </span>

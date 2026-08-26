@@ -118,8 +118,8 @@ export default function ContactModal({ isOpen, onClose }: Props) {
           {status === 'sent' ? (
             <div className="py-12 text-center">
               <div
-                className="mx-auto h-12 w-12 rounded-full flex items-center justify-center mb-4"
-                style={{ border: '1px solid rgba(196, 122, 101, 0.4)', color: '#C47A65' }}
+                className="mx-auto h-12 w-12 rounded-full flex items-center justify-center text-gold mb-4"
+                style={{ border: '1px solid rgba(196, 122, 101, 0.4)' }}
               >
                 <Send size={18} strokeWidth={1.5} aria-hidden="true" />
               </div>

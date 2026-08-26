@@ -49,11 +49,10 @@ export default function Logo({ className = '', size = 'md', wordmark = true, tag
           </span>
           {tagline && (
             <span
-              className="font-body font-normal"
+              className="font-body font-normal text-gold"
               style={{
                 fontSize: tagSize,
                 letterSpacing: '0.16em',
-                color: '#C47A65',
                 opacity: 0.85,
                 lineHeight: 1.3,
               }}

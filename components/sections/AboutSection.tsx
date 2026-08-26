@@ -112,8 +112,8 @@ export default function AboutSection() {
                   </span>
                   <div>
                     <h3
-                      className="font-display font-medium mb-2"
-                      style={{ fontSize: '1.22rem', color: '#D4947E' }}
+                      className="font-display font-medium text-gold-light mb-2"
+                      style={{ fontSize: '1.22rem' }}
                     >
                       {pillar.title}
                     </h3>

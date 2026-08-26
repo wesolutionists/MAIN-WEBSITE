@@ -67,8 +67,8 @@ export default function FAQSection() {
           </RevealOnScroll>
           <RevealOnScroll delay={0.1}>
             <h2
-              className="font-display font-semibold"
-              style={{ fontSize: 'clamp(2rem, 4.5vw, 3.2rem)', lineHeight: 1.1, letterSpacing: '-0.02em', color: '#D4947E' }}
+              className="font-display font-semibold text-gold-light"
+              style={{ fontSize: 'clamp(2rem, 4.5vw, 3.2rem)', lineHeight: 1.1, letterSpacing: '-0.02em' }}
             >
               We Have Answers
             </h2>

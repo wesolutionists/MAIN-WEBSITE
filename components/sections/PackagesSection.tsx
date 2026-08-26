@@ -149,11 +149,10 @@ function PricingCard({
       <div className="flex flex-col gap-3.5">
         <div>
           <span
-            className="font-display font-semibold transition-all duration-500"
+            className="font-display font-semibold text-ink transition-all duration-500"
             style={{
               fontSize: hovered ? '2.8rem' : '2.5rem',
               lineHeight: 1,
-              color: '#F4EFE8',
             }}
           >
             {pkg.price}
@@ -167,8 +166,8 @@ function PricingCard({
         </div>
         <div className="flex items-baseline gap-1.5">
           <span
-            className="font-display font-semibold"
-            style={{ fontSize: '1.15rem', lineHeight: 1, color: '#D4947E' }}
+            className="font-display font-semibold text-gold-light"
+            style={{ fontSize: '1.15rem', lineHeight: 1 }}
           >
             + {pkg.monthly}
             <span className="font-body font-normal" style={{ fontSize: '0.72rem', color: 'rgba(212,148,126,0.7)' }}>/mo</span>

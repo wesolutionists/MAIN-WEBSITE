@@ -69,9 +69,8 @@ export default function Header() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="font-body font-normal transition-colors duration-300"
+                  className="font-body font-normal text-ink-soft transition-colors duration-300"
                   style={{
-                    color: '#D8CFC6',
                     fontSize: '0.82rem',
                     letterSpacing: '0.13em',
                     fontWeight: 400,
@@ -86,11 +85,10 @@ export default function Header() {
               {/* Rose-gold CTA */}
               <a
                 href="#contact"
-                className="inline-flex items-center font-body font-medium transition-all duration-300 hover:scale-[1.03] active:scale-[0.97]"
+                className="inline-flex items-center font-body font-medium text-bg transition-all duration-300 hover:scale-[1.03] active:scale-[0.97]"
                 style={{
                   background: 'linear-gradient(135deg, #B86855 0%, #D4947E 50%, #B86855 100%)',
                   backgroundSize: '200% 100%',
-                  color: '#0A080C',
                   fontSize: '0.75rem',
                   letterSpacing: '0.16em',
                   padding: '10px 22px',
@@ -113,11 +111,10 @@ export default function Header() {
 
             {/* Mobile hamburger */}
             <button
-              className="md:hidden p-1.5 rounded transition-colors duration-300 cursor-pointer"
+              className="md:hidden p-1.5 rounded text-ink-soft transition-colors duration-300 cursor-pointer"
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={menuOpen}
-              style={{ color: '#D8CFC6' }}
               onMouseEnter={(e) => (e.currentTarget.style.color = '#C47A65')}
               onMouseLeave={(e) => (e.currentTarget.style.color = '#D8CFC6')}
             >
@@ -151,9 +148,8 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="font-body font-normal py-4 px-6 transition-colors duration-300"
+                className="font-body font-normal text-ink-soft py-4 px-6 transition-colors duration-300"
                 style={{
-                  color: '#D8CFC6',
                   fontSize: '0.84rem',
                   letterSpacing: '0.15em',
                   borderBottom: '1px solid rgba(196, 122, 101,0.08)',
@@ -168,10 +164,9 @@ export default function Header() {
               <a
                 href="#contact"
                 onClick={() => setMenuOpen(false)}
-                className="flex justify-center font-body font-semibold transition-all duration-300"
+                className="flex justify-center font-body font-semibold text-bg transition-all duration-300"
                 style={{
                   background: 'linear-gradient(135deg, #B86855, #D4947E, #B86855)',
-                  color: '#0A080C',
                   fontSize: '0.78rem',
                   letterSpacing: '0.16em',
                   padding: '12px 24px',

@@ -145,11 +145,10 @@ function ServiceCard({ service }: { service: (typeof services)[0] }) {
 
         {/* Icon */}
         <div
-          className="flex h-20 w-20 items-center justify-center"
+          className="flex h-20 w-20 items-center justify-center text-gold"
           style={{
             border: '1px solid rgba(196, 122, 101, 0.25)',
             background: 'rgba(196, 122, 101, 0.04)',
-            color: '#C47A65',
           }}
         >
           <div className="h-12 w-12">{service.icon}</div>
@@ -197,11 +196,10 @@ function ServiceCard({ service }: { service: (typeof services)[0] }) {
           </ul>
 
           <p
-            className="font-display font-medium italic"
+            className="font-display font-medium italic text-ink-soft"
             style={{
               fontSize: '1.32rem',
               lineHeight: 1.5,
-              color: '#D8CFC6',
               borderTop: '1px solid rgba(196, 122, 101, 0.15)',
               paddingTop: '1.25rem',
               marginTop: '0.25rem',

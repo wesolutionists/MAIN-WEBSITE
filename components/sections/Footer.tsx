@@ -117,8 +117,8 @@ export default function Footer() {
           {Object.entries(links).map(([group, items]) => (
             <div key={group}>
               <p
-                className="font-body font-medium mb-5"
-                style={{ fontSize: '0.78rem', letterSpacing: '0.25em', color: '#C47A65' }}
+                className="font-body font-medium text-gold mb-5"
+                style={{ fontSize: '0.78rem', letterSpacing: '0.25em' }}
               >
                 {group.toUpperCase()}
               </p>

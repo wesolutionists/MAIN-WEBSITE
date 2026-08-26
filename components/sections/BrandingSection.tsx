@@ -128,8 +128,8 @@ export default function BrandingSection() {
         <WordLine
           text="but humans using"
           delay={0.38} direction="right" isInView={isInView}
-          className="font-display font-light italic"
-          style={{ fontSize: 'clamp(2.4rem, 6.5vw, 6rem)', lineHeight: 1.12, letterSpacing: '-0.02em', color: '#F4EFE8' }}
+          className="font-display font-light italic text-ink"
+          style={{ fontSize: 'clamp(2.4rem, 6.5vw, 6rem)', lineHeight: 1.12, letterSpacing: '-0.02em' }}
         />
 
         {/* "artificial intelligence will replace those who don't." */}
@@ -141,7 +141,8 @@ export default function BrandingSection() {
           {/* "artificial intelligence" — solid terracotta, scale stamp */}
           <motion.span
             aria-hidden="true"
-            style={{ display: 'inline-block', marginRight: '0.3em', color: '#D4947E' }}
+            className="text-gold-light"
+            style={{ display: 'inline-block', marginRight: '0.3em' }}
             initial={{ opacity: 0, scale: 1.35, filter: 'blur(10px)' }}
             animate={isInView ? { opacity: 1, scale: 1, filter: 'blur(0px)' } : {}}
             transition={{ duration: 0.55, delay: 0.52, ease: [0.34, 1.56, 0.64, 1] }}
@@ -151,7 +152,8 @@ export default function BrandingSection() {
           {['will', 'replace', 'those', 'who', "don't."].map((word, i) => (
             <motion.span
               key={word} aria-hidden="true"
-              style={{ display: 'inline-block', marginRight: i < 4 ? '0.3em' : 0, color: '#F4EFE8' }}
+              className="text-ink"
+              style={{ display: 'inline-block', marginRight: i < 4 ? '0.3em' : 0 }}
               initial={{ opacity: 0, x: 28, filter: 'blur(6px)' }}
               animate={isInView ? { opacity: 1, x: 0, filter: 'blur(0px)' } : {}}
               transition={{ duration: 0.75, delay: 0.72 + i * 0.09, ease }}
