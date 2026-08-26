@@ -56,7 +56,7 @@ export default function ConsultationSection({ onConsultClick }: Props) {
                 className="font-display font-semibold text-ink text-balance"
                 style={{ fontSize: 'clamp(2.4rem, 5vw, 3.8rem)', lineHeight: 1.08, letterSpacing: '-0.02em' }}
               >
-                Success is a decision.
+                Discover what your business is missing.
               </h2>
             </RevealOnScroll>
 
@@ -83,7 +83,7 @@ export default function ConsultationSection({ onConsultClick }: Props) {
                 }}
               >
                 <CalendarCheck size={14} strokeWidth={2} aria-hidden="true" />
-                BOOK YOUR FREE CALL
+                GET YOUR FREE AUDIT
               </button>
             </RevealOnScroll>
           </div>
@@ -94,17 +94,17 @@ export default function ConsultationSection({ onConsultClick }: Props) {
               {
                 number: '01',
                 title: 'Understand Your Business',
-                desc: 'We map your current position, goals and gaps — clearly and honestly.',
+                desc: 'Understand how your business works, what it attracts, what it serves, how it operates, and where it stands today.',
               },
               {
                 number: '02',
-                title: 'Identify Quick Wins',
-                desc: 'You leave with actionable insight regardless of whether we work together.',
+                title: 'Identify Opportunities',
+                desc: 'We uncover overlooked opportunities, inefficiencies, and areas where your business can improve and evolve.',
               },
               {
                 number: '03',
-                title: 'Chart the Path Forward',
-                desc: 'A tailored strategy built around your specific business — not a template.',
+                title: 'A Clear Direction',
+                desc: 'Leave with a clear direction for what comes next — whether we work together or not.',
               },
             ].map((item, i) => (
               <RevealOnScroll key={item.number} delay={0.1 + i * 0.12} direction="right">
