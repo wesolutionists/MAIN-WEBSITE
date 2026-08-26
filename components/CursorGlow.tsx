@@ -1,35 +1,29 @@
 ﻿'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export default function CursorGlow() {
   const glowRef = useRef<HTMLDivElement>(null)
+  const [enabled, setEnabled] = useState(false)
 
   useEffect(() => {
-    let raf: number
-    let x = 0
-    let y = 0
+    setEnabled(!window.matchMedia('(hover: none), (pointer: coarse)').matches)
+  }, [])
+
+  useEffect(() => {
+    if (!enabled) return
 
     const onMove = (e: MouseEvent) => {
-      x = e.clientX
-      y = e.clientY
-    }
-
-    const tick = () => {
       if (glowRef.current) {
-        glowRef.current.style.transform = `translate(${x - 250}px, ${y - 250}px)`
+        glowRef.current.style.transform = `translate(${e.clientX - 250}px, ${e.clientY - 250}px)`
       }
-      raf = requestAnimationFrame(tick)
     }
 
     window.addEventListener('mousemove', onMove, { passive: true })
-    raf = requestAnimationFrame(tick)
+    return () => window.removeEventListener('mousemove', onMove)
+  }, [enabled])
 
-    return () => {
-      window.removeEventListener('mousemove', onMove)
-      cancelAnimationFrame(raf)
-    }
-  }, [])
+  if (!enabled) return null
 
   return (
     <div
