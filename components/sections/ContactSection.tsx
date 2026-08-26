@@ -5,10 +5,10 @@ import { Send } from 'lucide-react'
 import RevealOnScroll from '../ui/RevealOnScroll'
 
 export default function ContactSection() {
-  const [form, setForm] = useState({ name: '', email: '', message: '' })
+  const [form, setForm] = useState({ name: '', email: '', interest: '', message: '' })
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent'>('idle')
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
@@ -93,7 +93,7 @@ export default function ContactSection() {
                 className="font-display font-semibold text-ink"
                 style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.4rem)', lineHeight: 1.1, letterSpacing: '-0.02em' }}
               >
-                Start the conversation.
+                Let&apos;s cook together.
               </h2>
             </RevealOnScroll>
             <RevealOnScroll delay={0.2}>
@@ -101,7 +101,7 @@ export default function ContactSection() {
                 className="font-body font-normal text-ink-muted mt-6 max-w-sm"
                 style={{ fontSize: '1.05rem', lineHeight: 1.9 }}
               >
-                Whether you have a project in mind or just want to explore what&apos;s possible — we&apos;re here.
+                Tell us where your business is today, what you want to achieve, or what you&apos;d like to change. We&apos;ll explore what we can build together.
               </p>
             </RevealOnScroll>
 
@@ -224,18 +224,43 @@ export default function ContactSection() {
 
                 <div>
                   <label
+                    htmlFor="contact-interest"
+                    className="font-body font-medium text-ink-muted block mb-2"
+                    style={{ fontSize: '0.78rem', letterSpacing: '0.22em' }}
+                  >
+                    WHAT CAN WE HELP YOU WITH?
+                  </label>
+                  <select
+                    id="contact-interest"
+                    name="interest"
+                    required
+                    value={form.interest}
+                    onChange={handleChange}
+                    style={{ ...inputStyle, cursor: 'pointer' }}
+                    onFocus={(e) => (e.target.style.borderBottomColor = 'rgba(196, 122, 101,0.7)')}
+                    onBlur={(e) => (e.target.style.borderBottomColor = 'rgba(196, 122, 101,0.25)')}
+                  >
+                    <option value="" style={{ background: '#131118' }}>Select an option</option>
+                    <option value="Digital Foundation" style={{ background: '#131118' }}>Digital Foundation</option>
+                    <option value="AI Business Systems" style={{ background: '#131118' }}>AI Business Systems</option>
+                    <option value="Not sure yet" style={{ background: '#131118' }}>Not sure yet</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label
                     htmlFor="contact-message"
                     className="font-body font-medium text-ink-muted block mb-2"
                     style={{ fontSize: '0.78rem', letterSpacing: '0.22em' }}
                   >
-                    YOUR MESSAGE
+                    TELL US A LITTLE ABOUT WHAT YOU&apos;RE LOOKING TO ACHIEVE
                   </label>
                   <textarea
                     id="contact-message"
                     name="message"
                     required
                     rows={5}
-                    placeholder="Tell us about your project..."
+                    placeholder="A few words about your business or what you'd like to build..."
                     value={form.message}
                     onChange={handleChange}
                     style={{ ...inputStyle, resize: 'none' }}
@@ -256,7 +281,7 @@ export default function ContactSection() {
                   }}
                 >
                   <Send size={13} strokeWidth={2} aria-hidden="true" />
-                  {status === 'sending' ? 'SENDING...' : 'SEND MESSAGE'}
+                  {status === 'sending' ? 'SENDING...' : 'START THE CONVERSATION →'}
                 </button>
               </form>
             )}
