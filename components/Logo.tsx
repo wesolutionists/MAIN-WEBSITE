@@ -52,13 +52,13 @@ export default function Logo({ className = '', size = 'md', wordmark = true, tag
               className="font-body font-normal"
               style={{
                 fontSize: tagSize,
-                letterSpacing: '0.28em',
+                letterSpacing: '0.16em',
                 color: '#C47A65',
                 opacity: 0.85,
-                lineHeight: 1,
+                lineHeight: 1.3,
               }}
             >
-              {'DESIGN · MARKET · AUTOMATE'}
+              {'Building what the future is'}
             </span>
           )}
         </div>

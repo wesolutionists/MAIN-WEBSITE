@@ -1,16 +1,17 @@
 ﻿import Logo from '../Logo'
 
 const links = {
-  Services: [
-    { label: 'Web Design & Development', href: '#services' },
-    { label: 'Meta Ads', href: '#services' },
-    { label: 'Business Automation', href: '#services' },
-  ],
-  Company: [
-    { label: 'About Us', href: '#about' },
-    { label: 'Packages', href: '#packages' },
+  Explore: [
+    { label: 'Solutions', href: '#services' },
+    { label: 'Pricing', href: '#packages' },
+    { label: 'About', href: '#about' },
     { label: 'FAQ', href: '#faq' },
     { label: 'Contact', href: '#contact' },
+  ],
+  'Our Solutions': [
+    { label: 'Digital Foundation', href: '#services' },
+    { label: 'AI Workforce', href: '#services' },
+    { label: 'AI Business Systems', href: '#services' },
   ],
 }
 
