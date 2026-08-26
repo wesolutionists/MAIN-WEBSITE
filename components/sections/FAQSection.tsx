@@ -103,7 +103,7 @@ export default function FAQSection() {
                       style={{
                         fontSize: '1.18rem',
                         lineHeight: 1.35,
-                        color: open === i ? '#F4EFE8' : '#D8D0C8',
+                        color: open === i ? '#F4EFE8' : '#D8CFC6',
                       }}
                     >
                       {faq.q}

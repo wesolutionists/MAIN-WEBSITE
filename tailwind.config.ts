@@ -22,6 +22,7 @@ const config: Config = {
         'rose-gold': '#C47A65',
         ink: {
           DEFAULT: '#F4EFE8',
+          soft: '#D8CFC6',
           muted: '#C8BEB8',
           dim: '#AEA8A4',
         },

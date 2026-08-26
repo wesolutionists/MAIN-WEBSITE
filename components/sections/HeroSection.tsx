@@ -118,7 +118,7 @@ export default function HeroSection({ onAuditClick, onConsultClick }: Props) {
           {/* Subheading */}
           <motion.p
             className="font-body font-normal mt-8 max-w-xl"
-            style={{ fontSize: '1.18rem', lineHeight: 1.8, letterSpacing: '0.01em', color: '#D8D0C8' }}
+            style={{ fontSize: '1.18rem', lineHeight: 1.8, letterSpacing: '0.01em', color: '#D8CFC6' }}
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}

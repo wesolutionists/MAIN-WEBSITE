@@ -221,7 +221,7 @@ function PricingCard({
                   fontSize: isEmphasized ? '0.8rem' : '0.86rem',
                   lineHeight: 1.55,
                   letterSpacing: isEmphasized ? '0.08em' : 'normal',
-                  color: isEmphasized ? '#D4947E' : hovered ? '#D8D0C8' : '#AEA8A4',
+                  color: isEmphasized ? '#D4947E' : hovered ? '#D8CFC6' : '#AEA8A4',
                 }}
               >
                 {feature}

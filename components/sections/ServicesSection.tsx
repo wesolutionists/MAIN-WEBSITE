@@ -185,7 +185,7 @@ function ServiceCard({ service }: { service: (typeof services)[0] }) {
                     style={{
                       fontSize: isEmphasized ? '0.92rem' : '1.02rem',
                       lineHeight: 1.7,
-                      color: isEmphasized ? '#D4947E' : '#E0DAD4',
+                      color: isEmphasized ? '#D4947E' : '#D8CFC6',
                       letterSpacing: isEmphasized ? '0.1em' : 'normal',
                     }}
                   >
