@@ -11,51 +11,52 @@ interface Props {
 
 const packages = [
   {
-    name: 'Website Starter',
-    promise: 'Your foundation, built to impress.',
-    originalPrice: 200,
-    price: 149,
+    number: '01',
+    name: 'Digital Foundation',
+    promise: 'Build your digital presence with intention.',
+    price: '$299',
+    monthly: '$99',
     featured: false,
     features: [
-      '1–5 Page Custom Website',
-      'Mobile-Responsive Design',
-      'Basic SEO Setup',
-      'Contact Form Integration',
-      '30 Days Post-Launch Support',
+      'Custom Websites',
+      'E-commerce Websites',
+      'Meta Ads Systems',
+      'Creative Strategy',
+      'Lead Generation',
     ],
     cta: 'Start Building',
   },
   {
-    name: 'Growth Package',
-    promise: 'The engine that gets you noticed.',
-    originalPrice: 400,
-    price: 299,
+    number: '02',
+    name: 'AI Workforce',
+    promise: 'Build your intelligent workforce.',
+    price: '$799+',
+    monthly: '$199',
     featured: true,
     features: [
-      'Everything in Starter',
-      'Up to 10 Pages',
-      'Social Media Integration',
-      'Advanced SEO Strategy',
-      'Meta Pixel Setup',
-      '60 Days Support',
+      'AI Voice Agents',
+      'AI Chatbots',
+      'AI Customer Support',
+      'AI Follow-Up Agents',
+      'AI Receptionist Agents',
     ],
-    cta: 'Start Growing',
+    cta: 'Build Your Workforce',
   },
   {
-    name: 'Growth + Automation',
-    promise: 'Automate. Scale. Dominate.',
-    originalPrice: 900,
-    price: 699,
+    number: '03',
+    name: 'AI Business Systems',
+    promise: 'Get your custom intelligent system.',
+    price: '$1,499+',
+    monthly: '$399',
     featured: false,
     features: [
-      'Everything in Growth',
-      'n8n Workflow Automation',
-      'CRM Integration',
-      'Lead Nurturing Sequences',
-      'Meta Ads Campaign Setup',
-      'Priority Support',
+      'Home Services OS',
+      'Real Estate OS',
+      'E-commerce OS',
+      'Business Automation Systems',
+      'CUSTOM BUSINESS SYSTEMS',
     ],
-    cta: 'Build Your Legacy',
+    cta: 'Build Your System',
   },
 ]
 
@@ -117,16 +118,25 @@ function PricingCard({
 
       {/* Package name */}
       <div>
-        <h3
-          className="font-display font-medium text-ink mb-1.5 transition-all duration-500"
-          style={{
-            fontSize: '1.3rem',
-            lineHeight: 1.2,
-            transform: hovered ? 'translateY(-2px)' : 'translateY(0)',
-          }}
-        >
-          {pkg.name}
-        </h3>
+        <div className="flex items-baseline gap-2.5 mb-2">
+          <span
+            className="font-display font-light shrink-0"
+            style={{ fontSize: '0.82rem', letterSpacing: '0.1em', color: 'rgba(196, 122, 101, 0.55)' }}
+          >
+            {pkg.number}
+          </span>
+          <h3
+            className="font-display font-medium text-ink transition-all duration-500"
+            style={{
+              fontSize: '1.3rem',
+              lineHeight: 1.2,
+              letterSpacing: '0.01em',
+              transform: hovered ? 'translateY(-2px)' : 'translateY(0)',
+            }}
+          >
+            {pkg.name}
+          </h3>
+        </div>
         <p
           className="font-body font-normal text-ink-muted italic"
           style={{ fontSize: '0.82rem', letterSpacing: '0.04em' }}
@@ -136,24 +146,40 @@ function PricingCard({
       </div>
 
       {/* Price */}
-      <div className="flex items-end gap-3">
-        <span
-          className="font-display font-semibold transition-all duration-500"
-          style={{
-            fontSize: hovered ? '2.8rem' : '2.5rem',
-            lineHeight: 1,
-            color: '#F4EFE8',
-          }}
+      <div className="flex flex-col gap-3.5">
+        <div>
+          <span
+            className="font-display font-semibold transition-all duration-500"
+            style={{
+              fontSize: hovered ? '2.8rem' : '2.5rem',
+              lineHeight: 1,
+              color: '#F4EFE8',
+            }}
+          >
+            {pkg.price}
+          </span>
+          <p
+            className="font-body font-medium text-ink-muted mt-1.5"
+            style={{ fontSize: '0.66rem', letterSpacing: '0.2em' }}
+          >
+            ONE-TIME IMPLEMENTATION
+          </p>
+        </div>
+        <div className="flex items-baseline gap-1.5">
+          <span
+            className="font-display font-semibold"
+            style={{ fontSize: '1.15rem', lineHeight: 1, color: '#D4947E' }}
+          >
+            + {pkg.monthly}
+            <span className="font-body font-normal" style={{ fontSize: '0.72rem', color: 'rgba(212,148,126,0.7)' }}>/mo</span>
+          </span>
+        </div>
+        <p
+          className="font-body font-medium text-ink-dim -mt-2.5"
+          style={{ fontSize: '0.66rem', letterSpacing: '0.2em' }}
         >
-          ${pkg.price}
-        </span>
-        <span
-          className="font-body font-normal text-ink-dim line-through mb-1.5"
-          style={{ fontSize: '0.9rem' }}
-          aria-label={`Was $${pkg.originalPrice}`}
-        >
-          ${pkg.originalPrice}
-        </span>
+          ONGOING EVOLUTION
+        </p>
       </div>
 
       {/* Divider */}
@@ -169,36 +195,40 @@ function PricingCard({
 
       {/* Features */}
       <ul className="flex flex-col gap-2.5 flex-1" role="list">
-        {pkg.features.map((feature, fi) => (
-          <motion.li
-            key={feature}
-            className="flex items-start gap-3"
-            animate={{ x: hovered ? 4 : 0 }}
-            transition={{ duration: 0.4, delay: fi * 0.04, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <Check
-              size={14}
-              strokeWidth={2.5}
-              aria-hidden="true"
-              style={{
-                flexShrink: 0,
-                marginTop: '0.125rem',
-                color: hovered ? '#D4947E' : '#AEA8A4',
-                transition: 'color 0.4s ease',
-              }}
-            />
-            <span
-              className="font-body font-normal transition-colors duration-300"
-              style={{
-                fontSize: '0.86rem',
-                lineHeight: 1.55,
-                color: hovered ? '#D8D0C8' : '#AEA8A4',
-              }}
+        {pkg.features.map((feature, fi) => {
+          const isEmphasized = feature === feature.toUpperCase() && /[A-Z]/.test(feature)
+          return (
+            <motion.li
+              key={feature}
+              className="flex items-start gap-3"
+              animate={{ x: hovered ? 4 : 0 }}
+              transition={{ duration: 0.4, delay: fi * 0.04, ease: [0.16, 1, 0.3, 1] }}
             >
-              {feature}
-            </span>
-          </motion.li>
-        ))}
+              <Check
+                size={14}
+                strokeWidth={2.5}
+                aria-hidden="true"
+                style={{
+                  flexShrink: 0,
+                  marginTop: '0.125rem',
+                  color: isEmphasized ? '#D4947E' : hovered ? '#D4947E' : '#AEA8A4',
+                  transition: 'color 0.4s ease',
+                }}
+              />
+              <span
+                className={isEmphasized ? 'font-body font-semibold transition-colors duration-300' : 'font-body font-normal transition-colors duration-300'}
+                style={{
+                  fontSize: isEmphasized ? '0.8rem' : '0.86rem',
+                  lineHeight: 1.55,
+                  letterSpacing: isEmphasized ? '0.08em' : 'normal',
+                  color: isEmphasized ? '#D4947E' : hovered ? '#D8D0C8' : '#AEA8A4',
+                }}
+              >
+                {feature}
+              </span>
+            </motion.li>
+          )
+        })}
       </ul>
 
       {/* Bottom reveal line */}
@@ -235,7 +265,7 @@ function PricingCard({
               }
         }
       >
-        {pkg.cta.toUpperCase()}
+        {pkg.cta.toUpperCase()} →
       </button>
     </motion.article>
   )
@@ -308,7 +338,7 @@ export default function PackagesSection({ onConsultClick }: Props) {
             className="mt-10 text-center font-body font-normal text-ink-dim"
             style={{ fontSize: '0.86rem', letterSpacing: '0.1em' }}
           >
-            All prices are one-time project fees. Custom scopes available — let&apos;s talk.
+            Pricing shown covers one-time implementation plus ongoing evolution. Custom scopes available — let&apos;s talk.
           </p>
         </RevealOnScroll>
       </div>
