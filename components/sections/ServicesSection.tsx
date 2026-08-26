@@ -23,9 +23,17 @@ const services = [
         <path d="M20 41 L23 38 L26 41 L23 44 Z" stroke="#C47A65" strokeWidth="0.75" fill="rgba(196,122,101,0.15)"/>
       </svg>
     ),
-    title: 'Website Design & Development',
-    desc: 'We build fast, beautiful, high-converting websites that create lasting impressions and drive real results. Every pixel is intentional.',
-    detail: 'Custom design · Mobile-first · Performance-optimized',
+    number: '01',
+    title: 'Digital Foundation',
+    items: [
+      'Custom Websites',
+      'Automated Websites',
+      'E-commerce Websites',
+      'Meta Ads Systems',
+      'Creative Strategy',
+      'Lead Generation',
+    ],
+    quote: 'Build your digital foundation to acquire and grow.',
   },
   {
     icon: (
@@ -43,9 +51,17 @@ const services = [
         <circle cx="42" cy="22" r="2" fill="#C47A65" opacity="0.85"/>
       </svg>
     ),
-    title: 'Marketing & Sales',
-    desc: 'We craft strategies that attract, convert and retain customers — from paid social campaigns to full-funnel sales systems built around your business.',
-    detail: 'Meta Ads · Sales Funnels · Lead Generation · Conversion Strategy',
+    number: '02',
+    title: 'AI Workforce',
+    items: [
+      'AI Voice Agents',
+      'AI Chatbots',
+      'AI Customer Support',
+      'AI Follow-Up Agents',
+      'AI Receptionist Agents',
+      'MORE INTELLIGENT AGENTS',
+    ],
+    quote: 'Build your intelligent workforce.',
   },
   {
     icon: (
@@ -66,9 +82,17 @@ const services = [
         <line x1="46" y1="50" x2="46" y2="54" stroke="currentColor" strokeWidth="0.5" opacity="0.3"/>
       </svg>
     ),
-    title: 'Business Automation (n8n)',
-    desc: 'We automate your workflows, save time, reduce errors and help your business run smarter — so you can focus on what only you can do.',
-    detail: 'n8n Workflows · CRM Integration · Lead Automation',
+    number: '03',
+    title: 'AI Business Systems',
+    items: [
+      'Havex OS',
+      'Home Services OS',
+      'Real Estate OS',
+      'E-commerce OS',
+      'Business Automation Systems',
+      'CUSTOM BUSINESS SYSTEMS',
+    ],
+    quote: 'Get your own intelligent system.',
   },
 ]
 
@@ -133,23 +157,65 @@ function ServiceCard({ service }: { service: (typeof services)[0] }) {
 
         {/* Content */}
         <div className="flex flex-col gap-5 flex-1">
-          <h3
-            className="font-display font-semibold text-ink"
-            style={{ fontSize: '1.5rem', lineHeight: 1.2 }}
-          >
-            {service.title}
-          </h3>
+          <div className="flex items-baseline gap-3">
+            <span
+              className="font-display font-light text-ink-muted shrink-0"
+              style={{ fontSize: '0.88rem', letterSpacing: '0.1em' }}
+            >
+              {service.number}
+            </span>
+            <h3
+              className="font-display font-semibold text-ink"
+              style={{ fontSize: '1.5rem', lineHeight: 1.2 }}
+            >
+              {service.title}
+            </h3>
+          </div>
+
+          <ul className="flex flex-col gap-2.5 flex-1">
+            {service.items.map((item) => {
+              const isEmphasized = item === item.toUpperCase() && /[A-Z]/.test(item)
+              return (
+                <li key={item} className="flex items-baseline gap-2.5">
+                  <span
+                    className="shrink-0"
+                    style={{
+                      width: '4px',
+                      height: '4px',
+                      borderRadius: '999px',
+                      background: isEmphasized ? '#D4947E' : 'rgba(196, 122, 101, 0.5)',
+                      transform: 'translateY(-2px)',
+                    }}
+                    aria-hidden="true"
+                  />
+                  <span
+                    className={isEmphasized ? 'font-body font-semibold' : 'font-body font-normal'}
+                    style={{
+                      fontSize: isEmphasized ? '0.92rem' : '1.02rem',
+                      lineHeight: 1.7,
+                      color: isEmphasized ? '#D4947E' : '#E0DAD4',
+                      letterSpacing: isEmphasized ? '0.1em' : 'normal',
+                    }}
+                  >
+                    {item}
+                  </span>
+                </li>
+              )
+            })}
+          </ul>
+
           <p
-            className="font-body font-normal flex-1"
-            style={{ fontSize: '1.02rem', lineHeight: 1.9, color: '#E0DAD4' }}
+            className="font-display font-medium italic"
+            style={{
+              fontSize: '1rem',
+              lineHeight: 1.6,
+              color: '#C8BEB8',
+              borderTop: '1px solid rgba(196, 122, 101, 0.15)',
+              paddingTop: '1.25rem',
+              marginTop: '0.25rem',
+            }}
           >
-            {service.desc}
-          </p>
-          <p
-            className="font-body font-medium text-ink-muted"
-            style={{ fontSize: '0.8rem', letterSpacing: '0.16em' }}
-          >
-            {service.detail}
+            &ldquo;{service.quote}&rdquo;
           </p>
         </div>
 
@@ -189,7 +255,7 @@ export default function ServicesSection() {
               className="font-display font-semibold text-ink"
               style={{ fontSize: 'clamp(2rem, 4.5vw, 3.2rem)', lineHeight: 1.1, letterSpacing: '-0.02em' }}
             >
-              Our Services
+              Our Solutions
             </h2>
           </RevealOnScroll>
         </div>
