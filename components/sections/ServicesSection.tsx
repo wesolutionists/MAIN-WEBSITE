@@ -23,7 +23,6 @@ const services = [
         <path d="M20 41 L23 38 L26 41 L23 44 Z" stroke="#C47A65" strokeWidth="0.75" fill="rgba(196,122,101,0.15)"/>
       </svg>
     ),
-    number: '01',
     title: 'Digital Foundation',
     items: [
       'Custom Websites',
@@ -51,7 +50,6 @@ const services = [
         <circle cx="42" cy="22" r="2" fill="#C47A65" opacity="0.85"/>
       </svg>
     ),
-    number: '02',
     title: 'AI Workforce',
     items: [
       'AI Voice Agents',
@@ -82,7 +80,6 @@ const services = [
         <line x1="46" y1="50" x2="46" y2="54" stroke="currentColor" strokeWidth="0.5" opacity="0.3"/>
       </svg>
     ),
-    number: '03',
     title: 'AI Business Systems',
     items: [
       'Home Services OS',
