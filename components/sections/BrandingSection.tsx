@@ -58,7 +58,7 @@ export default function BrandingSection() {
       {/* Mobile extra */}
       <div className="absolute inset-0 pointer-events-none md:hidden z-[2]" style={{ background: 'rgba(7,6,10,0.15)' }} aria-hidden="true" />
 
-      {/* Drifting radial spotlight — follows scroll */}
+      {/* Drifting radial spotlight — follows scroll, with a periodic power-on flicker */}
       <motion.div
         className="pointer-events-none absolute z-[3]"
         style={{
@@ -69,6 +69,14 @@ export default function BrandingSection() {
           borderRadius: '50%',
           background: 'radial-gradient(circle, rgba(196,122,101,0.13) 0%, transparent 65%)',
           filter: 'blur(40px)',
+        }}
+        animate={{ opacity: [1, 0.25, 0.85, 0.35, 1, 0.6, 1, 1] }}
+        transition={{
+          duration: 1.4,
+          times: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 1],
+          repeat: Infinity,
+          repeatDelay: 6.5,
+          ease: 'easeInOut',
         }}
         aria-hidden="true"
       />
