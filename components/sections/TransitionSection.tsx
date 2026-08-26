@@ -16,10 +16,15 @@ const solutions = [
   'AI Customer Support',
   'AI Follow-Up Agents',
   'AI Receptionist Agents',
+  'Home Services OS',
+  'Real Estate OS',
+  'Healthcare OS',
+  'E-commerce OS',
+  'Business Automation Systems',
 ]
 
-const row1Base = solutions.slice(0, 6)
-const row2Base = solutions.slice(6)
+const row1Base = solutions.slice(0, 9)
+const row2Base = solutions.slice(9)
 
 const row1 = [...row1Base, ...row1Base, ...row1Base]
 const row2 = [...row2Base, ...row2Base, ...row2Base]
