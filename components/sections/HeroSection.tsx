@@ -3,7 +3,6 @@
 import { useEffect, useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Search, CalendarCheck, Package } from 'lucide-react'
-import CountUp from '../ui/CountUp'
 
 interface Props {
   onAuditClick: () => void
@@ -227,45 +226,6 @@ export default function HeroSection({ onAuditClick, onConsultClick }: Props) {
             </div>
           </motion.div>
 
-          {/* Stats with CountUp — 2+1 on mobile, row on desktop */}
-          <motion.div
-            className="mt-16 pt-8"
-            style={{ borderTop: '1px solid rgba(196, 122, 101, 0.18)' }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.9 }}
-          >
-            <div className="grid grid-cols-2 md:flex md:items-center gap-6 md:gap-10">
-              {[
-                { value: '250+', label: 'Clients Served' },
-                { value: '2,000+', label: 'Projects Delivered' },
-                { value: '3', label: 'Core Solutions' },
-              ].map((stat, i) => (
-                <div key={stat.label} className={i === 2 ? 'col-span-2 flex flex-col items-center md:items-start md:col-auto' : ''}>
-                  <CountUp
-                    value={stat.value}
-                    className="font-display font-semibold"
-                    style={{
-                      fontSize: '1.6rem',
-                      lineHeight: 1,
-                      background: 'linear-gradient(135deg, #D4947E, #C47A65)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      backgroundClip: 'text',
-                      display: 'block',
-                    }}
-                    duration={2000}
-                  />
-                  <p
-                    className="font-body font-normal mt-1.5"
-                    style={{ fontSize: 'clamp(0.75rem, 2vw, 0.78rem)', letterSpacing: '0.13em', color: '#C8BEB8' }}
-                  >
-                    {stat.label.toUpperCase()}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
         </div>
       </motion.div>
 

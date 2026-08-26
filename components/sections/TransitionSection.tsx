@@ -3,53 +3,63 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 
-const clients = [
-  { name: 'VANTAGE', sub: 'Consulting' },
-  { name: 'BLOOM', sub: 'Wellness' },
-  { name: 'ARCLINE', sub: 'Architecture' },
-  { name: 'STRATA', sub: 'Real Estate' },
-  { name: 'KOVA', sub: 'E-Commerce' },
-  { name: 'FORGE', sub: 'Technology' },
+const solutions = [
+  'Custom Websites',
+  'Automated Websites',
+  'E-commerce Websites',
+  'Meta Ads Systems',
+  'Creative Strategy',
+  'Lead Generation',
+  'Conversion Systems',
+  'AI Voice Agents',
+  'AI Chatbots',
+  'AI Customer Support',
+  'AI Follow-Up Agents',
+  'AI Receptionist Agents',
 ]
 
-const row1 = [...clients, ...clients, ...clients]
-const row2 = [...clients].reverse()
-const allRow2 = [...row2, ...row2, ...row2]
+const row1Base = solutions.slice(0, 6)
+const row2Base = solutions.slice(6)
 
-function ClientItem({ name, sub }: { name: string; sub: string }) {
+const row1 = [...row1Base, ...row1Base, ...row1Base]
+const row2 = [...row2Base, ...row2Base, ...row2Base]
+
+function Pill({ label }: { label: string }) {
   return (
-    <div
-      className="group flex flex-col items-center gap-1 shrink-0 cursor-default"
-      style={{ minWidth: '130px' }}
+    <span
+      className="group inline-flex shrink-0 cursor-default items-center transition-all duration-300"
+      style={{
+        padding: '0.6rem 1.4rem',
+        borderRadius: '999px',
+        border: '1px solid rgba(196, 122, 101, 0.22)',
+        background: 'rgba(196, 122, 101, 0.05)',
+      }}
+      onMouseEnter={(e) => {
+        const el = e.currentTarget
+        el.style.borderColor = 'rgba(196, 122, 101, 0.65)'
+        el.style.background = 'rgba(196, 122, 101, 0.12)'
+        el.style.boxShadow = '0 4px 20px rgba(196, 122, 101, 0.18)'
+        el.style.transform = 'translateY(-2px)'
+      }}
+      onMouseLeave={(e) => {
+        const el = e.currentTarget
+        el.style.borderColor = 'rgba(196, 122, 101, 0.22)'
+        el.style.background = 'rgba(196, 122, 101, 0.05)'
+        el.style.boxShadow = 'none'
+        el.style.transform = 'translateY(0)'
+      }}
     >
       <span
-        className="font-display font-semibold transition-all duration-400"
+        className="font-body font-normal whitespace-nowrap transition-colors duration-300"
         style={{
-          fontSize: '1.15rem',
-          letterSpacing: '0.18em',
-          lineHeight: 1,
-          color: 'rgba(244,239,232,0.45)',
-        }}
-        onMouseEnter={(e) => {
-          const el = e.currentTarget as HTMLElement
-          el.style.color = '#D4947E'
-          el.style.textShadow = '0 0 20px rgba(196,122,101,0.4)'
-        }}
-        onMouseLeave={(e) => {
-          const el = e.currentTarget as HTMLElement
-          el.style.color = 'rgba(244,239,232,0.45)'
-          el.style.textShadow = 'none'
+          fontSize: '0.82rem',
+          letterSpacing: '0.06em',
+          color: '#D8CFC6',
         }}
       >
-        {name}
+        {label}
       </span>
-      <span
-        className="font-body font-normal transition-colors duration-400"
-        style={{ fontSize: '0.6rem', letterSpacing: '0.22em', color: 'rgba(244,239,232,0.22)' }}
-      >
-        {sub.toUpperCase()}
-      </span>
-    </div>
+    </span>
   )
 }
 
@@ -60,7 +70,7 @@ export default function TransitionSection() {
   return (
     <section
       ref={ref}
-      className="relative py-12 md:py-16 overflow-hidden"
+      className="relative py-8 md:py-10 overflow-hidden"
       aria-label="Trusted by"
       style={{
         borderTop: '1px solid rgba(196, 122, 101, 0.08)',
@@ -82,7 +92,7 @@ export default function TransitionSection() {
       />
 
       {/* Header */}
-      <div className="relative z-10 mb-8 text-center">
+      <div className="relative z-10 mb-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -92,7 +102,7 @@ export default function TransitionSection() {
             className="font-body font-medium"
             style={{ fontSize: '0.7rem', letterSpacing: '0.35em', color: 'rgba(196,122,101,0.6)' }}
           >
-            TRUSTED BY
+            TRUSTED FOR
           </p>
         </motion.div>
 
@@ -108,26 +118,17 @@ export default function TransitionSection() {
 
       {/* Row 1 — scrolls left */}
       <motion.div
-        className="relative z-10 overflow-hidden mb-5"
+        className="relative z-10 overflow-hidden mb-3"
         initial={{ opacity: 0, x: -40 }}
         animate={inView ? { opacity: 1, x: 0 } : {}}
         transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
       >
-        <div className="marquee-track flex items-center gap-16 w-max">
-          {row1.map((client, i) => (
-            <ClientItem key={i} name={client.name} sub={client.sub} />
+        <div className="marquee-track flex items-center gap-3 w-max">
+          {row1.map((label, i) => (
+            <Pill key={i} label={label} />
           ))}
         </div>
       </motion.div>
-
-      {/* Glowing separator */}
-      <motion.div
-        className="relative z-10 mx-auto mb-5"
-        style={{ height: '1px', background: 'linear-gradient(90deg, transparent, rgba(196,122,101,0.25), transparent)' }}
-        initial={{ width: '0%', opacity: 0 }}
-        animate={inView ? { width: '60%', opacity: 1 } : {}}
-        transition={{ duration: 1.2, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-      />
 
       {/* Row 2 — scrolls right */}
       <motion.div
@@ -136,9 +137,9 @@ export default function TransitionSection() {
         animate={inView ? { opacity: 1, x: 0 } : {}}
         transition={{ duration: 0.9, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
       >
-        <div className="marquee-track-reverse flex items-center gap-16 w-max">
-          {allRow2.map((client, i) => (
-            <ClientItem key={i} name={client.name} sub={client.sub} />
+        <div className="marquee-track-reverse flex items-center gap-3 w-max">
+          {row2.map((label, i) => (
+            <Pill key={i} label={label} />
           ))}
         </div>
       </motion.div>
