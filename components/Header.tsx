@@ -57,12 +57,17 @@ export default function Header() {
 
             {/* Logo */}
             <a href="#" aria-label="The Solutionists — home" className="shrink-0">
-              <Logo size="nav" tagline={false} />
+              <span className="lg:hidden">
+                <Logo size="sm" wordmark={false} />
+              </span>
+              <span className="hidden lg:inline-block">
+                <Logo size="nav" tagline={false} />
+              </span>
             </a>
 
             {/* Desktop nav */}
             <nav
-              className="hidden md:flex items-center gap-7 lg:gap-9"
+              className="hidden lg:flex items-center gap-7 lg:gap-9"
               aria-label="Main navigation"
             >
               {navLinks.map((link) => (
@@ -111,7 +116,7 @@ export default function Header() {
 
             {/* Mobile hamburger */}
             <button
-              className="md:hidden p-1.5 rounded text-ink-soft transition-colors duration-300 cursor-pointer"
+              className="lg:hidden flex items-center justify-center h-11 w-11 -mr-1.5 rounded text-ink-soft transition-colors duration-300 cursor-pointer"
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={menuOpen}
@@ -125,7 +130,7 @@ export default function Header() {
 
         {/* ── Mobile dropdown (attached below pill) ── */}
         <div
-          className="md:hidden mt-2 overflow-hidden transition-all duration-500 ease-in-out"
+          className="lg:hidden mt-2 overflow-hidden transition-all duration-500 ease-in-out"
           style={{
             maxHeight: menuOpen ? '400px' : '0',
             opacity: menuOpen ? 1 : 0,

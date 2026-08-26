@@ -240,7 +240,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Service cards */}
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-4 lg:grid-cols-3">
           {services.map((service, i) => (
             <RevealOnScroll key={service.title} delay={i * 0.12}>
               <ServiceCard service={service} />

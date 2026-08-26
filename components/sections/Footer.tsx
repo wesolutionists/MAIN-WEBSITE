@@ -85,7 +85,7 @@ export default function Footer() {
                   href={`https://mail.google.com/mail/?view=cm&to=${email}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-body font-normal transition-colors duration-300"
+                  className="inline-block py-2 -my-2 font-body font-normal transition-colors duration-300"
                   style={{ fontSize: '0.85rem', color: 'rgba(196,122,101,0.7)', textDecoration: 'none' }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = '#D4947E')}
                   onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(196,122,101,0.7)')}
@@ -104,7 +104,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="flex h-9 w-9 items-center justify-center rounded-full text-ink-muted hover:text-ink transition-colors duration-300"
+                  className="flex h-11 w-11 items-center justify-center rounded-full text-ink-muted hover:text-ink transition-colors duration-300"
                   style={{ border: '1px solid rgba(196, 122, 101, 0.2)' }}
                 >
                   {s.icon}
@@ -127,7 +127,7 @@ export default function Footer() {
                   <li key={item.label}>
                     <a
                       href={item.href}
-                      className="font-body font-normal text-ink-muted hover:text-ink transition-colors duration-300"
+                      className="inline-block py-2 -my-2 font-body font-normal text-ink-muted hover:text-ink transition-colors duration-300"
                       style={{ fontSize: '0.96rem' }}
                     >
                       {item.label}
@@ -155,7 +155,7 @@ export default function Footer() {
               <a
                 key={item.label}
                 href={item.href}
-                className="font-body font-normal text-ink-dim hover:text-ink-muted transition-colors duration-300"
+                className="inline-block py-2 -my-2 font-body font-normal text-ink-dim hover:text-ink-muted transition-colors duration-300"
                 style={{ fontSize: '0.8rem', letterSpacing: '0.05em' }}
               >
                 {item.label}

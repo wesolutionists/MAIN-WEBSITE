@@ -135,7 +135,7 @@ export default function BookingModal({ isOpen, onClose, selectedPackage }: Props
                 No pitch. No pressure. Just an honest conversation about your business and where you want to go.
               </p>
 
-              <div className="grid grid-cols-2 gap-7">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-7">
                 <div>
                   <label htmlFor="book-name" className="font-body font-normal text-gold-dim block mb-1.5" style={{ fontSize: '0.6rem', letterSpacing: '0.22em' }}>
                     YOUR NAME

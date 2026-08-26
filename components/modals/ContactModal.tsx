@@ -130,7 +130,7 @@ export default function ContactModal({ isOpen, onClose }: Props) {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-7" noValidate>
-              <div className="grid grid-cols-2 gap-7">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-7">
                 <div>
                   <label htmlFor="audit-name" className="font-body font-normal text-gold-dim block mb-1.5" style={{ fontSize: '0.6rem', letterSpacing: '0.22em' }}>
                     YOUR NAME

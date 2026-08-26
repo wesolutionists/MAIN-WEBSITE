@@ -323,7 +323,7 @@ export default function PackagesSection({ onConsultClick }: Props) {
         </div>
 
         {/* Cards */}
-        <div className="grid gap-5 md:grid-cols-3 items-start">
+        <div className="grid gap-5 lg:grid-cols-3 items-start">
           {packages.map((pkg, i) => (
             <RevealOnScroll key={pkg.name} delay={i * 0.12}>
               <PricingCard pkg={pkg} onConsultClick={onConsultClick} />
