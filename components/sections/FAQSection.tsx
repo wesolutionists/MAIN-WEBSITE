@@ -8,32 +8,36 @@ import AnimatedRule from '@/components/ui/AnimatedRule'
 
 const faqs = [
   {
-    q: 'How long does a website project take?',
-    a: 'Most projects are completed within 2–4 weeks, depending on the scope and how quickly content is provided. We work efficiently without cutting corners — quality is non-negotiable.',
+    q: "I'm not sure what my business needs. Can you help me figure it out?",
+    a: "Absolutely. You don't need a technical plan to start. Tell us where your business is today and what you're trying to achieve — we'll identify where technology can create the most meaningful value.",
   },
   {
-    q: 'Do I need to have content ready before we start?',
-    a: 'Not necessarily. We can guide you through what\'s needed and even help craft copy that speaks to your audience. The clearer your vision, the faster we move.',
+    q: 'Is AI actually useful for a business like mine?',
+    a: 'It depends on your business. We look for practical opportunities where AI can reduce repetitive work, improve customer experiences, increase responsiveness, or help your team operate more effectively.',
   },
   {
-    q: 'What is n8n and how does automation help my business?',
-    a: 'n8n is an open-source workflow automation platform that connects your tools — CRM, email, forms, databases — and automates repetitive tasks like lead follow-ups, notifications and data syncing. Less manual work. More revenue.',
+    q: 'Can you build something specifically around my business?',
+    a: "Yes. Every business is different, so we design systems around your workflows, customers, tools, and goals — rather than forcing you into a predefined model.",
   },
   {
-    q: 'Do you run ads on platforms other than Meta?',
-    a: 'We specialize in Meta (Facebook & Instagram) Ads because that\'s where the ROI is strongest for most businesses. Multi-platform strategies can be discussed during your consultation.',
+    q: "Will this actually make my business better, or just give me another system to manage?",
+    a: "The goal is to remove complexity, not create it. We build systems that take repetitive work off your team's plate, connect your operations, and make important processes easier to manage.",
   },
   {
-    q: 'Can I upgrade my package after we start?',
-    a: 'Absolutely. Many clients start with the Starter package and scale into Growth or Full Automation as their business expands. We make transitions seamless.',
+    q: 'Can you work with the tools and systems I already use?',
+    a: 'Yes. Where possible, we integrate with your existing website, CRM, communication platforms, and business software rather than asking you to replace everything.',
   },
   {
-    q: 'Do you offer ongoing support after launch?',
-    a: 'Yes. Every package includes post-launch support and extended maintenance plans are available. We don\'t disappear after delivery — we\'re invested in your continued success.',
+    q: 'What does it cost to work with The Solutionists?',
+    a: 'Our solutions have a one-time implementation cost followed by a monthly fee for ongoing evolution, maintenance, and optimization. Starting prices are shown in our investment section.',
   },
   {
-    q: 'What makes The Solutionists different from other agencies?',
-    a: 'We combine design, marketing and automation under one roof — so your brand, your traffic and your systems all speak the same language. No handoffs, no gaps, no excuses.',
+    q: 'What happens after I contact you?',
+    a: "We'll review what you've shared, understand what you're trying to achieve, and come back with a clear direction for what makes sense next — no obligation to move forward.",
+  },
+  {
+    q: "What if I have an idea that isn't listed on your website?",
+    a: "Tell us anyway. Our listed solutions are starting points, not limits. If there's a better way to solve your problem, we'll explore it with you and build around what your business actually needs.",
   },
 ]
 
