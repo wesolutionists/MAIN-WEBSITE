@@ -10,7 +10,7 @@ interface Props {
 }
 
 export default function ContactModal({ isOpen, onClose }: Props) {
-  const [form, setForm] = useState({ name: '', email: '', website: '', budget: '', message: '' })
+  const [form, setForm] = useState({ name: '', email: '', website: '', preferred: '', message: '' })
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent'>('idle')
   const firstInputRef = useRef<HTMLInputElement>(null)
   const dialogRef = useRef<HTMLDivElement>(null)
@@ -189,24 +189,23 @@ export default function ContactModal({ isOpen, onClose }: Props) {
               </div>
 
               <div>
-                <label htmlFor="audit-budget" className="font-body font-normal text-gold-dim block mb-1.5" style={{ fontSize: '0.6rem', letterSpacing: '0.22em' }}>
-                  BUDGET RANGE
+                <label htmlFor="audit-preferred" className="font-body font-normal text-gold-dim block mb-1.5" style={{ fontSize: '0.6rem', letterSpacing: '0.22em' }}>
+                  PREFERRED TIME SLOT
                 </label>
                 <select
-                  id="audit-budget"
-                  name="budget"
-                  value={form.budget}
+                  id="audit-preferred"
+                  name="preferred"
+                  value={form.preferred}
                   onChange={handleChange}
                   style={{ ...inputStyle, cursor: 'pointer' }}
                   onFocus={(e) => (e.target.style.borderBottomColor = 'rgba(196, 122, 101,0.7)')}
                   onBlur={(e) => (e.target.style.borderBottomColor = 'rgba(196, 122, 101,0.25)')}
                 >
-                  <option value="" style={{ background: '#131118' }}>Select a range</option>
-                  <option value="under-150" style={{ background: '#131118' }}>Under $150</option>
-                  <option value="150-300" style={{ background: '#131118' }}>$150 – $300</option>
-                  <option value="300-700" style={{ background: '#131118' }}>$300 – $700</option>
-                  <option value="700-plus" style={{ background: '#131118' }}>$700+</option>
-                  <option value="unsure" style={{ background: '#131118' }}>Not sure yet</option>
+                  <option value="" style={{ background: '#131118' }}>Choose a time</option>
+                  <option value="morning" style={{ background: '#131118' }}>Morning (9am – 12pm)</option>
+                  <option value="afternoon" style={{ background: '#131118' }}>Afternoon (12pm – 5pm)</option>
+                  <option value="evening" style={{ background: '#131118' }}>Evening (5pm – 8pm)</option>
+                  <option value="flexible" style={{ background: '#131118' }}>Flexible</option>
                 </select>
               </div>
 
