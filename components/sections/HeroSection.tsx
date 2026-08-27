@@ -4,17 +4,12 @@ import { useEffect, useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Search, CalendarCheck, Package } from 'lucide-react'
 
-interface Props {
-  onAuditClick: () => void
-  onConsultClick: () => void
-}
-
 const lines = [
   { text: 'We Are', accent: false, delay: 0.1 },
   { text: 'The Solutionists.', accent: true, delay: 0.32 },
 ]
 
-export default function HeroSection({ onAuditClick, onConsultClick }: Props) {
+export default function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
   const { scrollY } = useScroll()
@@ -135,8 +130,8 @@ export default function HeroSection({ onAuditClick, onConsultClick }: Props) {
           >
             {/* Mobile layout: primary full-width + text link */}
             <div className="flex md:hidden flex-col gap-5">
-              <button
-                onClick={onAuditClick}
+              <a
+                href="#discover"
                 className="inline-flex w-full items-center justify-center gap-3 px-8 py-4 font-body font-semibold text-white transition-all duration-300 active:scale-[0.98] cursor-pointer"
                 style={{
                   background: 'linear-gradient(135deg, #B86855, #D4947E, #B86855)',
@@ -148,22 +143,22 @@ export default function HeroSection({ onAuditClick, onConsultClick }: Props) {
               >
                 <Search size={14} strokeWidth={2} aria-hidden="true" />
                 GET A FREE AUDIT
-              </button>
-              <button
-                onClick={onConsultClick}
+              </a>
+              <a
+                href="#contact"
                 className="font-body font-normal text-center py-3 cursor-pointer transition-colors duration-300"
                 style={{ color: 'rgba(196, 122, 101, 0.75)', fontSize: '0.82rem', letterSpacing: '0.1em' }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = '#C47A65')}
                 onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(196, 122, 101, 0.75)')}
               >
-                Book a free consultation →
-              </button>
+                Start the conversation →
+              </a>
             </div>
 
             {/* Desktop layout: all 3 buttons */}
             <div className="hidden md:flex flex-wrap gap-4">
-              <button
-                onClick={onAuditClick}
+              <a
+                href="#discover"
                 className="group inline-flex items-center gap-3 px-8 py-4 font-body font-semibold text-white transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
                 style={{
                   background: 'linear-gradient(135deg, #B86855, #D4947E, #B86855)',
@@ -177,9 +172,9 @@ export default function HeroSection({ onAuditClick, onConsultClick }: Props) {
               >
                 <Search size={14} strokeWidth={2} aria-hidden="true" />
                 GET A FREE AUDIT
-              </button>
-              <button
-                onClick={onConsultClick}
+              </a>
+              <a
+                href="#contact"
                 className="inline-flex items-center gap-3 px-8 py-4 font-body font-medium text-gold-light transition-all duration-300 active:scale-[0.98] cursor-pointer"
                 style={{
                   border: '1px solid rgba(196, 122, 101, 0.6)',
@@ -198,8 +193,8 @@ export default function HeroSection({ onAuditClick, onConsultClick }: Props) {
                 }}
               >
                 <CalendarCheck size={14} strokeWidth={1.5} aria-hidden="true" />
-                BOOK A FREE CONSULTATION
-              </button>
+                START THE CONVERSATION
+              </a>
               <a
                 href="#packages"
                 className="inline-flex items-center gap-3 px-8 py-4 font-body font-medium transition-all duration-300 active:scale-[0.98] cursor-pointer"

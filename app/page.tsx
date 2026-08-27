@@ -36,10 +36,7 @@ export default function Home() {
 
       {/* Page content */}
       <main>
-        <HeroSection
-          onAuditClick={() => setContactOpen(true)}
-          onConsultClick={() => { setSelectedPackage(undefined); setBookingOpen(true) }}
-        />
+        <HeroSection />
 
         <TransitionSection />
 

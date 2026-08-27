@@ -8,6 +8,7 @@ interface Props {
 export default function ConsultationSection({ onConsultClick }: Props) {
   return (
     <section
+      id="discover"
       className="relative pt-12 pb-9 md:pt-16 md:pb-12 overflow-hidden"
       aria-label="Free Consultation"
       style={{
