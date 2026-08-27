@@ -28,6 +28,22 @@ export default function ContactSection() {
         }),
       })
       const data = await res.json()
+
+      if (data.success === true) {
+        await fetch('https://testing002.app.n8n.cloud/webhook/solutionists-lead', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: form.name,
+            email: form.email,
+            interest: form.interest,
+            message: form.message,
+          }),
+        })
+      }
+
       setStatus(data.success ? 'sent' : 'idle')
     } catch {
       setStatus('idle')
