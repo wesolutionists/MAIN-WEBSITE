@@ -5,6 +5,7 @@ import Footer from '@/components/sections/Footer'
 import AuroraBg from '@/components/ui/AuroraBg'
 import RevealOnScroll from '@/components/ui/RevealOnScroll'
 import AnimatedRule from '@/components/ui/AnimatedRule'
+import FloatingBackButton from '@/components/ui/FloatingBackButton'
 import { solutions } from '@/lib/solutions'
 import { CalendarCheck } from 'lucide-react'
 
@@ -49,12 +50,20 @@ const features = [
     desc: 'Manage listings, leads and client communication in a system built around a real estate workflow, not a generic CRM you have to bend to fit.',
   },
   {
+    name: 'Healthcare OS',
+    desc: 'Patient scheduling, intake and follow-up connected in one system, built around how clinics and practices actually run their day.',
+  },
+  {
     name: 'E-commerce OS',
     desc: 'Inventory, orders, fulfillment and customer communication connected — so nothing falls through the cracks as you scale.',
   },
   {
     name: 'Business Automation Systems',
     desc: 'We automate the repetitive work behind the scenes — data entry, follow-ups, notifications — so your team spends time on what actually needs a human.',
+  },
+  {
+    name: 'CRM & Tool Integration',
+    desc: 'Your new system connects to the tools you already use — no ripping out what already works, just closing the gaps between them.',
   },
   {
     name: 'Custom Business Systems',
@@ -121,6 +130,7 @@ export default function AIBusinessSystemsPage() {
     <>
       <AuroraBg />
       <Header />
+      <FloatingBackButton />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -130,15 +140,6 @@ export default function AIBusinessSystemsPage() {
         {/* Hero */}
         <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden">
           <div className="mx-auto max-w-4xl px-6 lg:px-10 text-center">
-            <div className="text-left mb-10 md:mb-14">
-              <Link
-                href="/"
-                className="inline-flex items-center gap-2 font-body font-normal transition-colors duration-300"
-                style={{ fontSize: '0.8rem', letterSpacing: '0.1em', color: 'rgba(196, 122, 101, 0.75)' }}
-              >
-                ← BACK TO HOME
-              </Link>
-            </div>
             <RevealOnScroll>
               <p
                 className="font-body font-medium text-gold mb-5"

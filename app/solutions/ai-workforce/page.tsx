@@ -5,6 +5,7 @@ import Footer from '@/components/sections/Footer'
 import AuroraBg from '@/components/ui/AuroraBg'
 import RevealOnScroll from '@/components/ui/RevealOnScroll'
 import AnimatedRule from '@/components/ui/AnimatedRule'
+import FloatingBackButton from '@/components/ui/FloatingBackButton'
 import { solutions } from '@/lib/solutions'
 import { CalendarCheck } from 'lucide-react'
 
@@ -59,6 +60,14 @@ const features = [
   {
     name: 'AI Receptionist Agents',
     desc: 'An always-on front desk that greets callers, books appointments and directs people to the right place — the way a great receptionist would.',
+  },
+  {
+    name: 'AI Appointment Scheduling',
+    desc: 'Books, reschedules and confirms appointments directly into your calendar — no back-and-forth, no double bookings, no missed reminders.',
+  },
+  {
+    name: 'AI Lead Qualification',
+    desc: 'Asks the right questions the moment a lead comes in, so your team only spends time on conversations worth having.',
   },
 ]
 
@@ -121,6 +130,7 @@ export default function AIWorkforcePage() {
     <>
       <AuroraBg />
       <Header />
+      <FloatingBackButton />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -130,15 +140,6 @@ export default function AIWorkforcePage() {
         {/* Hero */}
         <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden">
           <div className="mx-auto max-w-4xl px-6 lg:px-10 text-center">
-            <div className="text-left mb-10 md:mb-14">
-              <Link
-                href="/"
-                className="inline-flex items-center gap-2 font-body font-normal transition-colors duration-300"
-                style={{ fontSize: '0.8rem', letterSpacing: '0.1em', color: 'rgba(196, 122, 101, 0.75)' }}
-              >
-                ← BACK TO HOME
-              </Link>
-            </div>
             <RevealOnScroll>
               <p
                 className="font-body font-medium text-gold mb-5"

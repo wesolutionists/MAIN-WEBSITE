@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 import Logo from './Logo'
@@ -15,6 +16,9 @@ const navLinks = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const pathname = usePathname()
+  // On any page other than the homepage, section anchors need to navigate back to "/" first
+  const homePrefix = pathname === '/' ? '' : '/'
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : ''
@@ -57,7 +61,7 @@ export default function Header() {
           <div className="flex h-[68px] items-center justify-between px-5 lg:px-7">
 
             {/* Logo */}
-            <a href="#" aria-label="The Solutionists — home" className="shrink-0">
+            <a href="/" aria-label="The Solutionists — home" className="shrink-0">
               <span className="lg:hidden">
                 <Logo size="mobile" tagline={false} />
               </span>
@@ -74,7 +78,7 @@ export default function Header() {
               {navLinks.map((link) => (
                 <a
                   key={link.href}
-                  href={link.href}
+                  href={`${homePrefix}${link.href}`}
                   className="font-body font-normal text-ink-soft transition-colors duration-300"
                   style={{
                     fontSize: '0.82rem',
@@ -90,7 +94,7 @@ export default function Header() {
 
               {/* Rose-gold CTA */}
               <a
-                href="#contact"
+                href={`${homePrefix}#contact`}
                 className="inline-flex items-center font-body font-medium text-bg transition-all duration-300 hover:scale-[1.03] active:scale-[0.97]"
                 style={{
                   background: 'linear-gradient(135deg, #B86855 0%, #D4947E 50%, #B86855 100%)',
@@ -152,7 +156,7 @@ export default function Header() {
             {navLinks.map((link) => (
               <a
                 key={link.href}
-                href={link.href}
+                href={`${homePrefix}${link.href}`}
                 onClick={() => setMenuOpen(false)}
                 className="font-body font-normal text-ink-soft py-4 px-6 transition-colors duration-300"
                 style={{
@@ -168,7 +172,7 @@ export default function Header() {
             ))}
             <div className="px-6 py-4">
               <a
-                href="#contact"
+                href={`${homePrefix}#contact`}
                 onClick={() => setMenuOpen(false)}
                 className="flex justify-center font-body font-semibold text-bg transition-all duration-300"
                 style={{
