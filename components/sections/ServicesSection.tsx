@@ -2,6 +2,7 @@
 
 import { useRef, useState } from 'react'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import RevealOnScroll from '../ui/RevealOnScroll'
 import AnimatedRule from '@/components/ui/AnimatedRule'
 
@@ -60,6 +61,7 @@ const services = [
       'MORE INTELLIGENT AGENTS',
     ],
     quote: 'Build your intelligent workforce.',
+    href: '/solutions/ai-workforce',
   },
   {
     icon: (
@@ -93,7 +95,7 @@ const services = [
   },
 ]
 
-function ServiceCard({ service }: { service: (typeof services)[0] }) {
+function ServiceCard({ service }: { service: (typeof services)[number] }) {
   const wrapRef = useRef<HTMLDivElement>(null)
   const [tilt, setTilt] = useState({ rx: 0, ry: 0 })
   const [hovered, setHovered] = useState(false)
@@ -204,6 +206,16 @@ function ServiceCard({ service }: { service: (typeof services)[0] }) {
           >
             {service.quote}
           </p>
+
+          {service.href && (
+            <Link
+              href={service.href}
+              className="inline-flex items-center gap-2 font-body font-medium transition-colors duration-300 self-start"
+              style={{ fontSize: '0.82rem', letterSpacing: '0.06em', color: '#C47A65' }}
+            >
+              Learn more →
+            </Link>
+          )}
         </div>
 
         {/* Bottom gold line */}
