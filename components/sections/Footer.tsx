@@ -1,5 +1,6 @@
 ﻿'use client'
 
+import { usePathname } from 'next/navigation'
 import Logo from '../Logo'
 
 const links = {
@@ -41,6 +42,9 @@ const socials = [
 ]
 
 export default function Footer() {
+  const pathname = usePathname()
+  const homePrefix = pathname === '/' ? '' : '/'
+
   return (
     <footer
       className="relative pt-16 overflow-hidden"
@@ -64,7 +68,7 @@ export default function Footer() {
         >
           {/* Brand column */}
           <div className="lg:col-span-2">
-            <a href="#" aria-label="The Solutionists — back to top">
+            <a href="/" aria-label="The Solutionists — back to top">
               <Logo size="sm" />
             </a>
             <p
@@ -128,7 +132,7 @@ export default function Footer() {
                 {items.map((item) => (
                   <li key={item.label}>
                     <a
-                      href={item.href}
+                      href={`${homePrefix}${item.href}`}
                       className="inline-block py-2 -my-2 font-body font-normal text-ink-muted hover:text-ink transition-colors duration-300"
                       style={{ fontSize: '0.96rem' }}
                     >

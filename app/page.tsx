@@ -40,7 +40,7 @@ export default function Home() {
 
         <TransitionSection />
 
-        <ConsultationSection onConsultClick={() => { setSelectedPackage(undefined); setBookingOpen(true) }} />
+        <ConsultationSection onConsultClick={() => setContactOpen(true)} />
 
         <ServicesSection />
 

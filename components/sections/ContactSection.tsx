@@ -220,6 +220,7 @@ export default function ContactSection() {
                   >
                     <option value="" style={{ background: '#131118' }}>Select an option</option>
                     <option value="Digital Foundation" style={{ background: '#131118' }}>Digital Foundation</option>
+                    <option value="AI Workforce" style={{ background: '#131118' }}>AI Workforce</option>
                     <option value="AI Business Systems" style={{ background: '#131118' }}>AI Business Systems</option>
                     <option value="Not sure yet" style={{ background: '#131118' }}>Not sure yet</option>
                   </select>
