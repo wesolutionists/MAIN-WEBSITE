@@ -8,7 +8,7 @@ interface LogoProps {
 }
 
 const sizes = {
-  mobile: { mark: 26, nameSize: '0.64rem', nameSpacing: '0.05em', tagSize: '0.52rem' },
+  mobile: { mark: 28, nameSize: '0.74rem', nameSpacing: '0.04em', tagSize: '0.52rem' },
   sm: { mark: 40, nameSize: '1.05rem', nameSpacing: '0.18em', tagSize: '0.58rem' },
   md: { mark: 50, nameSize: '1.2rem', nameSpacing: '0.18em', tagSize: '0.65rem' },
   lg: { mark: 68, nameSize: '1.45rem', nameSpacing: '0.18em', tagSize: '0.72rem' },

@@ -119,17 +119,34 @@ export default function Header() {
               </a>
             </nav>
 
-            {/* Mobile hamburger */}
-            <button
-              className="lg:hidden flex items-center justify-center h-11 w-11 -mr-1.5 rounded text-ink-soft transition-colors duration-300 cursor-pointer"
-              onClick={() => setMenuOpen(!menuOpen)}
-              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={menuOpen}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#C47A65')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#D8CFC6')}
-            >
-              {menuOpen ? <X size={22} strokeWidth={1.5} /> : <Menu size={22} strokeWidth={1.5} />}
-            </button>
+            {/* Mobile: compact CTA + hamburger */}
+            <div className="lg:hidden flex items-center gap-1.5">
+              <a
+                href={`${homePrefix}#contact`}
+                className="inline-flex items-center font-body font-semibold text-bg transition-all duration-300 active:scale-[0.97]"
+                style={{
+                  background: 'linear-gradient(135deg, #B86855 0%, #D4947E 50%, #B86855 100%)',
+                  fontSize: '0.48rem',
+                  letterSpacing: '0.01em',
+                  padding: '6px 8px',
+                  borderRadius: '7px',
+                  boxShadow: '0 2px 12px rgba(196, 122, 101,0.28)',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                GET STARTED
+              </a>
+              <button
+                className="flex items-center justify-center h-11 w-11 -mr-1.5 rounded text-ink-soft transition-colors duration-300 cursor-pointer"
+                onClick={() => setMenuOpen(!menuOpen)}
+                aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+                aria-expanded={menuOpen}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#C47A65')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = '#D8CFC6')}
+              >
+                {menuOpen ? <X size={22} strokeWidth={1.5} /> : <Menu size={22} strokeWidth={1.5} />}
+              </button>
+            </div>
           </div>
         </motion.div>
 
