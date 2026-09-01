@@ -28,7 +28,7 @@ export default function HeroSection() {
         fill
         priority
         sizes="100vw"
-        className="pointer-events-none object-cover object-[92%_25%] md:object-[68%_32%]"
+        className="pointer-events-none object-cover object-[100%_25%] md:object-[68%_32%]"
         aria-hidden="true"
       />
 
