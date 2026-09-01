@@ -109,32 +109,34 @@ export default function FAQSection() {
                 style={{ borderColor: 'rgba(196, 122, 101, 0.12)' }}
               >
                 <dt>
-                  <button
-                    className="flex w-full items-center justify-between gap-6 py-7 text-left group cursor-pointer"
-                    onClick={() => toggle(i)}
-                    aria-expanded={open === i}
-                    aria-controls={`faq-answer-${i}`}
-                  >
-                    <span
-                      className="font-display font-medium transition-colors duration-300"
-                      style={{
-                        fontSize: '1.18rem',
-                        lineHeight: 1.35,
-                        color: open === i ? '#F4EFE8' : '#D8CFC6',
-                      }}
+                  <h3>
+                    <button
+                      className="flex w-full items-center justify-between gap-6 py-7 text-left group cursor-pointer"
+                      onClick={() => toggle(i)}
+                      aria-expanded={open === i}
+                      aria-controls={`faq-answer-${i}`}
                     >
-                      {faq.q}
-                    </span>
-                    <motion.span
-                      className="shrink-0"
-                      style={{ color: open === i ? '#C47A65' : '#AEA8A4' }}
-                      animate={{ rotate: open === i ? 45 : 0 }}
-                      transition={{ duration: 0.3, ease }}
-                      aria-hidden="true"
-                    >
-                      <Plus size={16} strokeWidth={1.5} />
-                    </motion.span>
-                  </button>
+                      <span
+                        className="font-display font-medium transition-colors duration-300"
+                        style={{
+                          fontSize: '1.18rem',
+                          lineHeight: 1.35,
+                          color: open === i ? '#F4EFE8' : '#D8CFC6',
+                        }}
+                      >
+                        {faq.q}
+                      </span>
+                      <motion.span
+                        className="shrink-0"
+                        style={{ color: open === i ? '#C47A65' : '#AEA8A4' }}
+                        animate={{ rotate: open === i ? 45 : 0 }}
+                        transition={{ duration: 0.3, ease }}
+                        aria-hidden="true"
+                      >
+                        <Plus size={16} strokeWidth={1.5} />
+                      </motion.span>
+                    </button>
+                  </h3>
                 </dt>
                 <AnimatePresence initial={false}>
                   {open === i && (
