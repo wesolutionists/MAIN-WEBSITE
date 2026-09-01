@@ -3,7 +3,27 @@ import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
+import { solutions } from '@/lib/solutions'
 import './globals.css'
+
+const serviceSchemas = solutions.map((solution) => ({
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: solution.name,
+  description: solution.promise,
+  provider: {
+    '@type': 'Organization',
+    name: 'The Solutionists',
+    url: 'https://www.wesolutionists.com/',
+  },
+  areaServed: 'Worldwide',
+  offers: {
+    '@type': 'Offer',
+    price: solution.price.replace(/[^0-9.]/g, ''),
+    priceCurrency: 'USD',
+    description: `One-time implementation, plus ${solution.monthly}/month for ongoing evolution.`,
+  },
+}))
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -99,6 +119,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 name: 'The Solutionists',
                 url: 'https://www.wesolutionists.com/',
               },
+              ...serviceSchemas,
             ]),
           }}
         />

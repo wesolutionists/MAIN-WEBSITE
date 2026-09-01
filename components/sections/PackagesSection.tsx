@@ -4,62 +4,12 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import RevealOnScroll from '../ui/RevealOnScroll'
 import { useLazyBackground } from '../ui/useLazyBackground'
+import { solutions as packages } from '@/lib/solutions'
 import { Check } from 'lucide-react'
 
 interface Props {
   onConsultClick: (packageName: string) => void
 }
-
-const packages = [
-  {
-    number: '01',
-    name: 'Digital Foundation',
-    promise: 'Your foundation, built to convert.',
-    price: '$299',
-    monthly: '$99',
-    featured: false,
-    features: [
-      'Custom Websites',
-      'E-commerce Websites',
-      'Meta Ads Systems',
-      'Creative Strategy',
-      'Lead Generation',
-    ],
-    cta: 'Start Building',
-  },
-  {
-    number: '02',
-    name: 'AI Workforce',
-    promise: 'A team that never clocks out.',
-    price: '$799+',
-    monthly: '$199',
-    featured: true,
-    features: [
-      'AI Voice Agents',
-      'AI Chatbots',
-      'AI Customer Support',
-      'AI Follow-Up Agents',
-      'AI Receptionist Agents',
-    ],
-    cta: 'Build Your Workforce',
-  },
-  {
-    number: '03',
-    name: 'AI Business Systems',
-    promise: 'Software built around how you work.',
-    price: '$1,499+',
-    monthly: '$399',
-    featured: false,
-    features: [
-      'Home Services OS',
-      'Real Estate OS',
-      'E-commerce OS',
-      'Business Automation Systems',
-      'CUSTOM BUSINESS SYSTEMS',
-    ],
-    cta: 'Build Your System',
-  },
-]
 
 function PricingCard({
   pkg,
