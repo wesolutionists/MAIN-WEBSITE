@@ -9,56 +9,56 @@ import { solutions } from '@/lib/solutions'
 import { CalendarCheck } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'AI Workforce for Business — Voice Agents, Chatbots & Support | The Solutionists',
+  title: 'AI Business Systems — Custom Software for Your Industry | The Solutionists',
   description:
-    'Answer every call, chat and follow-up without hiring. AI voice agents, chatbots, customer support and receptionist agents built around how your business actually runs.',
-  alternates: { canonical: '/solutions/ai-workforce' },
+    'Home Services OS, Real Estate OS, E-commerce OS and fully custom business systems — built around how your business actually works, not a generic template.',
+  alternates: { canonical: '/solutions/ai-business-systems' },
   openGraph: {
-    title: 'AI Workforce for Business — Voice Agents, Chatbots & Support',
+    title: 'AI Business Systems — Custom Software for Your Industry',
     description:
-      'Answer every call, chat and follow-up without hiring. AI voice agents, chatbots, customer support and receptionist agents built around how your business actually runs.',
-    url: 'https://www.wesolutionists.com/solutions/ai-workforce',
+      'Home Services OS, Real Estate OS, E-commerce OS and fully custom business systems — built around how your business actually works, not a generic template.',
+    url: 'https://www.wesolutionists.com/solutions/ai-business-systems',
     siteName: 'The Solutionists',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'AI Workforce — The Solutionists' }],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'AI Business Systems — The Solutionists' }],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     site: '@wesolutionists',
-    title: 'AI Workforce for Business — Voice Agents, Chatbots & Support',
+    title: 'AI Business Systems — Custom Software for Your Industry',
     description:
-      'Answer every call, chat and follow-up without hiring. AI voice agents, chatbots, customer support and receptionist agents built around how your business actually runs.',
+      'Home Services OS, Real Estate OS, E-commerce OS and fully custom business systems — built around how your business actually works, not a generic template.',
     images: ['/og-image.jpg'],
   },
 }
 
 const painPoints = [
-  'Calls going unanswered after hours, or during your busiest hours',
-  'Leads that go cold because nobody followed up fast enough',
-  'The same five questions answered over and over by your team',
-  "You're growing, but hiring another person isn't the right move yet",
+  "You're running parts of your business on spreadsheets and sticky notes",
+  "Leads and customers fall through the cracks between tools that don't talk to each other",
+  'Your team spends hours a week on manual work that could run itself',
+  "Off-the-shelf software doesn't fit how your industry actually works",
 ]
 
 const features = [
   {
-    name: 'AI Voice Agents',
-    desc: 'Answer, qualify and route every call — even after hours — without a single ring going unanswered. Sounds natural, follows your scripts, and hands off to your team exactly when a human is needed.',
+    name: 'Home Services OS',
+    desc: 'A system built around how service businesses actually work — scheduling, dispatch, follow-up and invoicing connected in one place.',
   },
   {
-    name: 'AI Chatbots',
-    desc: 'Live on your website and social channels, answering common questions instantly and capturing leads around the clock — only escalating the conversations that actually need a person.',
+    name: 'Real Estate OS',
+    desc: 'Manage listings, leads and client communication in a system built around a real estate workflow, not a generic CRM you have to bend to fit.',
   },
   {
-    name: 'AI Customer Support',
-    desc: "Handles repetitive support questions day and night, resolving what it can and flagging what it can't — so your team spends time on problems that matter, not questions they've answered a hundred times.",
+    name: 'E-commerce OS',
+    desc: 'Inventory, orders, fulfillment and customer communication connected — so nothing falls through the cracks as you scale.',
   },
   {
-    name: 'AI Follow-Up Agents',
-    desc: "Never let a lead go cold. Follows up with prospects and past customers on the schedule you set, so pipeline doesn't leak out the back door.",
+    name: 'Business Automation Systems',
+    desc: 'We automate the repetitive work behind the scenes — data entry, follow-ups, notifications — so your team spends time on what actually needs a human.',
   },
   {
-    name: 'AI Receptionist Agents',
-    desc: 'An always-on front desk that greets callers, books appointments and directs people to the right place — the way a great receptionist would.',
+    name: 'Custom Business Systems',
+    desc: "If your business doesn't fit a template, we build one that fits your business — from the ground up, around your actual workflow.",
   },
 ]
 
@@ -66,45 +66,45 @@ const steps = [
   {
     number: '01',
     title: 'Discovery Call',
-    desc: 'We learn your business, your call/chat volume, and exactly where the friction is today.',
+    desc: 'We map your current workflow — the tools you use, where things break, and what a better system would actually look like.',
   },
   {
     number: '02',
-    title: 'Build & Integrate',
-    desc: 'We configure your AI workforce to your workflows, tone and existing tools — CRM, calendar, phone system.',
+    title: 'Design the System',
+    desc: "We design a system built specifically around your business, not a generic template you have to adapt to.",
   },
   {
     number: '03',
-    title: 'Launch & Monitor',
-    desc: 'Your AI agents go live. We watch closely in the first weeks and tune based on real conversations.',
+    title: 'Build & Integrate',
+    desc: "We build and connect it to the tools you already use, so nothing has to be replaced that doesn't need to be.",
   },
   {
     number: '04',
     title: 'Ongoing Evolution',
-    desc: 'Monthly refinement as your business changes, with new agents added whenever you need them.',
+    desc: 'As your business grows and changes, your system evolves with it — new features added as you need them.',
   },
 ]
 
 const faqs = [
   {
-    q: 'Will it sound robotic?',
-    a: "No. Our voice and chat agents are built to sound natural and match your brand's tone — most callers don't realize they're not speaking to a person until it's helpful to know.",
+    q: "What if my industry isn't listed?",
+    a: "Home Services, Real Estate and E-commerce are our most common builds, not a limit. If your business doesn't fit those categories, we design a fully custom system around how you actually operate.",
   },
   {
-    q: "What happens if the AI can't handle something?",
-    a: "It hands off to your team immediately, with full context of the conversation so far — nobody has to repeat themselves, and nothing falls through the cracks.",
+    q: 'How is this different from off-the-shelf software?',
+    a: "Off-the-shelf tools make you adapt your workflow to fit their software. We build the system around your workflow, so your team doesn't have to change how they work to use it.",
   },
   {
-    q: 'How long does setup take?',
-    a: 'Most AI Workforce builds go from discovery call to live in under two weeks, depending on how many agents and integrations are involved.',
+    q: 'Will it work with the tools I already use?',
+    a: 'In most cases, yes. We integrate with your existing CRM, calendar, phone system and other business software rather than asking you to replace everything.',
   },
   {
-    q: 'Is my data secure?',
-    a: "Yes. Conversations and customer data are handled through secure, access-controlled systems, and we never sell or share your data with third parties.",
+    q: 'How long does it take to build?',
+    a: "Timelines depend on scope — a focused automation might take one to two weeks, while a full custom system typically takes four to eight weeks from discovery to launch.",
   },
 ]
 
-const pkg = solutions.find((s) => s.name === 'AI Workforce')!
+const pkg = solutions.find((s) => s.name === 'AI Business Systems')!
 
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -116,7 +116,7 @@ const faqSchema = {
   })),
 }
 
-export default function AIWorkforcePage() {
+export default function AIBusinessSystemsPage() {
   return (
     <>
       <AuroraBg />
@@ -144,7 +144,7 @@ export default function AIWorkforcePage() {
                 className="font-body font-medium text-gold mb-5"
                 style={{ fontSize: '0.78rem', letterSpacing: '0.3em' }}
               >
-                AI WORKFORCE
+                AI BUSINESS SYSTEMS
               </p>
             </RevealOnScroll>
             <RevealOnScroll delay={0.1}>
@@ -152,7 +152,7 @@ export default function AIWorkforcePage() {
                 className="font-display font-semibold text-ink text-balance"
                 style={{ fontSize: 'clamp(2.6rem, 6vw, 4.4rem)', lineHeight: 1.08, letterSpacing: '-0.02em' }}
               >
-                AI Workforce for businesses ready to scale without hiring.
+                Get your own intelligent system, built around your business.
               </h1>
             </RevealOnScroll>
             <RevealOnScroll delay={0.2}>
@@ -160,7 +160,7 @@ export default function AIWorkforcePage() {
                 className="font-body font-normal text-ink-muted mt-6 mx-auto max-w-2xl"
                 style={{ fontSize: '1.1rem', lineHeight: 1.9 }}
               >
-                Voice agents, chatbots, customer support and follow-up — built around how your business actually runs, answering every call and chat whether it&apos;s 2pm or 2am.
+                Home Services OS, Real Estate OS, E-commerce OS or something fully custom — software that fits how you actually work, not the other way around.
               </p>
             </RevealOnScroll>
             <RevealOnScroll delay={0.3}>
@@ -202,7 +202,7 @@ export default function AIWorkforcePage() {
                 className="font-display font-semibold text-ink mb-8"
                 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', lineHeight: 1.15, letterSpacing: '-0.02em' }}
               >
-                If any of this sounds like your business, an AI Workforce closes the gap.
+                If any of this sounds like your business, you need a real system.
               </h2>
             </RevealOnScroll>
             <div className="flex flex-col gap-3">
@@ -245,7 +245,7 @@ export default function AIWorkforcePage() {
                 className="font-display font-semibold text-ink mb-10"
                 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', lineHeight: 1.15, letterSpacing: '-0.02em' }}
               >
-                Five agents. One workforce.
+                A system built for your industry — or entirely your own.
               </h2>
             </RevealOnScroll>
             <div className="grid gap-4 md:grid-cols-2">
@@ -286,7 +286,7 @@ export default function AIWorkforcePage() {
                 className="font-display font-semibold text-ink mb-10"
                 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', lineHeight: 1.15, letterSpacing: '-0.02em' }}
               >
-                From first call to fully live.
+                From how you work today to a system that runs it.
               </h2>
             </RevealOnScroll>
             <div className="flex flex-col gap-2">
@@ -358,7 +358,7 @@ export default function AIWorkforcePage() {
         <AnimatedRule />
 
         {/* FAQ */}
-        <section className="relative pt-12 pb-12 md:pt-16 md:pb-16" aria-label="AI Workforce FAQ">
+        <section className="relative pt-12 pb-12 md:pt-16 md:pb-16" aria-label="AI Business Systems FAQ">
           <div className="mx-auto max-w-3xl px-6 lg:px-10">
             <RevealOnScroll>
               <p
@@ -373,7 +373,7 @@ export default function AIWorkforcePage() {
                 className="font-display font-semibold text-gold-light mb-10"
                 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', lineHeight: 1.15, letterSpacing: '-0.02em' }}
               >
-                About your AI Workforce.
+                About your AI Business System.
               </h2>
             </RevealOnScroll>
             <dl className="flex flex-col gap-8">
@@ -405,7 +405,7 @@ export default function AIWorkforcePage() {
                 className="font-display font-semibold text-ink mb-5"
                 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', lineHeight: 1.15, letterSpacing: '-0.02em' }}
               >
-                Ready to build your AI Workforce?
+                Ready to build your system?
               </h2>
             </RevealOnScroll>
             <RevealOnScroll delay={0.1}>

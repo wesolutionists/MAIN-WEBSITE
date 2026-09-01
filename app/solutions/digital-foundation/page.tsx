@@ -9,56 +9,56 @@ import { solutions } from '@/lib/solutions'
 import { CalendarCheck } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'AI Workforce for Business — Voice Agents, Chatbots & Support | The Solutionists',
+  title: 'Digital Foundation — Websites, Meta Ads & Lead Generation | The Solutionists',
   description:
-    'Answer every call, chat and follow-up without hiring. AI voice agents, chatbots, customer support and receptionist agents built around how your business actually runs.',
-  alternates: { canonical: '/solutions/ai-workforce' },
+    'A website built to convert, ads built around your real numbers, and a brand that looks the same everywhere. The digital foundation your business grows on.',
+  alternates: { canonical: '/solutions/digital-foundation' },
   openGraph: {
-    title: 'AI Workforce for Business — Voice Agents, Chatbots & Support',
+    title: 'Digital Foundation — Websites, Meta Ads & Lead Generation',
     description:
-      'Answer every call, chat and follow-up without hiring. AI voice agents, chatbots, customer support and receptionist agents built around how your business actually runs.',
-    url: 'https://www.wesolutionists.com/solutions/ai-workforce',
+      'A website built to convert, ads built around your real numbers, and a brand that looks the same everywhere. The digital foundation your business grows on.',
+    url: 'https://www.wesolutionists.com/solutions/digital-foundation',
     siteName: 'The Solutionists',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'AI Workforce — The Solutionists' }],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Digital Foundation — The Solutionists' }],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     site: '@wesolutionists',
-    title: 'AI Workforce for Business — Voice Agents, Chatbots & Support',
+    title: 'Digital Foundation — Websites, Meta Ads & Lead Generation',
     description:
-      'Answer every call, chat and follow-up without hiring. AI voice agents, chatbots, customer support and receptionist agents built around how your business actually runs.',
+      'A website built to convert, ads built around your real numbers, and a brand that looks the same everywhere. The digital foundation your business grows on.',
     images: ['/og-image.jpg'],
   },
 }
 
 const painPoints = [
-  'Calls going unanswered after hours, or during your busiest hours',
-  'Leads that go cold because nobody followed up fast enough',
-  'The same five questions answered over and over by your team',
-  "You're growing, but hiring another person isn't the right move yet",
+  'Your website looks outdated next to competitors who are winning the click',
+  "You're running ads that send traffic to a site that doesn't convert",
+  "You don't show up when people search for what you do",
+  'Your brand looks like three different businesses across your site, ads and social',
 ]
 
 const features = [
   {
-    name: 'AI Voice Agents',
-    desc: 'Answer, qualify and route every call — even after hours — without a single ring going unanswered. Sounds natural, follows your scripts, and hands off to your team exactly when a human is needed.',
+    name: 'Custom Websites',
+    desc: 'A fast, premium website built to convert visitors into customers — not just look nice. Every page is designed around a clear next step.',
   },
   {
-    name: 'AI Chatbots',
-    desc: 'Live on your website and social channels, answering common questions instantly and capturing leads around the clock — only escalating the conversations that actually need a person.',
+    name: 'E-commerce Websites',
+    desc: 'A store built to sell, not just display products — clean checkout, mobile-first design, and the trust signals that turn browsers into buyers.',
   },
   {
-    name: 'AI Customer Support',
-    desc: "Handles repetitive support questions day and night, resolving what it can and flagging what it can't — so your team spends time on problems that matter, not questions they've answered a hundred times.",
+    name: 'Meta Ads Systems',
+    desc: 'Facebook and Instagram campaigns built around your actual offer, tracked and optimized against real numbers — not likes and impressions.',
   },
   {
-    name: 'AI Follow-Up Agents',
-    desc: "Never let a lead go cold. Follows up with prospects and past customers on the schedule you set, so pipeline doesn't leak out the back door.",
+    name: 'Creative Strategy',
+    desc: 'Consistent, on-brand visuals and messaging across your website, ads and social — so every touchpoint looks like the same business.',
   },
   {
-    name: 'AI Receptionist Agents',
-    desc: 'An always-on front desk that greets callers, books appointments and directs people to the right place — the way a great receptionist would.',
+    name: 'Lead Generation',
+    desc: 'Landing pages, forms and follow-up systems built specifically to turn traffic into leads you can actually reach.',
   },
 ]
 
@@ -66,45 +66,45 @@ const steps = [
   {
     number: '01',
     title: 'Discovery Call',
-    desc: 'We learn your business, your call/chat volume, and exactly where the friction is today.',
+    desc: "We learn your business, your current presence, and what \"working\" actually looks like for you.",
   },
   {
     number: '02',
-    title: 'Build & Integrate',
-    desc: 'We configure your AI workforce to your workflows, tone and existing tools — CRM, calendar, phone system.',
+    title: 'Design & Build',
+    desc: 'We design and build your website and creative assets around your brand and your customer.',
   },
   {
     number: '03',
-    title: 'Launch & Monitor',
-    desc: 'Your AI agents go live. We watch closely in the first weeks and tune based on real conversations.',
+    title: 'Launch & Connect Ads',
+    desc: 'Your site goes live, connected to a Meta Ads system built around your actual offer.',
   },
   {
     number: '04',
-    title: 'Ongoing Evolution',
-    desc: 'Monthly refinement as your business changes, with new agents added whenever you need them.',
+    title: 'Ongoing Growth',
+    desc: 'We monitor performance and refine monthly as your business and market change.',
   },
 ]
 
 const faqs = [
   {
-    q: 'Will it sound robotic?',
-    a: "No. Our voice and chat agents are built to sound natural and match your brand's tone — most callers don't realize they're not speaking to a person until it's helpful to know.",
+    q: 'How long does a website take to build?',
+    a: 'Most Digital Foundation builds go live within 2-4 weeks, depending on scope and how quickly we get content and feedback from you.',
   },
   {
-    q: "What happens if the AI can't handle something?",
-    a: "It hands off to your team immediately, with full context of the conversation so far — nobody has to repeat themselves, and nothing falls through the cracks.",
+    q: 'Do you handle hosting and maintenance?',
+    a: "Yes. We handle hosting, updates and technical maintenance so you don't have to think about it — that's part of the ongoing evolution fee.",
   },
   {
-    q: 'How long does setup take?',
-    a: 'Most AI Workforce builds go from discovery call to live in under two weeks, depending on how many agents and integrations are involved.',
+    q: 'Can you run ads without building a new website?',
+    a: "In some cases, yes — if your existing site converts well enough to send traffic to. We'll tell you honestly during the discovery call if a new site isn't necessary yet.",
   },
   {
-    q: 'Is my data secure?',
-    a: "Yes. Conversations and customer data are handled through secure, access-controlled systems, and we never sell or share your data with third parties.",
+    q: 'What if I already have a website I like?',
+    a: "We can build the Meta Ads and lead generation systems around your existing site, or refresh specific pages instead of a full rebuild — whatever actually moves the needle.",
   },
 ]
 
-const pkg = solutions.find((s) => s.name === 'AI Workforce')!
+const pkg = solutions.find((s) => s.name === 'Digital Foundation')!
 
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -116,7 +116,7 @@ const faqSchema = {
   })),
 }
 
-export default function AIWorkforcePage() {
+export default function DigitalFoundationPage() {
   return (
     <>
       <AuroraBg />
@@ -144,7 +144,7 @@ export default function AIWorkforcePage() {
                 className="font-body font-medium text-gold mb-5"
                 style={{ fontSize: '0.78rem', letterSpacing: '0.3em' }}
               >
-                AI WORKFORCE
+                DIGITAL FOUNDATION
               </p>
             </RevealOnScroll>
             <RevealOnScroll delay={0.1}>
@@ -152,7 +152,7 @@ export default function AIWorkforcePage() {
                 className="font-display font-semibold text-ink text-balance"
                 style={{ fontSize: 'clamp(2.6rem, 6vw, 4.4rem)', lineHeight: 1.08, letterSpacing: '-0.02em' }}
               >
-                AI Workforce for businesses ready to scale without hiring.
+                A digital foundation built to acquire and grow.
               </h1>
             </RevealOnScroll>
             <RevealOnScroll delay={0.2}>
@@ -160,7 +160,7 @@ export default function AIWorkforcePage() {
                 className="font-body font-normal text-ink-muted mt-6 mx-auto max-w-2xl"
                 style={{ fontSize: '1.1rem', lineHeight: 1.9 }}
               >
-                Voice agents, chatbots, customer support and follow-up — built around how your business actually runs, answering every call and chat whether it&apos;s 2pm or 2am.
+                A website built to convert, ads built around your real numbers, and a brand that looks the same everywhere someone finds you.
               </p>
             </RevealOnScroll>
             <RevealOnScroll delay={0.3}>
@@ -202,7 +202,7 @@ export default function AIWorkforcePage() {
                 className="font-display font-semibold text-ink mb-8"
                 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', lineHeight: 1.15, letterSpacing: '-0.02em' }}
               >
-                If any of this sounds like your business, an AI Workforce closes the gap.
+                If any of this sounds like your business, your digital foundation needs work.
               </h2>
             </RevealOnScroll>
             <div className="flex flex-col gap-3">
@@ -245,7 +245,7 @@ export default function AIWorkforcePage() {
                 className="font-display font-semibold text-ink mb-10"
                 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', lineHeight: 1.15, letterSpacing: '-0.02em' }}
               >
-                Five agents. One workforce.
+                Everything your business needs to be found and chosen.
               </h2>
             </RevealOnScroll>
             <div className="grid gap-4 md:grid-cols-2">
@@ -358,7 +358,7 @@ export default function AIWorkforcePage() {
         <AnimatedRule />
 
         {/* FAQ */}
-        <section className="relative pt-12 pb-12 md:pt-16 md:pb-16" aria-label="AI Workforce FAQ">
+        <section className="relative pt-12 pb-12 md:pt-16 md:pb-16" aria-label="Digital Foundation FAQ">
           <div className="mx-auto max-w-3xl px-6 lg:px-10">
             <RevealOnScroll>
               <p
@@ -373,7 +373,7 @@ export default function AIWorkforcePage() {
                 className="font-display font-semibold text-gold-light mb-10"
                 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', lineHeight: 1.15, letterSpacing: '-0.02em' }}
               >
-                About your AI Workforce.
+                About your Digital Foundation.
               </h2>
             </RevealOnScroll>
             <dl className="flex flex-col gap-8">
@@ -405,7 +405,7 @@ export default function AIWorkforcePage() {
                 className="font-display font-semibold text-ink mb-5"
                 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', lineHeight: 1.15, letterSpacing: '-0.02em' }}
               >
-                Ready to build your AI Workforce?
+                Ready to build your Digital Foundation?
               </h2>
             </RevealOnScroll>
             <RevealOnScroll delay={0.1}>

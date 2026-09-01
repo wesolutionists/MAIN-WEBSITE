@@ -34,6 +34,7 @@ const services = [
       'Lead Generation',
     ],
     quote: 'Build your digital foundation to acquire and grow.',
+    href: '/solutions/digital-foundation',
   },
   {
     icon: (
@@ -92,6 +93,7 @@ const services = [
       'CUSTOM BUSINESS SYSTEMS',
     ],
     quote: 'Get your own intelligent system.',
+    href: '/solutions/ai-business-systems',
   },
 ]
 
@@ -210,10 +212,19 @@ function ServiceCard({ service }: { service: (typeof services)[number] }) {
           {service.href && (
             <Link
               href={service.href}
-              className="inline-flex items-center gap-2 font-body font-medium transition-colors duration-300 self-start"
-              style={{ fontSize: '0.82rem', letterSpacing: '0.06em', color: '#C47A65' }}
+              className="group/cta inline-flex items-center gap-2.5 self-start font-body font-semibold transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
+              style={{
+                fontSize: '0.8rem',
+                letterSpacing: '0.1em',
+                color: '#0A090C',
+                padding: '0.85rem 1.6rem',
+                borderRadius: '999px',
+                background: 'linear-gradient(135deg, #B86855, #D4947E, #B86855)',
+                boxShadow: '0 4px 20px rgba(196, 122, 101, 0.28)',
+              }}
             >
-              Learn more →
+              LEARN MORE
+              <span className="transition-transform duration-300 group-hover/cta:translate-x-1">→</span>
             </Link>
           )}
         </div>
