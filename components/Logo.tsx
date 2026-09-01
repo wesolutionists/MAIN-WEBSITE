@@ -2,23 +2,24 @@ import Image from 'next/image'
 
 interface LogoProps {
   className?: string
-  size?: 'sm' | 'md' | 'lg' | 'nav'
+  size?: 'mobile' | 'sm' | 'md' | 'lg' | 'nav'
   wordmark?: boolean
   tagline?: boolean
 }
 
 const sizes = {
-  sm: { mark: 40, nameSize: '1.05rem', tagSize: '0.58rem' },
-  md: { mark: 50, nameSize: '1.2rem', tagSize: '0.65rem' },
-  lg: { mark: 68, nameSize: '1.45rem', tagSize: '0.72rem' },
-  nav: { mark: 46, nameSize: '1.22rem', tagSize: '0.58rem' },
+  mobile: { mark: 26, nameSize: '0.64rem', nameSpacing: '0.05em', tagSize: '0.52rem' },
+  sm: { mark: 40, nameSize: '1.05rem', nameSpacing: '0.18em', tagSize: '0.58rem' },
+  md: { mark: 50, nameSize: '1.2rem', nameSpacing: '0.18em', tagSize: '0.65rem' },
+  lg: { mark: 68, nameSize: '1.45rem', nameSpacing: '0.18em', tagSize: '0.72rem' },
+  nav: { mark: 46, nameSize: '1.22rem', nameSpacing: '0.18em', tagSize: '0.58rem' },
 }
 
 export default function Logo({ className = '', size = 'md', wordmark = true, tagline = true }: LogoProps) {
-  const { mark, nameSize, tagSize } = sizes[size]
+  const { mark, nameSize, nameSpacing, tagSize } = sizes[size]
 
   return (
-    <div className={`flex items-center gap-3 ${className}`}>
+    <div className={`flex items-center ${size === 'mobile' ? 'gap-1.5' : 'gap-3'} ${className}`}>
       <div style={{ width: mark, height: mark, flexShrink: 0, position: 'relative' }}>
         <Image
           src="/logo.jpg"
@@ -40,7 +41,8 @@ export default function Logo({ className = '', size = 'md', wordmark = true, tag
             className="font-display font-semibold text-ink"
             style={{
               fontSize: nameSize,
-              letterSpacing: '0.18em',
+              letterSpacing: nameSpacing,
+              whiteSpace: 'nowrap',
               textTransform: 'uppercase',
               lineHeight: 1,
             }}

@@ -45,7 +45,7 @@ export default function BrandingSection() {
       className="relative flex items-center overflow-hidden"
       aria-label="Branding"
       style={{
-        backgroundImage: 'url(/transition-bg.png)',
+        backgroundImage: isInView ? 'url(/transition-bg.webp)' : undefined,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',

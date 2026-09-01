@@ -3,10 +3,12 @@
 import { useState } from 'react'
 import { Send } from 'lucide-react'
 import RevealOnScroll from '../ui/RevealOnScroll'
+import { useLazyBackground } from '../ui/useLazyBackground'
 
 export default function ContactSection() {
   const [form, setForm] = useState({ name: '', email: '', interest: '', message: '' })
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent'>('idle')
+  const { ref: bgRef, backgroundImage } = useLazyBackground<HTMLElement>('/contact-bg.webp')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
@@ -67,11 +69,12 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
+      ref={bgRef}
       className="relative py-12 md:py-16 overflow-hidden"
       aria-label="Contact"
       style={{
         borderTop: '1px solid rgba(196, 122, 101, 0.1)',
-        backgroundImage: 'url(/contact-bg.png)',
+        backgroundImage,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',

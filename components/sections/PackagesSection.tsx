@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import RevealOnScroll from '../ui/RevealOnScroll'
+import { useLazyBackground } from '../ui/useLazyBackground'
 import { Check } from 'lucide-react'
 
 interface Props {
@@ -271,13 +272,16 @@ function PricingCard({
 }
 
 export default function PackagesSection({ onConsultClick }: Props) {
+  const { ref: bgRef, backgroundImage } = useLazyBackground<HTMLElement>('/pricing-bg.webp')
+
   return (
     <section
       id="packages"
+      ref={bgRef}
       className="relative py-8 md:py-10 overflow-hidden"
       aria-label="Packages"
       style={{
-        backgroundImage: 'url(/pricing-bg.png)',
+        backgroundImage,
         backgroundSize: 'cover',
         backgroundPosition: 'center top',
         backgroundRepeat: 'no-repeat',

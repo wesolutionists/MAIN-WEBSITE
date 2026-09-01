@@ -1,4 +1,7 @@
-﻿import RevealOnScroll from '../ui/RevealOnScroll'
+﻿'use client'
+
+import RevealOnScroll from '../ui/RevealOnScroll'
+import { useLazyBackground } from '../ui/useLazyBackground'
 import { CalendarCheck } from 'lucide-react'
 
 interface Props {
@@ -6,15 +9,18 @@ interface Props {
 }
 
 export default function ConsultationSection({ onConsultClick }: Props) {
+  const { ref: bgRef, backgroundImage } = useLazyBackground<HTMLElement>('/consultation-bg.webp')
+
   return (
     <section
       id="discover"
+      ref={bgRef}
       className="relative pt-12 pb-9 md:pt-16 md:pb-12 overflow-hidden"
       aria-label="Free Consultation"
       style={{
         borderTop: '1px solid rgba(196, 122, 101, 0.1)',
         borderBottom: '1px solid rgba(196, 122, 101, 0.1)',
-        backgroundImage: 'url(/consultation-bg.png)',
+        backgroundImage,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',

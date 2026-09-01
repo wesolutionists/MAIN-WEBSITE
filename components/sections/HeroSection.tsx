@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Search, CalendarCheck, Package } from 'lucide-react'
 
@@ -14,11 +14,17 @@ export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null)
   const { scrollY } = useScroll()
   const contentY = useTransform(scrollY, [0, 700], [0, -105])
+  const [showVideo, setShowVideo] = useState(false)
+
+  // Skip the 900KB+ background video on phones — poster image only
+  useEffect(() => {
+    setShowVideo(!window.matchMedia('(max-width: 767px)').matches)
+  }, [])
 
   useEffect(() => {
     const section = sectionRef.current
     const video = videoRef.current
-    if (!section || !video) return
+    if (!section || !video || !showVideo) return
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -34,7 +40,7 @@ export default function HeroSection() {
 
     observer.observe(section)
     return () => observer.disconnect()
-  }, [])
+  }, [showVideo])
 
   return (
     <section
@@ -42,12 +48,12 @@ export default function HeroSection() {
       className="relative flex min-h-[100dvh] flex-col justify-center overflow-hidden"
       aria-label="Hero"
     >
-      {/* Video background */}
+      {/* Video background — desktop/tablet only; phones get the poster image */}
       <video
         ref={videoRef}
         className="pointer-events-none absolute inset-0 h-full w-full object-cover object-top md:object-center"
-        src="/hero-bg.mp4"
-        poster="/hero-poster.png"
+        src={showVideo ? '/hero-bg.mp4' : undefined}
+        poster="/hero-poster.webp"
         preload="metadata"
         muted
         playsInline

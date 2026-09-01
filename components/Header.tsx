@@ -59,7 +59,7 @@ export default function Header() {
             {/* Logo */}
             <a href="#" aria-label="The Solutionists — home" className="shrink-0">
               <span className="lg:hidden">
-                <Logo size="sm" wordmark={false} />
+                <Logo size="mobile" tagline={false} />
               </span>
               <span className="hidden lg:inline-block">
                 <Logo size="nav" tagline={false} />
