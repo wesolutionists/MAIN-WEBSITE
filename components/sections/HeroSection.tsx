@@ -1,7 +1,8 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
+import Image from 'next/image'
 import { Search, CalendarCheck, Package } from 'lucide-react'
 
 const lines = [
@@ -11,36 +12,8 @@ const lines = [
 
 export default function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null)
-  const videoRef = useRef<HTMLVideoElement>(null)
   const { scrollY } = useScroll()
   const contentY = useTransform(scrollY, [0, 700], [0, -105])
-  const [showVideo, setShowVideo] = useState(false)
-
-  // Skip the 900KB+ background video on phones — poster image only
-  useEffect(() => {
-    setShowVideo(!window.matchMedia('(max-width: 767px)').matches)
-  }, [])
-
-  useEffect(() => {
-    const section = sectionRef.current
-    const video = videoRef.current
-    if (!section || !video || !showVideo) return
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          video.currentTime = 0
-          video.play()
-        } else {
-          video.pause()
-        }
-      },
-      { threshold: 0.15 }
-    )
-
-    observer.observe(section)
-    return () => observer.disconnect()
-  }, [showVideo])
 
   return (
     <section
@@ -48,15 +21,14 @@ export default function HeroSection() {
       className="relative flex min-h-[100dvh] flex-col justify-center overflow-hidden"
       aria-label="Hero"
     >
-      {/* Video background — desktop/tablet only; phones get the poster image */}
-      <video
-        ref={videoRef}
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover object-top md:object-center"
-        src={showVideo ? '/hero-bg.mp4' : undefined}
-        poster="/hero-poster.webp"
-        preload="metadata"
-        muted
-        playsInline
+      {/* Background image — Next.js serves an appropriately-sized, compressed version per device */}
+      <Image
+        src="/hero-bg.webp"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="pointer-events-none object-cover object-top md:object-center"
         aria-hidden="true"
       />
 
