@@ -48,11 +48,28 @@ export default function FAQSection() {
 
   const toggle = (i: number) => setOpen(open === i ? null : i)
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.a,
+      },
+    })),
+  }
+
   return (
     <section
       className="relative pt-10 md:pt-12 pb-12 md:pb-16 overflow-hidden"
       aria-label="Frequently Asked Questions"
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <AnimatedRule />
       <div className="mx-auto max-w-4xl px-6 lg:px-10 mt-10 md:mt-12">
         {/* Header */}
