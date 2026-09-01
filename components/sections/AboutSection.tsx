@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import RevealOnScroll from '../ui/RevealOnScroll'
 import AnimatedRule from '@/components/ui/AnimatedRule'
 
@@ -72,6 +73,16 @@ export default function AboutSection() {
                 style={{ background: 'linear-gradient(90deg, #C47A65, transparent)' }}
                 aria-hidden="true"
               />
+            </RevealOnScroll>
+
+            <RevealOnScroll delay={0.3}>
+              <Link
+                href="/about"
+                className="inline-block mt-8 font-body font-normal transition-colors duration-300"
+                style={{ fontSize: '0.92rem', color: 'rgba(196,122,101,0.75)', letterSpacing: '0.03em' }}
+              >
+                Learn more about us →
+              </Link>
             </RevealOnScroll>
           </div>
 
