@@ -125,7 +125,7 @@ function ServiceCard({ service }: { service: (typeof services)[number] }) {
       onMouseLeave={onMouseLeave}
     >
       <motion.article
-        className="group relative flex flex-col gap-6 p-8 md:p-10 h-full cursor-default"
+        className="group relative flex flex-col gap-5 p-7 md:p-8 h-full cursor-default"
         style={{
           background: hovered ? '#131118' : '#0F0D12',
           border: `1px solid rgba(196, 122, 101, ${hovered ? '0.32' : '0.13'})`,
@@ -146,17 +146,17 @@ function ServiceCard({ service }: { service: (typeof services)[number] }) {
 
         {/* Icon */}
         <div
-          className="flex h-20 w-20 items-center justify-center text-gold"
+          className="flex h-16 w-16 items-center justify-center text-gold"
           style={{
             border: '1px solid rgba(196, 122, 101, 0.25)',
             background: 'rgba(196, 122, 101, 0.04)',
           }}
         >
-          <div className="h-12 w-12">{service.icon}</div>
+          <div className="h-10 w-10">{service.icon}</div>
         </div>
 
         {/* Content */}
-        <div className="flex flex-col gap-5 flex-1">
+        <div className="flex flex-col gap-4 flex-1">
           <h3
             className="font-display font-semibold text-ink"
             style={{ fontSize: '1.5rem', lineHeight: 1.2 }}
@@ -164,7 +164,7 @@ function ServiceCard({ service }: { service: (typeof services)[number] }) {
             {service.title}
           </h3>
 
-          <ul className="flex flex-col gap-2.5 flex-1">
+          <ul className="flex flex-col gap-2 flex-1">
             {service.items.map((item) => {
               const isEmphasized = item === item.toUpperCase() && /[A-Z]/.test(item)
               return (
@@ -202,8 +202,8 @@ function ServiceCard({ service }: { service: (typeof services)[number] }) {
               fontSize: '1.32rem',
               lineHeight: 1.5,
               borderTop: '1px solid rgba(196, 122, 101, 0.15)',
-              paddingTop: '1.25rem',
-              marginTop: '0.25rem',
+              paddingTop: '1rem',
+              marginTop: '0.15rem',
             }}
           >
             {service.quote}
@@ -217,7 +217,7 @@ function ServiceCard({ service }: { service: (typeof services)[number] }) {
                 fontSize: '0.8rem',
                 letterSpacing: '0.1em',
                 color: '#0A090C',
-                padding: '0.85rem 1.6rem',
+                padding: '0.7rem 1.4rem',
                 borderRadius: '999px',
                 background: 'linear-gradient(135deg, #B86855, #D4947E, #B86855)',
                 boxShadow: '0 4px 20px rgba(196, 122, 101, 0.28)',
@@ -244,14 +244,14 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="relative pt-8 md:pt-10 pb-9 md:pb-12 overflow-hidden"
+      className="relative pt-6 md:pt-8 pb-7 md:pb-9 overflow-hidden"
       aria-label="Services"
     >
       <AnimatedRule />
 
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 mt-8 md:mt-10">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10 mt-6 md:mt-8">
         {/* Section header */}
-        <div className="mb-8 md:mb-10">
+        <div className="mb-6 md:mb-8">
           <RevealOnScroll>
             <h2
               className="font-display font-semibold text-ink"
