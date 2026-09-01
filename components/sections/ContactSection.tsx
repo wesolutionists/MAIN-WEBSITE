@@ -97,8 +97,8 @@ export default function ContactSection() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
-          {/* Left */}
-          <div>
+          {/* Intro heading + paragraph — always first */}
+          <div className="order-1 lg:order-none lg:col-start-1 lg:row-start-1">
             <RevealOnScroll>
               <h2
                 className="font-display font-semibold text-ink"
@@ -115,47 +115,14 @@ export default function ContactSection() {
                 Tell us where your business is today, what you want to achieve or what you&apos;d like to change. We&apos;ll explore what we can build together.
               </p>
             </RevealOnScroll>
-
-            <RevealOnScroll delay={0.3}>
-              <div className="mt-12 space-y-6">
-                {[
-                  { label: 'General', value: 'hello@wesolutionists.com', href: 'https://mail.google.com/mail/?view=cm&to=hello@wesolutionists.com' },
-                  { label: 'Support', value: 'support@wesolutionists.com', href: 'https://mail.google.com/mail/?view=cm&to=support@wesolutionists.com' },
-                  { label: 'Location', value: 'Available Worldwide', href: null },
-                  { label: 'Response Time', value: 'Within 24 hours', href: null },
-                ].map((item) => (
-                  <div key={item.label}>
-                    <p
-                      className="font-body font-medium text-ink-muted mb-1"
-                      style={{ fontSize: '0.78rem', letterSpacing: '0.22em' }}
-                    >
-                      {item.label.toUpperCase()}
-                    </p>
-                    {item.href ? (
-                      <a
-                        href={item.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-body font-normal transition-colors duration-300"
-                        style={{ fontSize: '1rem', color: 'rgba(196,122,101,0.75)', textDecoration: 'none' }}
-                        onMouseEnter={(e) => (e.currentTarget.style.color = '#D4947E')}
-                        onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(196,122,101,0.75)')}
-                      >
-                        {item.value}
-                      </a>
-                    ) : (
-                      <p className="font-body font-normal text-ink-muted" style={{ fontSize: '1rem' }}>
-                        {item.value}
-                      </p>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </RevealOnScroll>
           </div>
 
-          {/* Right: form */}
-          <RevealOnScroll delay={0.15} direction="left">
+          {/* Right: form — shows 2nd on mobile (right after intro), right column on desktop */}
+          <RevealOnScroll
+            delay={0.15}
+            direction="left"
+            className="order-2 lg:order-none lg:col-start-2 lg:row-start-1 lg:row-span-2"
+          >
             {status === 'sent' ? (
               <div
                 className="flex flex-col items-center justify-center h-full py-16 text-center"
@@ -296,6 +263,47 @@ export default function ContactSection() {
                 </button>
               </form>
             )}
+          </RevealOnScroll>
+
+          {/* Contact info — shows last on mobile (after the form/CTA), back in the left column on desktop */}
+          <RevealOnScroll
+            delay={0.3}
+            className="order-3 lg:order-none lg:col-start-1 lg:row-start-2"
+          >
+            <div className="space-y-6">
+              {[
+                { label: 'General', value: 'hello@wesolutionists.com', href: 'https://mail.google.com/mail/?view=cm&to=hello@wesolutionists.com' },
+                { label: 'Support', value: 'support@wesolutionists.com', href: 'https://mail.google.com/mail/?view=cm&to=support@wesolutionists.com' },
+                { label: 'Location', value: 'Available Worldwide', href: null },
+                { label: 'Response Time', value: 'Within 24 hours', href: null },
+              ].map((item) => (
+                <div key={item.label}>
+                  <p
+                    className="font-body font-medium text-ink-muted mb-1"
+                    style={{ fontSize: '0.78rem', letterSpacing: '0.22em' }}
+                  >
+                    {item.label.toUpperCase()}
+                  </p>
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-body font-normal transition-colors duration-300"
+                      style={{ fontSize: '1rem', color: 'rgba(196,122,101,0.75)', textDecoration: 'none' }}
+                      onMouseEnter={(e) => (e.currentTarget.style.color = '#D4947E')}
+                      onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(196,122,101,0.75)')}
+                    >
+                      {item.value}
+                    </a>
+                  ) : (
+                    <p className="font-body font-normal text-ink-muted" style={{ fontSize: '1rem' }}>
+                      {item.value}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
           </RevealOnScroll>
         </div>
       </div>

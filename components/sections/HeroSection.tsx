@@ -18,7 +18,7 @@ export default function HeroSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex min-h-[100dvh] flex-col justify-center overflow-hidden"
+      className="relative flex min-h-0 md:min-h-[100dvh] flex-col justify-center overflow-hidden"
       aria-label="Hero"
     >
       {/* Background image — Next.js serves an appropriately-sized, compressed version per device */}
