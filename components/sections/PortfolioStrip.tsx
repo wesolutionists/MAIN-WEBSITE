@@ -7,24 +7,39 @@ import AnimatedRule from '@/components/ui/AnimatedRule'
 
 const projects = [
   {
-    tag: 'FULL STACK',
-    name: 'Forge Tech',
-    image: '/portfolio/forge-tech.png',
+    tag: 'HVAC & CLIMATE CONTROL',
+    name: 'AeroFlo HVAC Solutions',
+    image: '/portfolio/aeroflo-hvac.webp',
   },
   {
-    tag: 'WEB DESIGN',
-    name: 'The Bloom Studio',
-    image: '/portfolio/bloom-studio.png',
+    tag: 'AI ANALYTICS & DATA',
+    name: 'AI Index Analytics',
+    image: '/portfolio/ai-index-analytics.webp',
   },
   {
-    tag: 'WEB + AUTOMATION',
-    name: 'Vantage Capital',
-    image: '/portfolio/vantage-capital.png',
+    tag: 'AI AUTOMATION',
+    name: 'SphereAI',
+    image: '/portfolio/sphereai.webp',
   },
   {
-    tag: 'MARKETING & SALES',
-    name: 'Kova Commerce',
-    image: '/portfolio/kova-commerce.png',
+    tag: 'ROOFING & HOME SERVICES',
+    name: 'PeakGuard Roofing',
+    image: '/portfolio/peakguard-roofing.webp',
+  },
+  {
+    tag: 'AI / FINTECH',
+    name: 'AlgoLift',
+    image: '/portfolio/algolift.webp',
+  },
+  {
+    tag: 'AMAZON PPC AUTOMATION',
+    name: 'RankPilot Ads',
+    image: '/portfolio/rankpilot-ads.webp',
+  },
+  {
+    tag: 'LEAD GEN & EMAIL AUTOMATION',
+    name: 'ReachLoop',
+    image: '/portfolio/reachloop.webp',
   },
 ]
 
