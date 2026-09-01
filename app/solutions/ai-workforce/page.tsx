@@ -246,7 +246,7 @@ export default function AIWorkforcePage() {
                 className="font-display font-semibold text-ink mb-10"
                 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', lineHeight: 1.15, letterSpacing: '-0.02em' }}
               >
-                Five agents. One workforce.
+                Seven agents. One workforce.
               </h2>
             </RevealOnScroll>
             <div className="grid gap-4 md:grid-cols-2">
