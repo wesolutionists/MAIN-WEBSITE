@@ -40,7 +40,7 @@ function MarqueeCard({ project }: { project: (typeof projects)[0] }) {
       >
         <Image
           src={project.image}
-          alt={project.name}
+          alt={`${project.name} — ${project.tag.toLowerCase()} project by The Solutionists`}
           fill
           sizes="220px"
           className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
