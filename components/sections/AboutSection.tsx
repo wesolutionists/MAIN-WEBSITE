@@ -79,7 +79,7 @@ export default function AboutSection() {
               <Link
                 href="/about"
                 className="inline-block mt-8 font-body font-normal transition-colors duration-300"
-                style={{ fontSize: '0.92rem', color: 'rgba(196,122,101,0.75)', letterSpacing: '0.03em' }}
+                style={{ fontSize: '0.92rem', color: 'rgba(196,122,101,0.85)', letterSpacing: '0.03em' }}
               >
                 Learn more about us →
               </Link>

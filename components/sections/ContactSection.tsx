@@ -291,7 +291,7 @@ export default function ContactSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="font-body font-normal transition-colors duration-300"
-                      style={{ fontSize: '1rem', color: 'rgba(196,122,101,0.75)', textDecoration: 'none' }}
+                      style={{ fontSize: '1rem', color: 'rgba(196,122,101,0.85)', textDecoration: 'none' }}
                       onMouseEnter={(e) => (e.currentTarget.style.color = '#D4947E')}
                       onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(196,122,101,0.75)')}
                     >

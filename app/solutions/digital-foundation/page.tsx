@@ -348,7 +348,7 @@ export default function DigitalFoundationPage() {
               <a
                 href="/#packages"
                 className="inline-block mt-8 font-body font-normal transition-colors duration-300"
-                style={{ fontSize: '0.85rem', color: 'rgba(196,122,101,0.75)', letterSpacing: '0.05em' }}
+                style={{ fontSize: '0.85rem', color: 'rgba(196,122,101,0.85)', letterSpacing: '0.05em' }}
               >
                 See how this compares to our other solutions →
               </a>

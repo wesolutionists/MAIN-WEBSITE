@@ -104,7 +104,7 @@ export default function TransitionSection() {
         >
           <p
             className="font-body font-medium"
-            style={{ fontSize: '0.7rem', letterSpacing: '0.35em', color: 'rgba(196,122,101,0.6)' }}
+            style={{ fontSize: '0.7rem', letterSpacing: '0.35em', color: 'rgba(196,122,101,0.85)' }}
           >
             TRUSTED FOR
           </p>

@@ -132,7 +132,7 @@ export default function ContactModal({ isOpen, onClose }: Props) {
             <form onSubmit={handleSubmit} className="flex flex-col gap-7" noValidate>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-7">
                 <div>
-                  <label htmlFor="audit-name" className="font-body font-normal text-gold-dim block mb-1.5" style={{ fontSize: '0.6rem', letterSpacing: '0.22em' }}>
+                  <label htmlFor="audit-name" className="font-body font-normal text-gold block mb-1.5" style={{ fontSize: '0.6rem', letterSpacing: '0.22em' }}>
                     YOUR NAME
                   </label>
                   <input
@@ -151,7 +151,7 @@ export default function ContactModal({ isOpen, onClose }: Props) {
                   />
                 </div>
                 <div>
-                  <label htmlFor="audit-email" className="font-body font-normal text-gold-dim block mb-1.5" style={{ fontSize: '0.6rem', letterSpacing: '0.22em' }}>
+                  <label htmlFor="audit-email" className="font-body font-normal text-gold block mb-1.5" style={{ fontSize: '0.6rem', letterSpacing: '0.22em' }}>
                     EMAIL
                   </label>
                   <input
@@ -171,7 +171,7 @@ export default function ContactModal({ isOpen, onClose }: Props) {
               </div>
 
               <div>
-                <label htmlFor="audit-website" className="font-body font-normal text-gold-dim block mb-1.5" style={{ fontSize: '0.6rem', letterSpacing: '0.22em' }}>
+                <label htmlFor="audit-website" className="font-body font-normal text-gold block mb-1.5" style={{ fontSize: '0.6rem', letterSpacing: '0.22em' }}>
                   WEBSITE URL (if any)
                 </label>
                 <input
@@ -189,7 +189,7 @@ export default function ContactModal({ isOpen, onClose }: Props) {
               </div>
 
               <div>
-                <label htmlFor="audit-preferred" className="font-body font-normal text-gold-dim block mb-1.5" style={{ fontSize: '0.6rem', letterSpacing: '0.22em' }}>
+                <label htmlFor="audit-preferred" className="font-body font-normal text-gold block mb-1.5" style={{ fontSize: '0.6rem', letterSpacing: '0.22em' }}>
                   PREFERRED TIME SLOT
                 </label>
                 <select
@@ -210,7 +210,7 @@ export default function ContactModal({ isOpen, onClose }: Props) {
               </div>
 
               <div>
-                <label htmlFor="audit-message" className="font-body font-normal text-gold-dim block mb-1.5" style={{ fontSize: '0.6rem', letterSpacing: '0.22em' }}>
+                <label htmlFor="audit-message" className="font-body font-normal text-gold block mb-1.5" style={{ fontSize: '0.6rem', letterSpacing: '0.22em' }}>
                   WHAT ARE YOUR BIGGEST CHALLENGES?
                 </label>
                 <textarea

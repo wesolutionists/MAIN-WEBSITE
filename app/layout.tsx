@@ -3,6 +3,7 @@ import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
+import MobileStickyCTA from '@/components/ui/MobileStickyCTA'
 import { solutions } from '@/lib/solutions'
 import './globals.css'
 
@@ -137,6 +138,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </Script>
         <GoogleAnalytics />
         {children}
+        <MobileStickyCTA />
         <Analytics />
         <SpeedInsights />
       </body>

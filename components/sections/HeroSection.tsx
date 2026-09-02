@@ -125,7 +125,7 @@ export default function HeroSection() {
               <a
                 href="#contact"
                 className="font-body font-normal text-center py-3 cursor-pointer transition-colors duration-300"
-                style={{ color: 'rgba(196, 122, 101, 0.75)', fontSize: '0.82rem', letterSpacing: '0.1em' }}
+                style={{ color: 'rgba(196, 122, 101, 0.85)', fontSize: '0.82rem', letterSpacing: '0.1em' }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = '#C47A65')}
                 onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(196, 122, 101, 0.75)')}
               >

@@ -64,14 +64,14 @@ export default function PrivacyPage() {
       <div style={{ borderBottom: '1px solid rgba(196, 122, 101, 0.12)', padding: '1.5rem 2rem' }}>
         <Link
           href="/"
-          style={{ fontSize: '0.75rem', letterSpacing: '0.2em', color: 'rgba(196, 122, 101, 0.7)', textDecoration: 'none' }}
+          style={{ fontSize: '0.75rem', letterSpacing: '0.2em', color: 'rgba(196, 122, 101, 0.85)', textDecoration: 'none' }}
         >
           ← BACK TO HOME
         </Link>
       </div>
 
       <div style={{ maxWidth: '720px', margin: '0 auto', padding: 'clamp(3rem, 8vw, 6rem) 2rem' }}>
-        <p style={{ fontSize: '0.72rem', letterSpacing: '0.3em', color: 'rgba(196,122,101,0.7)', marginBottom: '1.25rem' }}>
+        <p style={{ fontSize: '0.72rem', letterSpacing: '0.3em', color: 'rgba(196,122,101,0.85)', marginBottom: '1.25rem' }}>
           LEGAL
         </p>
         <h1
@@ -86,7 +86,7 @@ export default function PrivacyPage() {
         >
           Privacy Policy
         </h1>
-        <p style={{ fontSize: '0.88rem', color: 'rgba(244,239,232,0.4)', marginBottom: '3.5rem', letterSpacing: '0.05em' }}>
+        <p style={{ fontSize: '0.88rem', color: 'rgba(244,239,232,0.55)', marginBottom: '3.5rem', letterSpacing: '0.05em' }}>
           Effective date: {new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
         </p>
 
@@ -125,7 +125,7 @@ export default function PrivacyPage() {
             background: '#0F0D12',
           }}
         >
-          <p style={{ fontSize: '0.78rem', letterSpacing: '0.22em', color: 'rgba(196,122,101,0.7)', marginBottom: '0.5rem' }}>
+          <p style={{ fontSize: '0.78rem', letterSpacing: '0.22em', color: 'rgba(196,122,101,0.85)', marginBottom: '0.5rem' }}>
             QUESTIONS?
           </p>
           <p style={{ fontSize: '1rem', lineHeight: 1.8, color: 'rgba(244,239,232,0.6)' }}>

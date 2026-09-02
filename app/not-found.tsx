@@ -75,7 +75,7 @@ export default function NotFound() {
         style={{
           fontSize: '0.72rem',
           letterSpacing: '0.3em',
-          color: 'rgba(196,122,101,0.7)',
+          color: 'rgba(196,122,101,0.85)',
           marginBottom: '1.25rem',
         }}
       >

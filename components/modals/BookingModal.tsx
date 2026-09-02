@@ -137,7 +137,7 @@ export default function BookingModal({ isOpen, onClose, selectedPackage }: Props
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-7">
                 <div>
-                  <label htmlFor="book-name" className="font-body font-normal text-gold-dim block mb-1.5" style={{ fontSize: '0.6rem', letterSpacing: '0.22em' }}>
+                  <label htmlFor="book-name" className="font-body font-normal text-gold block mb-1.5" style={{ fontSize: '0.6rem', letterSpacing: '0.22em' }}>
                     YOUR NAME
                   </label>
                   <input
@@ -156,7 +156,7 @@ export default function BookingModal({ isOpen, onClose, selectedPackage }: Props
                   />
                 </div>
                 <div>
-                  <label htmlFor="book-email" className="font-body font-normal text-gold-dim block mb-1.5" style={{ fontSize: '0.6rem', letterSpacing: '0.22em' }}>
+                  <label htmlFor="book-email" className="font-body font-normal text-gold block mb-1.5" style={{ fontSize: '0.6rem', letterSpacing: '0.22em' }}>
                     EMAIL
                   </label>
                   <input
@@ -176,7 +176,7 @@ export default function BookingModal({ isOpen, onClose, selectedPackage }: Props
               </div>
 
               <div>
-                <label htmlFor="book-preferred" className="font-body font-normal text-gold-dim block mb-1.5" style={{ fontSize: '0.6rem', letterSpacing: '0.22em' }}>
+                <label htmlFor="book-preferred" className="font-body font-normal text-gold block mb-1.5" style={{ fontSize: '0.6rem', letterSpacing: '0.22em' }}>
                   PREFERRED TIME SLOT
                 </label>
                 <select
@@ -197,7 +197,7 @@ export default function BookingModal({ isOpen, onClose, selectedPackage }: Props
               </div>
 
               <div>
-                <label htmlFor="book-message" className="font-body font-normal text-gold-dim block mb-1.5" style={{ fontSize: '0.6rem', letterSpacing: '0.22em' }}>
+                <label htmlFor="book-message" className="font-body font-normal text-gold block mb-1.5" style={{ fontSize: '0.6rem', letterSpacing: '0.22em' }}>
                   WHAT WOULD YOU LIKE TO DISCUSS?
                 </label>
                 <textarea

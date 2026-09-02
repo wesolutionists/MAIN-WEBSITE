@@ -23,7 +23,7 @@ export default function TrustedTools() {
         <RevealOnScroll>
           <p
             className="font-body font-medium"
-            style={{ fontSize: '0.7rem', letterSpacing: '0.32em', color: 'rgba(196,122,101,0.55)' }}
+            style={{ fontSize: '0.7rem', letterSpacing: '0.32em', color: 'rgba(196,122,101,0.85)' }}
           >
             CONNECTS WITH THE TOOLS YOU ALREADY USE
           </p>

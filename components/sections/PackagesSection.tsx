@@ -72,7 +72,7 @@ function PricingCard({
         <div className="flex items-baseline gap-2.5 mb-2">
           <span
             className="font-display font-light shrink-0"
-            style={{ fontSize: '0.82rem', letterSpacing: '0.1em', color: 'rgba(196, 122, 101, 0.55)' }}
+            style={{ fontSize: '0.82rem', letterSpacing: '0.1em', color: 'rgba(196, 122, 101, 0.85)' }}
           >
             {pkg.number}
           </span>
@@ -121,7 +121,7 @@ function PricingCard({
             style={{ fontSize: '1.15rem', lineHeight: 1 }}
           >
             + {pkg.monthly}
-            <span className="font-body font-normal" style={{ fontSize: '0.72rem', color: 'rgba(212,148,126,0.7)' }}>/mo</span>
+            <span className="font-body font-normal" style={{ fontSize: '0.72rem', color: 'rgba(212,148,126,0.85)' }}>/mo</span>
           </span>
         </div>
         <p
