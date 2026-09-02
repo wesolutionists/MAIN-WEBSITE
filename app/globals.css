@@ -76,14 +76,22 @@ body {
   100% { transform: translateX(0); }
 }
 .portfolio-track-left {
-  animation: portfolio-left 44s linear infinite;
+  animation: portfolio-left 26s linear infinite;
 }
 .portfolio-track-right {
-  animation: portfolio-right 56s linear infinite;
+  animation: portfolio-right 33s linear infinite;
 }
 .portfolio-track-left:hover,
 .portfolio-track-right:hover {
   animation-play-state: paused;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 /* Featured pricing card border + glow pulse */

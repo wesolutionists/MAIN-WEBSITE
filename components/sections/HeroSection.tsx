@@ -60,7 +60,7 @@ export default function HeroSection() {
       {/* Content with parallax */}
       <motion.div
         style={{ y: contentY }}
-        className="relative z-10 mx-auto w-full max-w-7xl px-6 lg:px-10 pt-40 pb-24 lg:pt-44 lg:pb-0"
+        className="relative z-10 mx-auto w-full max-w-7xl px-6 lg:px-10 pt-40 pb-6 md:pb-16 lg:pt-44 lg:pb-0"
       >
         <div className="max-w-3xl">
 

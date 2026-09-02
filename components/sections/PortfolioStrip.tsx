@@ -1,8 +1,9 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import Image from 'next/image'
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, AnimatePresence } from 'framer-motion'
+import { X } from 'lucide-react'
 import AnimatedRule from '@/components/ui/AnimatedRule'
 
 const projects = [
@@ -43,11 +44,23 @@ const projects = [
   },
 ]
 
-function MarqueeCard({ project }: { project: (typeof projects)[0] }) {
+type Project = (typeof projects)[number]
+
+function MarqueeCard({ project, onSelect }: { project: Project; onSelect: (p: Project) => void }) {
   return (
     <article
-      className="group relative flex-shrink-0 cursor-default"
-      style={{ width: '220px', marginRight: '10px' }}
+      className="group relative flex-shrink-0 cursor-pointer"
+      style={{ width: '132px', marginRight: '8px' }}
+      onClick={() => onSelect(project)}
+      role="button"
+      tabIndex={0}
+      aria-label={`View ${project.name} larger`}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault()
+          onSelect(project)
+        }
+      }}
     >
       <div
         className="relative overflow-hidden"
@@ -57,7 +70,7 @@ function MarqueeCard({ project }: { project: (typeof projects)[0] }) {
           src={project.image}
           alt={`${project.name} — ${project.tag.toLowerCase()} project by The Solutionists`}
           fill
-          sizes="220px"
+          sizes="132px"
           className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
           draggable={false}
         />
@@ -68,7 +81,7 @@ function MarqueeCard({ project }: { project: (typeof projects)[0] }) {
         />
       </div>
       <div
-        className="px-3 py-2.5"
+        className="px-2 py-1.5"
         style={{
           background: '#0F0D12',
           border: '1px solid rgba(196, 122, 101, 0.13)',
@@ -77,14 +90,14 @@ function MarqueeCard({ project }: { project: (typeof projects)[0] }) {
         }}
       >
         <p
-          className="font-body font-medium text-ink-muted mb-1"
-          style={{ fontSize: '0.65rem', letterSpacing: '0.22em' }}
+          className="font-body font-medium text-ink-muted mb-0.5 truncate"
+          style={{ fontSize: '0.5rem', letterSpacing: '0.14em' }}
         >
           {project.tag}
         </p>
         <h3
-          className="font-display font-semibold text-ink"
-          style={{ fontSize: '1.05rem', lineHeight: 1.2 }}
+          className="font-display font-semibold text-ink truncate"
+          style={{ fontSize: '0.8rem', lineHeight: 1.2 }}
         >
           {project.name}
         </h3>
@@ -93,9 +106,53 @@ function MarqueeCard({ project }: { project: (typeof projects)[0] }) {
   )
 }
 
+function PortfolioRow({
+  projectsList,
+  direction,
+  onSelect,
+}: {
+  projectsList: Project[]
+  direction: 'left' | 'right'
+  onSelect: (p: Project) => void
+}) {
+  const [paused, setPaused] = useState(false)
+  const resumeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  const handleInteractionStart = () => {
+    if (resumeTimer.current) clearTimeout(resumeTimer.current)
+    setPaused(true)
+  }
+  const handleInteractionEnd = () => {
+    if (resumeTimer.current) clearTimeout(resumeTimer.current)
+    resumeTimer.current = setTimeout(() => setPaused(false), 1500)
+  }
+
+  return (
+    <div
+      className="overflow-x-auto no-scrollbar"
+      style={{ touchAction: 'pan-x' }}
+      onPointerDown={handleInteractionStart}
+      onPointerUp={handleInteractionEnd}
+      onPointerLeave={handleInteractionEnd}
+      onTouchStart={handleInteractionStart}
+      onTouchEnd={handleInteractionEnd}
+    >
+      <div
+        className={`flex ${direction === 'left' ? 'portfolio-track-left' : 'portfolio-track-right'}`}
+        style={{ width: 'max-content', animationPlayState: paused ? 'paused' : 'running' }}
+      >
+        {projectsList.map((project, i) => (
+          <MarqueeCard key={i} project={project} onSelect={onSelect} />
+        ))}
+      </div>
+    </div>
+  )
+}
+
 export default function PortfolioStrip() {
   const headerRef = useRef(null)
   const isHeaderInView = useInView(headerRef, { once: true, amount: 0.3 })
+  const [selected, setSelected] = useState<Project | null>(null)
 
   // Row 2 starts offset by 2 for visual variety
   const row2Base = [...projects.slice(2), ...projects.slice(0, 2)]
@@ -135,7 +192,7 @@ export default function PortfolioStrip() {
         </motion.div>
       </div>
 
-      {/* Dual marquee rows — full bleed */}
+      {/* Dual marquee rows — full bleed, draggable/scrollable */}
       <div className="relative">
         {/* Edge fade masks */}
         <div
@@ -149,24 +206,73 @@ export default function PortfolioStrip() {
           aria-hidden="true"
         />
 
-        {/* Row 1 — scrolls left */}
-        <div className="overflow-hidden mb-3">
-          <div className="portfolio-track-left flex" style={{ width: 'max-content' }}>
-            {row1.map((project, i) => (
-              <MarqueeCard key={i} project={project} />
-            ))}
-          </div>
+        <div className="mb-3">
+          <PortfolioRow projectsList={row1} direction="left" onSelect={setSelected} />
         </div>
-
-        {/* Row 2 — scrolls right */}
-        <div className="overflow-hidden">
-          <div className="portfolio-track-right flex" style={{ width: 'max-content' }}>
-            {row2.map((project, i) => (
-              <MarqueeCard key={i} project={project} />
-            ))}
-          </div>
-        </div>
+        <PortfolioRow projectsList={row2} direction="right" onSelect={setSelected} />
       </div>
+
+      {/* Enlarge lightbox */}
+      <AnimatePresence>
+        {selected && (
+          <motion.div
+            key={selected.name}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-6"
+            style={{ background: 'rgba(7,6,10,0.92)', backdropFilter: 'blur(8px)' }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            onClick={() => setSelected(null)}
+            role="dialog"
+            aria-modal="true"
+            aria-label={selected.name}
+          >
+            <motion.div
+              className="relative w-full max-w-3xl"
+              initial={{ opacity: 0, scale: 0.94, y: 12 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.96, y: 8 }}
+              transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setSelected(null)}
+                aria-label="Close"
+                className="absolute -top-12 right-0 text-ink-muted hover:text-ink transition-colors duration-300"
+              >
+                <X size={26} strokeWidth={1.5} />
+              </button>
+              <div
+                className="relative w-full overflow-hidden"
+                style={{ aspectRatio: '7/4', border: '1px solid rgba(196, 122, 101, 0.2)' }}
+              >
+                <Image
+                  src={selected.image}
+                  alt={`${selected.name} — ${selected.tag.toLowerCase()} project by The Solutionists`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 768px"
+                  className="object-cover object-top"
+                />
+              </div>
+              <div
+                className="px-5 py-4"
+                style={{ background: '#0F0D12', border: '1px solid rgba(196, 122, 101, 0.18)', borderTop: 'none' }}
+              >
+                <p
+                  className="font-body font-medium text-ink-muted mb-1"
+                  style={{ fontSize: '0.72rem', letterSpacing: '0.2em' }}
+                >
+                  {selected.tag}
+                </p>
+                <h3 className="font-display font-semibold text-ink" style={{ fontSize: '1.4rem' }}>
+                  {selected.name}
+                </h3>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   )
 }

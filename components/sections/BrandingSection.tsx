@@ -49,8 +49,8 @@ export default function BrandingSection() {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        minHeight: 'clamp(480px, 72vh, 760px)',
-        padding: 'clamp(3rem, 6vh, 5rem) clamp(1.25rem, 5vw, 4rem)',
+        minHeight: 'clamp(340px, 48vh, 540px)',
+        padding: 'clamp(2rem, 4vh, 3.25rem) clamp(1.25rem, 5vw, 4rem)',
       }}
     >
       {/* Dark overlay — brighter now (0.58) */}
@@ -58,7 +58,7 @@ export default function BrandingSection() {
       {/* Mobile extra */}
       <div className="absolute inset-0 pointer-events-none md:hidden z-[2]" style={{ background: 'rgba(7,6,10,0.15)' }} aria-hidden="true" />
 
-      {/* Drifting radial spotlight — follows scroll, with a periodic power-on flicker */}
+      {/* Drifting radial spotlight — follows scroll, steady glow */}
       <motion.div
         className="pointer-events-none absolute z-[3]"
         style={{
@@ -70,23 +70,18 @@ export default function BrandingSection() {
           background: 'radial-gradient(circle, rgba(196,122,101,0.13) 0%, transparent 65%)',
           filter: 'blur(40px)',
         }}
-        animate={{ opacity: [1, 0.25, 0.85, 0.35, 1, 0.6, 1, 1] }}
-        transition={{
-          duration: 1.4,
-          times: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 1],
-          repeat: Infinity,
-          repeatDelay: 6.5,
-          ease: 'easeInOut',
-        }}
         aria-hidden="true"
       />
 
-      {/* Top accent line — draws from left */}
+      {/* Top accent line — draws from left, then pulses continuously */}
       <motion.div
         className="mb-8 relative z-10"
         initial={{ width: 0, opacity: 0 }}
-        animate={isInView ? { width: 60, opacity: 1 } : {}}
-        transition={{ duration: 1.1, ease }}
+        animate={isInView ? { width: 60, opacity: [1, 0.5, 1] } : {}}
+        transition={{
+          width: { duration: 1.1, ease },
+          opacity: { duration: 2.6, repeat: Infinity, ease: 'easeInOut', delay: 1.1 },
+        }}
         style={{ height: '1px', background: 'linear-gradient(90deg, #C47A65, transparent)' }}
         aria-hidden="true"
       />
@@ -99,7 +94,7 @@ export default function BrandingSection() {
           text="Artificial intelligence"
           delay={0.05} direction="left" isInView={isInView}
           className="font-display font-light italic"
-          style={{ fontSize: 'clamp(2.4rem, 6.5vw, 6rem)', lineHeight: 1.12, letterSpacing: '-0.02em', color: 'rgba(244,239,232,0.45)' }}
+          style={{ fontSize: 'clamp(1.8rem, 4.8vw, 4.4rem)', lineHeight: 1.12, letterSpacing: '-0.02em', color: 'rgba(244,239,232,0.45)' }}
         />
 
         {/* "won't replace humans," */}
@@ -107,7 +102,7 @@ export default function BrandingSection() {
           text="won't replace humans,"
           delay={0.2} direction="left" isInView={isInView}
           className="font-display font-light italic"
-          style={{ fontSize: 'clamp(2.4rem, 6.5vw, 6rem)', lineHeight: 1.12, letterSpacing: '-0.02em', color: 'rgba(244,239,232,0.45)' }}
+          style={{ fontSize: 'clamp(1.8rem, 4.8vw, 4.4rem)', lineHeight: 1.12, letterSpacing: '-0.02em', color: 'rgba(244,239,232,0.45)' }}
         />
 
         {/* Divider line between dim and bright lines */}
@@ -129,13 +124,13 @@ export default function BrandingSection() {
           text="but humans using"
           delay={0.38} direction="right" isInView={isInView}
           className="font-display font-light italic text-ink"
-          style={{ fontSize: 'clamp(2.4rem, 6.5vw, 6rem)', lineHeight: 1.12, letterSpacing: '-0.02em' }}
+          style={{ fontSize: 'clamp(1.8rem, 4.8vw, 4.4rem)', lineHeight: 1.12, letterSpacing: '-0.02em' }}
         />
 
         {/* "artificial intelligence will replace those who don't." */}
         <p
           className="font-display font-light italic"
-          style={{ fontSize: 'clamp(2.4rem, 6.5vw, 6rem)', lineHeight: 1.12, letterSpacing: '-0.02em' }}
+          style={{ fontSize: 'clamp(1.8rem, 4.8vw, 4.4rem)', lineHeight: 1.12, letterSpacing: '-0.02em' }}
           aria-label="artificial intelligence will replace those who don't."
         >
           {/* "artificial intelligence" — solid terracotta, scale stamp */}
@@ -163,12 +158,15 @@ export default function BrandingSection() {
           ))}
         </p>
 
-        {/* Bottom accent line — draws from right */}
+        {/* Bottom accent line — draws from right, then pulses continuously */}
         <motion.div
           className="mt-8 md:mt-10"
           initial={{ width: 0, opacity: 0 }}
-          animate={isInView ? { width: 60, opacity: 1 } : {}}
-          transition={{ duration: 1.1, delay: 1.3, ease }}
+          animate={isInView ? { width: 60, opacity: [1, 0.5, 1] } : {}}
+          transition={{
+            width: { duration: 1.1, delay: 1.3, ease },
+            opacity: { duration: 2.6, repeat: Infinity, ease: 'easeInOut', delay: 2.4 },
+          }}
           style={{ height: '1px', background: 'linear-gradient(90deg, transparent, #C47A65)', marginLeft: 'auto' }}
           aria-hidden="true"
         />

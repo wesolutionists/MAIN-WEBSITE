@@ -78,10 +78,19 @@ export default function AboutSection() {
             <RevealOnScroll delay={0.3}>
               <Link
                 href="/about"
-                className="inline-block mt-8 font-body font-normal transition-colors duration-300"
-                style={{ fontSize: '0.92rem', color: 'rgba(196,122,101,0.85)', letterSpacing: '0.03em' }}
+                className="group/cta inline-flex items-center gap-2.5 mt-8 font-body font-semibold transition-all duration-300 hover:scale-[1.03] active:scale-[0.98]"
+                style={{
+                  fontSize: '0.8rem',
+                  letterSpacing: '0.1em',
+                  color: '#0A090C',
+                  padding: '0.7rem 1.4rem',
+                  borderRadius: '999px',
+                  background: 'linear-gradient(135deg, #B86855, #D4947E, #B86855)',
+                  boxShadow: '0 4px 20px rgba(196, 122, 101, 0.28)',
+                }}
               >
-                Learn more about us →
+                LEARN MORE ABOUT US
+                <span className="transition-transform duration-300 group-hover/cta:translate-x-1">→</span>
               </Link>
             </RevealOnScroll>
           </div>

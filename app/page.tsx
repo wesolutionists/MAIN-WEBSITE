@@ -13,7 +13,6 @@ import AboutSection from '@/components/sections/AboutSection'
 import FAQSection from '@/components/sections/FAQSection'
 import ContactSection from '@/components/sections/ContactSection'
 import PortfolioStrip from '@/components/sections/PortfolioStrip'
-import TrustedTools from '@/components/sections/TrustedTools'
 import Footer from '@/components/sections/Footer'
 import ContactModal from '@/components/modals/ContactModal'
 import BookingModal from '@/components/modals/BookingModal'
@@ -52,8 +51,6 @@ export default function Home() {
         <AboutSection />
 
         <PortfolioStrip />
-
-        <TrustedTools />
 
         <ContactSection />
 
