@@ -5,11 +5,6 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
 import { Search, CalendarCheck, Package } from 'lucide-react'
 
-const lines = [
-  { text: 'We Are', accent: false, delay: 0.1 },
-  { text: 'The Solutionists.', accent: true, delay: 0.32 },
-]
-
 export default function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null)
   const { scrollY } = useScroll()
@@ -21,16 +16,23 @@ export default function HeroSection() {
       className="relative flex min-h-0 md:min-h-[100dvh] flex-col justify-center overflow-hidden"
       aria-label="Hero"
     >
-      {/* Background image — Next.js serves an appropriately-sized, compressed version per device */}
-      <Image
-        src="/hero-bg.webp"
-        alt=""
-        fill
-        priority
-        sizes="100vw"
-        className="pointer-events-none object-cover object-[18%_25%] md:object-[68%_32%]"
-        aria-hidden="true"
-      />
+      {/* Background image — fades and settles in rather than appearing instantly */}
+      <motion.div
+        className="pointer-events-none absolute inset-0"
+        initial={{ opacity: 0, scale: 1.06 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
+      >
+        <Image
+          src="/hero-bg.webp"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[18%_25%] md:object-[68%_32%]"
+          aria-hidden="true"
+        />
+      </motion.div>
 
       {/* Gradient scrim */}
       <div
@@ -39,6 +41,16 @@ export default function HeroSection() {
           background:
             'linear-gradient(to right, rgba(10,9,12,0.55) 0%, rgba(10,9,12,0.25) 55%, rgba(10,9,12,0.08) 100%)',
         }}
+        aria-hidden="true"
+      />
+
+      {/* Dark curtain — starts near-opaque, lifts as the image settles in */}
+      <motion.div
+        className="pointer-events-none absolute inset-0"
+        style={{ background: '#0A090C' }}
+        initial={{ opacity: 0.7 }}
+        animate={{ opacity: 0 }}
+        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         aria-hidden="true"
       />
 
@@ -64,29 +76,17 @@ export default function HeroSection() {
       >
         <div className="max-w-3xl">
 
-          {/* Headline — word by word */}
-          <h1
+          {/* Headline — fades in with the background, no word-reveal */}
+          <motion.h1
             className="font-display font-semibold"
             style={{ fontSize: 'clamp(2.8rem, 7.5vw, 5.8rem)', lineHeight: 1.08, letterSpacing: '-0.02em' }}
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
-            {lines.map((line) => (
-              <span key={line.text} className="block overflow-hidden" style={{ paddingBottom: '0.06em' }}>
-                <motion.span
-                  className="block"
-                  style={{ color: line.accent ? '#D4947E' : '#F4EFE8' }}
-                  initial={{ y: '105%' }}
-                  animate={{ y: '0%' }}
-                  transition={{
-                    duration: 1.1,
-                    delay: line.delay,
-                    ease: [0.16, 1, 0.3, 1],
-                  }}
-                >
-                  {line.text}
-                </motion.span>
-              </span>
-            ))}
-          </h1>
+            <span className="block" style={{ color: '#F4EFE8' }}>We Are</span>
+            <span className="block" style={{ color: '#D4947E' }}>The Solutionists.</span>
+          </motion.h1>
 
           {/* Subheading */}
           <motion.p
