@@ -1,32 +1,53 @@
 'use client'
 
 import { useRef } from 'react'
-import { motion, useInView, useScroll, useTransform } from 'framer-motion'
+import { motion, useInView, useScroll, useTransform, MotionValue } from 'framer-motion'
 
 const ease = [0.16, 1, 0.3, 1] as const
 
-function WordLine({
-  text, delay, direction, isInView, className, style,
+// Words come into focus (blur + brighten) as the section scrolls through view,
+// rather than firing a one-time timed fade — the reveal tracks scroll directly.
+function ScrubWord({
+  progress, range, children, className, style,
 }: {
-  text: string; delay: number; direction: 'left' | 'right'
-  isInView: boolean; className?: string; style?: React.CSSProperties
+  progress: MotionValue<number>; range: [number, number]
+  children: React.ReactNode; className?: string; style?: React.CSSProperties
+}) {
+  const opacity = useTransform(progress, range, [0, 1], { clamp: true })
+  const blur = useTransform(opacity, (v) => `blur(${(1 - v) * 7}px)`)
+  return (
+    <motion.span
+      aria-hidden="true"
+      className={className}
+      style={{ display: 'inline-block', opacity, filter: blur, ...style }}
+    >
+      {children}
+    </motion.span>
+  )
+}
+
+function ScrubLine({
+  text, progress, unitStart, unitSpan, className, style,
+}: {
+  text: string; progress: MotionValue<number>; unitStart: number; unitSpan: number
+  className?: string; style?: React.CSSProperties
 }) {
   const words = text.split(' ')
-  const xFrom = direction === 'left' ? -28 : 28
   return (
     <p className={className} style={style} aria-label={text}>
-      {words.map((word, i) => (
-        <motion.span
-          key={i}
-          aria-hidden="true"
-          style={{ display: 'inline-block', marginRight: i < words.length - 1 ? '0.3em' : 0 }}
-          initial={{ opacity: 0, x: xFrom, filter: 'blur(6px)' }}
-          animate={isInView ? { opacity: 1, x: 0, filter: 'blur(0px)' } : {}}
-          transition={{ duration: 0.75, delay: delay + i * 0.09, ease }}
-        >
-          {word}
-        </motion.span>
-      ))}
+      {words.map((word, i) => {
+        const start = unitStart + i * unitSpan
+        return (
+          <ScrubWord
+            key={i}
+            progress={progress}
+            range={[start, start + unitSpan * 2.2]}
+            style={{ marginRight: i < words.length - 1 ? '0.3em' : 0 }}
+          >
+            {word}
+          </ScrubWord>
+        )
+      })}
     </p>
   )
 }
@@ -38,6 +59,10 @@ export default function BrandingSection() {
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start end', 'end start'] })
   const spotX = useTransform(scrollYProgress, [0, 1], ['-10%', '10%'])
   const textY = useTransform(scrollYProgress, [0, 1], ['0%', '-4%'])
+
+  // Word reveal is scrubbed across the first ~55% of the section's scroll transit
+  const reveal = useTransform(scrollYProgress, [0.08, 0.55], [0, 1], { clamp: true })
+  const unitSpan = 1 / 14 // 14 reveal units across the whole statement
 
   return (
     <section
@@ -90,17 +115,17 @@ export default function BrandingSection() {
       <motion.div className="relative z-10 max-w-7xl" style={{ y: textY }}>
 
         {/* "Artificial intelligence" */}
-        <WordLine
+        <ScrubLine
           text="Artificial intelligence"
-          delay={0.05} direction="left" isInView={isInView}
+          progress={reveal} unitStart={0 * unitSpan} unitSpan={unitSpan}
           className="font-display font-light italic"
           style={{ fontSize: 'clamp(1.8rem, 4.8vw, 4.4rem)', lineHeight: 1.12, letterSpacing: '-0.02em', color: 'rgba(244,239,232,0.45)' }}
         />
 
         {/* "won't replace humans," */}
-        <WordLine
+        <ScrubLine
           text="won't replace humans,"
-          delay={0.2} direction="left" isInView={isInView}
+          progress={reveal} unitStart={2 * unitSpan} unitSpan={unitSpan}
           className="font-display font-light italic"
           style={{ fontSize: 'clamp(1.8rem, 4.8vw, 4.4rem)', lineHeight: 1.12, letterSpacing: '-0.02em', color: 'rgba(244,239,232,0.45)' }}
         />
@@ -120,9 +145,9 @@ export default function BrandingSection() {
         />
 
         {/* "but humans using" */}
-        <WordLine
+        <ScrubLine
           text="but humans using"
-          delay={0.38} direction="right" isInView={isInView}
+          progress={reveal} unitStart={5 * unitSpan} unitSpan={unitSpan}
           className="font-display font-light italic text-ink"
           style={{ fontSize: 'clamp(1.8rem, 4.8vw, 4.4rem)', lineHeight: 1.12, letterSpacing: '-0.02em' }}
         />
@@ -134,28 +159,28 @@ export default function BrandingSection() {
           aria-label="artificial intelligence will replace those who don't."
         >
           {/* "artificial intelligence" — solid terracotta, scale stamp */}
-          <motion.span
-            aria-hidden="true"
+          <ScrubWord
+            progress={reveal}
+            range={[8 * unitSpan, 8 * unitSpan + unitSpan * 2.2]}
             className="text-gold-light"
-            style={{ display: 'inline-block', marginRight: '0.3em' }}
-            initial={{ opacity: 0, scale: 1.35, filter: 'blur(10px)' }}
-            animate={isInView ? { opacity: 1, scale: 1, filter: 'blur(0px)' } : {}}
-            transition={{ duration: 0.55, delay: 0.52, ease: [0.34, 1.56, 0.64, 1] }}
+            style={{ marginRight: '0.3em' }}
           >
             artificial intelligence
-          </motion.span>
-          {['will', 'replace', 'those', 'who', "don't."].map((word, i) => (
-            <motion.span
-              key={word} aria-hidden="true"
-              className="text-ink"
-              style={{ display: 'inline-block', marginRight: i < 4 ? '0.3em' : 0 }}
-              initial={{ opacity: 0, x: 28, filter: 'blur(6px)' }}
-              animate={isInView ? { opacity: 1, x: 0, filter: 'blur(0px)' } : {}}
-              transition={{ duration: 0.75, delay: 0.72 + i * 0.09, ease }}
-            >
-              {word}
-            </motion.span>
-          ))}
+          </ScrubWord>
+          {['will', 'replace', 'those', 'who', "don't."].map((word, i) => {
+            const start = (9 + i) * unitSpan
+            return (
+              <ScrubWord
+                key={word}
+                progress={reveal}
+                range={[start, start + unitSpan * 2.2]}
+                className="text-ink"
+                style={{ marginRight: i < 4 ? '0.3em' : 0 }}
+              >
+                {word}
+              </ScrubWord>
+            )
+          })}
         </p>
 
         {/* Bottom accent line — draws from right, then pulses continuously */}
