@@ -41,7 +41,7 @@ function ScrubLine({
           <ScrubWord
             key={i}
             progress={progress}
-            range={[start, start + unitSpan * 2.2]}
+            range={[start, Math.min(1, start + unitSpan * 2.2)]}
             style={{ marginRight: i < words.length - 1 ? '0.3em' : 0 }}
           >
             {word}
@@ -60,8 +60,10 @@ export default function BrandingSection() {
   const spotX = useTransform(scrollYProgress, [0, 1], ['-10%', '10%'])
   const textY = useTransform(scrollYProgress, [0, 1], ['0%', '-4%'])
 
-  // Word reveal is scrubbed across the first ~55% of the section's scroll transit
-  const reveal = useTransform(scrollYProgress, [0.08, 0.55], [0, 1], { clamp: true })
+  // Word reveal uses its own tighter scroll window — as the section enters and
+  // settles into view, not the section's whole (much longer) scroll transit —
+  // so it finishes while still comfortably on screen, not as it scrolls away.
+  const { scrollYProgress: reveal } = useScroll({ target: sectionRef, offset: ['start 0.92', 'start 0.4'] })
   const unitSpan = 1 / 14 // 14 reveal units across the whole statement
 
   return (
@@ -161,7 +163,7 @@ export default function BrandingSection() {
           {/* "artificial intelligence" — solid terracotta, scale stamp */}
           <ScrubWord
             progress={reveal}
-            range={[8 * unitSpan, 8 * unitSpan + unitSpan * 2.2]}
+            range={[8 * unitSpan, Math.min(1, 8 * unitSpan + unitSpan * 2.2)]}
             className="text-gold-light"
             style={{ marginRight: '0.3em' }}
           >
@@ -173,7 +175,7 @@ export default function BrandingSection() {
               <ScrubWord
                 key={word}
                 progress={reveal}
-                range={[start, start + unitSpan * 2.2]}
+                range={[start, Math.min(1, start + unitSpan * 2.2)]}
                 className="text-ink"
                 style={{ marginRight: i < 4 ? '0.3em' : 0 }}
               >
